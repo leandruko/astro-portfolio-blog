@@ -4,7 +4,14 @@ module.exports = {
     './src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        'backgraund':'#1A1A19',
+        'verde':'#31511E',
+        'pistacho':'#859F3D',
+        'claro':'#F6FCDF'
+      },
+    },
   },
   plugins: [],
 }
