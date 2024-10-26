@@ -1,0 +1,51 @@
+---
+// proyectos
+const projects = [
+  {
+    title: "Chile Earthquakes",
+    description: "Data analysis project on the Chile Earthquakes dataset, to identify trends or patterns over the past years.",
+    link: "https://github.com/leandruko/sismos-Chile"
+  },
+  {
+    title: "Monopoly ML",
+    description: "Machine Learning project to predict if a customer will leave the bank.",
+    link: "https://github.com/leandruko/MonopolyMLproject"
+  },
+  {
+    title: "Weather Australia",
+    description: "Team project to predict whether it will rain tomorrow in Australia, using data analysis and Machine Learning techniques.",
+    link: "https://github.com/leandruko/MineriaDatosProject"
+  },
+  {
+    title: "Movie Recommendation",
+    description: "Project for recommending movies using collaborative filtering techniques and cosine similarity, along with the use of Streamlit.",
+    link: "https://github.com/leandruko/recomendacion-peliculas"
+  },
+  {
+    title: "Lung Cancer",
+    description: "Machine learning project to predict if a person has lung cancer based on patient data.",
+    link: "https://github.com/leandruko/lung-cancer"
+  },
+  {
+    title: "Financial System Delinquency",
+    description: "Project aimed at predicting if a person will become a debtor in the financial system.",
+    link: "https://github.com/leandruko/Morosidad-Sistema-Financiero"
+  },
+];
+
+---
+
+<section id="projects" class="my-16 p-8 rounded-lg">
+    <h2 class="text-4xl font-bold text-center text-white transition-transform duration-500 ease-in-out transform hover:scale-110">Projects</h2>
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+      {projects.map(project => (
+        <div class="p-10">
+          <h3 class="text-xl font-bold mb-2 text-white">{project.title}</h3>
+          <p class="mb-4 text-white">{project.description}</p>
+          <a href={project.link} target="_blank" class="text-white hover:text-pink-300 transition-colors duration-300 font-semibold">
+            Project &rarr;
+          </a>
+        </div>
+      ))}
+    </div>
+</section>
