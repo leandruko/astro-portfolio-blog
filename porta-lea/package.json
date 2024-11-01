@@ -12,7 +12,8 @@
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "astro": "^4.16.7",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",

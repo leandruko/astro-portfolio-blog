@@ -1,12 +1,40 @@
 <section class="py-8 z-10 font-serif">
-    <div class="flex flex-col md:flex-row items-center max-w-7xl px-6 py-8 mx-auto">
-      <div class="w-full md:w-1/2 py-8">
-        <h1 class="text-purple-900 text-7xl font-semibold leading-none tracking-tighter">
-          Welcome to <br><span class="text-blue-500">My Portfolio, <br></span> I am Web Developer.
-        </h1>
-      </div>
-      <div class="w-full md:w-1/2 py-8">
-        <img src="https://www.svgrepo.com/show/493509/person-who-invests.svg" class="g-image">
-      </div>
+  <div
+    class="flex flex-col md:flex-row items-center max-w-7xl px-6 py-8 mx-auto"
+  >
+    <div class="w-full md:w-1/2 py-8">
+      <h1
+        class="text-purple-900 text-7xl font-semibold leading-none tracking-tighter"
+      >
+        Welcome to <br /><span class="text-blue-500">My Portfolio, <br /></span>
+        <span id="typewriter" class="text-blue-500"></span>
+      </h1>
     </div>
-  </section>
+    <div class="w-full md:w-1/2 py-8">
+      <img
+        src="https://www.svgrepo.com/show/493328/male-programmer.svg"
+        class="g-image"
+      />
+    </div>
+  </div>
+</section>
+
+<script>
+  // Inicializar el efecto de máquina de escribir en el elemento con id 'typewriter'
+  const typewriter = new Typewriter("#typewriter", {
+    loop: true,
+    delay: 75,
+  });
+
+  typewriter
+    .typeString("I am a Web Developer.")
+    .pauseFor(2000)
+    .deleteAll()
+    .typeString("I am a Data Enthusiast.")
+    .pauseFor(2000)
+    .deleteAll()
+    .typeString("I build awesome projects.")
+    .pauseFor(2000)
+    .deleteAll()
+    .start();
+</script>
