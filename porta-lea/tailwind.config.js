@@ -9,7 +9,7 @@ module.exports = {
         'negro':'#181C14',
         'verde':'#697565',
         'claro':'#ECDFCC',
-        'gris':'3C3D37'
+        'gris':'#3C3D37'
       },
     },
   },

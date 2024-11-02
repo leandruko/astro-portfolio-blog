@@ -2,24 +2,13 @@
 // Datos para el footer
 const footerData = {
   year: new Date().getFullYear(),
-  links: [
-    { name: "LinkedIn", url: "https://www.linkedin.com/in/leandro-soto-miranda-767a72264/", icon: "fab fa-linkedin" },
-    { name: "GitHub", url: "https://github.com/leandruko", icon: "fab fa-github" }
-  ]
 };
 ---
 
 <footer class="text-claro py-6 mt-10">
   <div class="container mx-auto flex flex-col items-center">
-    <div class="flex space-x-4">
-      {footerData.links.map(link => (
-        <a href={link.url} target="_blank" rel="noopener noreferrer" class="hover:text-blue-300 transition duration-300 ">
-          <i class={`${link.icon} text-xl`}></i>
-        </a>
-      ))}
-    </div>
     <p class="text-sm text-center mb-4 mt-2">
-      Developed by leandruko - {footerData.year}
+      Developed by lea - {footerData.year}
     </p>
   </div>
 </footer>
