@@ -1,15 +1,39 @@
 <nav class="top-0 left-0 w-full text-claro py-4 z-50">
-    <div class="container mx-auto flex justify-between items-center px-6">
-      <a href="#home" class="text-lg font-semibold tracking-wide">lea's portfolio</a>
-      <div class="flex space-x-6">
-        <a href="#about" class="hover:text-verde">About</a>
-        <a href="#projects" class="hover:text-verde">Projects</a>
-        <a href="#experience" class="hover:text-verde">Experience</a>
-        <a href="#contact" class="hover:text-verde">Contact</a>
-        <a href="/esp.pdf" download class="hover:text-verde font-semibold">
-          Download CV
-        </a>
-      </div>
+  <div class="container mx-auto flex justify-between items-center px-6">
+    <a href="#home" class="text-lg font-semibold tracking-wide">lea's portfolio</a>
+    <div class="hidden md:flex space-x-6">
+      <a href="#about" class="hover:text-verde">About</a>
+      <a href="#projects" class="hover:text-verde">Projects</a>
+      <a href="#experience" class="hover:text-verde">Experience</a>
+      <a href="#contact" class="hover:text-verde">Contact</a>
+      <a href="/esp.pdf" download class="hover:text-verde font-semibold">
+        Download CV
+      </a>
     </div>
-  </nav>
-  
+    <!-- Botón del menú para pantallas pequeñas -->
+    <button id="menu-toggle" class="md:hidden text-xl focus:outline-none">
+      ☰
+    </button>
+  </div>
+
+  <!-- Menú desplegable para móviles -->
+  <div id="mobile-menu" class="hidden md:hidden text-claro py-4">
+    <div class="space-y-4 text-center">
+      <a href="#about" class="block hover:text-verde">About</a>
+      <a href="#projects" class="block hover:text-verde">Projects</a>
+      <a href="#experience" class="block hover:text-verde">Experience</a>
+      <a href="#contact" class="block hover:text-verde">Contact</a>
+      <a href="/esp.pdf" download class="block hover:text-verde font-semibold">
+        Download CV
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Toggle de visibilidad del menú móvil
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
