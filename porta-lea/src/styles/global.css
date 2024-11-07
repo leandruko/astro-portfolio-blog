@@ -24,13 +24,9 @@
 
 
   body {
-    background-image: url('bk.jpg'); /* Ruta de tu imagen */
-    background-size: cover; /* La imagen cubrirá todo el fondo */
-    background-position: center; /* Centra la imagen en la pantalla */
-    background-attachment: fixed; /* Fija la imagen para que no se mueva al hacer scroll */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-image: url('bk.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+    background-repeat: no-repeat; 
   }
-
-  
-  
-  
