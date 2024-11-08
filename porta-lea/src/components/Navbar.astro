@@ -33,7 +33,7 @@ const navItems = [
     {
       navItems.map((link) => (
         <a
-          class="relative block px-2 py-2 transition hover:text-gray-200 dark:hover:text-blue-500"
+          class="relative block px-2 py-2 transition  dark:hover:text-verde"
           aria-label={link.label}
           href={link.url}
         >
@@ -93,12 +93,12 @@ const navItems = [
   }
 
   nav {
-    @apply dark:bg-gray-800/90 bg-white/50;
+    @apply dark:bg-negro/90;
   }
 
   @keyframes nav-shadown {
     0% {
-      @apply dark:bg-gray-800/0 bg-white/0;
+      @apply dark:bg-claro/0;
     }
     to {
       @apply shadow-lg ring-1 backdrop-blur ring-white/10;
