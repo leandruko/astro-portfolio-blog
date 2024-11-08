@@ -4,17 +4,32 @@
       class="h-screen w-full mx-auto py-20 xl:px-16 xs:px-8 flex md:flex-row xs:flex-col gap-4 justify-center items-center pb-10 pt-4"
     >
       <div class="w-full flex flex-col justify-center gap-4 text-claro md:mt-0 sm:mt-8 xs:mt-4">
-        <h1 class="text-5xl font-semibold">Hola👋, Soy</h1>
-        
-        <!-- Contenedor de títulos que se deslizan -->
-        <div class="slide-container">
-          <span class="title">Data Engineer</span>
-          <span class="title">Data Analyst</span>
-          <span class="title">Full Stack</span>
-          <span class="title final">Leandro Soto</span>
-        </div>
+        <h1 class="text-5xl font-semibold">Hola👋, Soy
+          <span class="title-slide text-green-500">Leandro Soto</span>
+        </h1>
         <p>Ingeniero en Informática</p>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .title-slide {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .title-slide::after {
+    content: 'Data Engineer';
+    animation: titleSlide 8s ease forwards;
+    display: inline-block;
+  }
+
+  @keyframes titleSlide {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-100%); content: 'Data Analyst'; }
+    50% { transform: translateY(-200%); content: 'Full Stack Developer'; }
+    100% { transform: translateY(-300%); content: 'Leandro Soto'; }
+  }
+</style>
