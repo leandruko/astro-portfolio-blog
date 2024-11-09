@@ -1,92 +1,78 @@
-<section
-  id="hero"
-  class="relative flex flex-col justify-between h-full max-w-7xl px-10 mx-auto xl:px-0">
-  <div class="w-full md:w-1/2 py-8">
-    <div
-      class="h-screen w-full mx-auto py-20 xl:px-16 xs:px-8 flex md:flex-row xs:flex-col gap-4 justify-center items-center pb-10 pt-4"
-    >
-      <div
-        class="w-full flex flex-col justify-center gap-4 text-claro md:mt-0 sm:mt-8 xs:mt-4"
-      >
-        <h1 class="text-4xl font-semibold">Hola👋, Soy Leandro Soto</h1>
-        <h3 class="capitalize text-rose-400">
-          I'm <span class=" text-green-500 dark:text-green-700"
-            >fullstack developer</span>
-        </h3>
-        <p>
-          Experienced full-stack developer with 4+ years of expertise in
-          Laravel, NestJS, Nuxt.js, Next.js, Android, and some Flutter
-          experience.
-        </p>
+<section>
+  <div
+    class="flex min-h-screen items-center justify-center font-bold text-claro">
+    <div class="text-center space-y-12">
+      <div class="text-center text-5xl font-bold">
+        <div
+          class="relative inline-grid grid-cols-1 grid-rows-1 gap-12 overflow-hidden"
+        >
+          <span class="animate-word col-span-full row-span-full">Analisis de datos</span>
+          <span class="animate-word-delay-1 col-span-full row-span-full"
+            >Desarrollo Frontend</span
+          >
+          <span class="animate-word-delay-2 col-span-full row-span-full"
+            >Desarrollo Backend</span
+          >
+          <span class="animate-word-delay-3 col-span-full row-span-full"
+            >Aprender</span
+          >
+          <span class="animate-word-delay-4 col-span-full row-span-full"
+            >NuxtJS</span
+          >
+        </div>
       </div>
-      <div class="flex flex-wrap justify-center gap-6">
-        <a class="relative" href="es_lea.pdf">
-            <span class="absolute top-0 left-0 mt-1 ml-1 h-full w-full rounded bg-black"></span>
-            <span class="fold-bold relative inline-block h-full w-full rounded border-2 border-black bg-white px-3 py-1 text-base font-bold text-black transition duration-100 hover:bg-yellow-400 hover:text-gray-900">elevated button</span>
+      <div>
+        <p class="text-xl opacity-70">
+          Ingeniero en informatica con enfoque en
+        </p>
+        <p class="text-claro opacity-70">
+          Si necesitas mas informacion sobre mi
+        </p>
+        <a href="es_lea.pdf" download class="hover:text-verde font-semibold">
+          Descarga mi CV
         </a>
-    </div>
+      </div>
     </div>
   </div>
 </section>
 
-
-<div class="flex min-h-screen items-center justify-center bg-black font-bold text-white">
-  <div class=" text-center space-y-12">
-      <div class="text-center text-5xl font-bold">
-        Services offered
-        <div class="relative inline-grid grid-cols-1 grid-rows-1 gap-12 overflow-hidden">
-        <span class="animate-word col-span-full row-span-full">Flutter</span>
-        <span class="animate-word-delay-1 col-span-full row-span-full">Django</span>
-        <span class="animate-word-delay-2 col-span-full row-span-full">Website</span>
-        <span class="animate-word-delay-3 col-span-full row-span-full">VueJS</span>
-        <span class="animate-word-delay-4 col-span-full row-span-full">NuxtJS</span>
-        </div>
-    </div>
-    <p class=" text-white">
-        Want to hire me for work ping me <a class="underline" href="mailto:ponnamkarthik3@gmail.com">mail here</a>
-    </p>
-  </div>
-</div>
-
 <style>
+  @keyframes word {
+    0% {
+      transform: translateY(100%);
+    }
+    15% {
+      transform: translateY(-10%);
+      animation-timing-function: ease-out;
+    }
 
-@keyframes word {
-  0% {
-    transform: translateY(100%);
+    20% {
+      transform: translateY(0);
+    }
+
+    40%,
+    100% {
+      transform: translateY(-110%);
+    }
   }
-  15% {
-    transform: translateY(-10%);
-    animation-timing-function: ease-out;
+
+  .animate-word {
+    animation: word 7s infinite;
   }
-
-  20% {
-    transform: translateY(0);
+  .animate-word-delay-1 {
+    animation: word 7s infinite;
+    animation-delay: -1.4s;
   }
-
-  40%,
-  100% {
-    transform: translateY(-110%);
+  .animate-word-delay-2 {
+    animation: word 7s infinite;
+    animation-delay: -2.8s;
   }
-}
-
-.animate-word {
-  animation: word 7s infinite;
-}
-.animate-word-delay-1 {
-  animation: word 7s infinite;
-  animation-delay: -1.4s;
-}
-.animate-word-delay-2 {
-  animation: word 7s infinite;
-  animation-delay: -2.8s;
-}
-.animate-word-delay-3 {
-  animation: word 7s infinite;
-  animation-delay: -4.2s;
-}
-.animate-word-delay-4 {
-  animation: word 7s infinite;
-  animation-delay: -5.6s;
-}
-
+  .animate-word-delay-3 {
+    animation: word 7s infinite;
+    animation-delay: -4.2s;
+  }
+  .animate-word-delay-4 {
+    animation: word 7s infinite;
+    animation-delay: -5.6s;
+  }
 </style>
