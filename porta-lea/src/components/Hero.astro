@@ -1,35 +1,29 @@
-<section>
-  <div
-    class="flex min-h-screen items-center justify-center font-bold text-claro">
-    <div class="text-center space-y-12">
-      <div>
-        <p class="text-3xl">Hola! 👋, mi nombre es</p>
-        <p class="text-green-500 text-6xl ">Leandro Soto Miranda</p>
-      </div>
-      <div class="text-2xl opacity-75"> Ingeniero en informatica enfocado en:</div>
-      <div class="text-center text-4xl font-bold">
+<section class="flex min-h-screen items-center font-bold text-claro">
+  <div class="container mx-auto flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start px-6 space-y-12 md:space-y-0 md:space-x-12">
+    <!-- Bloque de bienvenida alineado a la izquierda -->
+    <div class="md:text-left">
+      <p class="text-3xl">Hola! 👋, mi nombre es</p>
+      <p class="text-green-500 text-6xl">Leandro Soto Miranda</p>
+    </div>
+
+    <!-- Bloque centrado con los otros elementos -->
+    <div class="text-center md:text-left space-y-8">
+      <div class="text-2xl opacity-75">Ingeniero en informática enfocado en:</div>
+      
+      <!-- Animación de habilidades alineada a la izquierda en desktop -->
+      <div class="text-5xl font-bold">
         <div class="relative inline-grid grid-cols-1 grid-rows-1 gap-12 overflow-hidden">
-          <span class="animate-word col-span-full row-span-full">Analisis de datos</span>
-          <span class="animate-word-delay-1 col-span-full row-span-full">Desarrollo Frontend</span
-          >
-          <span class="animate-word-delay-2 col-span-full row-span-full"
-            >Desarrollo Backend</span
-          >
-          <span class="animate-word-delay-3 col-span-full row-span-full"
-            >Desarrollo Cloud</span
-          >
-          <span class="animate-word-delay-4 col-span-full row-span-full"
-            >Machine Learning</span
-          >
+          <span class="animate-word col-span-full row-span-full text-sky-500">Análisis de datos</span>
+          <span class="animate-word-delay-1 col-span-full row-span-full text-purple-500">Desarrollo Frontend</span>
+          <span class="animate-word-delay-2 col-span-full row-span-full text-amber-500">Desarrollo Backend</span>
+          <span class="animate-word-delay-3 col-span-full row-span-full text-indigo-500">Desarrollo Cloud</span>
+          <span class="animate-word-delay-4 col-span-full row-span-full text-red-500">Machine Learning</span>
         </div>
       </div>
+
+      <!-- Bloque de descarga de CV -->
       <div>
-        <p class="text-claro opacity-70">
-          Si necesitas mas informacion sobre mi
-        </p>
-        <a href="es_lea.pdf" download class="hover:text-verde font-semibold">
-          Descarga mi CV
-        </a>
+        <p class="text-claro">Si necesitas más información sobre mí <a href="es_lea.pdf" download class="text-claro opacity-70 hover:text-verde font-semibold">Descarga mi CV</a></p>
       </div>
     </div>
   </div>
