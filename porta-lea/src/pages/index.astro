@@ -7,16 +7,16 @@ import Hero from '../components/Hero.astro';
 import Projects from '../components/Projects.astro';
 import Exp from '../components/Exp.astro';
 import Contact from '../components/Contact.astro';
-import Tec from '../components/Tec.astro';
 ---
 
 <html class="scroll-smooth">
   <head>
     <meta charset="UTF-8">
-    <title>leandruko</title>
-    <link rel="icon" type="image/x-icon">
+    <title>Lea's page</title>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <!-- Incluye el CDN de Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preload" href="images/bk.jpg" as="image">
     <!-- Material Tailwind stylesheet -->
     <link rel="stylesheet" href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css" />
   </head>
@@ -36,10 +36,6 @@ import Tec from '../components/Tec.astro';
 
       <!-- Proyectos -->
       <Projects />
-      
-      <!-- Tecnologias 
-      <Tec />
-      -->
       <!-- Acerca de mí -->
       <About />
       <!-- Contacto -->
