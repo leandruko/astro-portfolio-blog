@@ -1,7 +1,6 @@
 ---
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
-import Analytics from '@vercel/analytics/astro'; // Importación correcta
 const { pageTitle } = Astro.props;
 ---
 
@@ -12,11 +11,12 @@ const { pageTitle } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <!-- Script de Vercel Analytics -->
+    <script defer src="https://vercel.live/analytics/script.js"></script>
   </head>
   <body>
     <h1>{pageTitle}</h1>
     <slot />
     <Footer />
-    <Analytics /> <!-- Mueve Analytics aquí -->
   </body>
 </html>

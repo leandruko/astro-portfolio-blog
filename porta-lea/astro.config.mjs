@@ -1,11 +1,7 @@
 import { defineConfig } from 'astro/config';
-import vercel from '@astrojs/vercel'; // Aquí quitamos "/serverless"
+import vercel from '@astrojs/vercel';
 
 export default defineConfig({
   output: 'server',
-  adapter: vercel({
-    webAnalytics: {
-      enabled: true, // Activa Vercel Analytics
-    },
-  }),
+  adapter: vercel()
 });
