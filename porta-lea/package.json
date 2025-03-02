@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "astro": "^4.16.7",
+    "@vercel/analytics": "^1.5.0",
+    "@vercel/speed-insights": "^1.2.0",
+    "astro": "^5.4.1",
     "typescript": "^5.6.3",
     "typewriter-effect": "^2.21.0"
   },
