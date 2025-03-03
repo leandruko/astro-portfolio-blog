@@ -2,6 +2,9 @@
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 const { pageTitle } = Astro.props;
+import { inject } from '@vercel/analytics'; // Importa solo la función inject
+
+inject(); // Llama a la función para inyectar el script automáticamente
 ---
 
 <html lang="es">
@@ -11,7 +14,6 @@ const { pageTitle } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
-    <script defer data-domain="astro-portfolio-blog-mocha.vercel.app" src="https://plausible.io/js/script.js"></script>
   </head>
   <body>
     <h1>{pageTitle}</h1>

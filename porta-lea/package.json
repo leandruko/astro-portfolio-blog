@@ -11,16 +11,19 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/vercel": "^8.1.0",
+    "@astrojs/vercel": "^8.0.4",
+    "@heroui/react": "^2.7.4",
+    "@tailwindcss/vite": "^4.0.9",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
     "astro": "^5.4.1",
+    "framer-motion": "^12.4.7",
     "typescript": "^5.6.3",
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.14"
+    "tailwindcss": "^3.4.17"
   }
 }
