@@ -1,120 +1,46 @@
----
-const navItems = [
-  {
-    title: "Experiencia",
-    label: "Exp",
-    url: "/#experience",
-  },
-  {
-    title: "Proyectos",
-    label: "proyectos",
-    url: "/#projects",
-  },
-  {
-    title: "Sobre mi",
-    label: "about-me",
-    url: "/#about",
-  },
-  {
-    title: "Contacto",
-    label: "contacto",
-    url: "/#contact",
-  },
-  {
-    title: "Blog",
-    label: "blog",
-    url: "/blog",
-  },
-]
----
-
-
-<header
-  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-5"
->
-  <nav
-    class="flex px-3 text-sm font-medium rounded-full text-gray-300 dark:text-gray-200 justify-center items-center"
-  >
-    {
-      navItems.map((link) => (
-        <a
-          class="relative block px-2 py-2 transition  dark:hover:text-verde"
-          aria-label={link.label}
-          href={link.url}
-        >
-          {link.title}
-        </a>
-      ))
-    }
-  </nav>
-</header>
-
-<script>
-  document.addEventListener("astro:page-load", () => {
-    const sections = document.querySelectorAll("section")
-    const navItems = document.querySelectorAll("header nav a")
-
-    const callback = (entries: any[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          navItems.forEach((item) => {
-            if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-blue-500")
-            } else {
-              item.classList.remove("text-blue-500")
-            }
-          })
-        }
-      })
-    }
-
-    const observer = new IntersectionObserver(callback, {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.3,
-    })
-
-    sections.forEach((section) => {
-      observer.observe(section)
-    })
-
-    // Cleanup function
-    document.onvisibilitychange = () => {
-      if (document.visibilityState === "hidden") {
-        observer.disconnect()
-      } else {
-        sections.forEach((section) => {
-          observer.observe(section)
-        })
-      }
-    }
-  })
-</script>
-
-<style>
-  nav {
-    animation: nav-shadown 1s linear both;
-    animation-range: 0 100px;
-  }
-
-  nav {
-    @apply dark:bg-negro/90;
-  }
-
-  @keyframes nav-shadown {
-    0% {
-      @apply dark:bg-claro/0;
-    }
-    to {
-      @apply shadow-lg ring-1 backdrop-blur ring-white/10;
-    }
-  }
-</style>
-
-<script>
-  // Toggle de visibilidad del menú móvil
-  document.getElementById('menu-toggle').addEventListener('click', function() {
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenu.classList.toggle('hidden');
-  });
-</script>
+<!-- nuevo navbar -->
+<nav class="block w-full max-w-screen-lg px-4 py-2 mx-auto text-white bg-negro/90 shadow-md rounded-md lg:px-8 lg:py-3 mt-10">
+  <div class="container flex flex-wrap items-center justify-between mx-auto text-slate-800">
+    <a href="#"
+      class="mr-4 block cursor-pointer py-1.5 text-base text-claro font-semibold">
+      Lensodev
+    </a>
+    <div class="hidden lg:block">
+      <ul class="flex flex-col gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+        <li
+          class="flex items-center p-1 text-sm gap-x-2 text-claro">
+          <a href="#experience" class="flex items-center">
+            Experiencia
+          </a>
+        </li>
+        <li
+          class="flex items-center p-1 text-sm gap-x-2 text-claro">
+          <a href="#projects" class="flex items-center">
+            Proyectos
+          </a>
+        </li>
+        <li
+          class="flex items-center p-1 text-sm gap-x-2 text-claro">
+          <a href="#about" class="flex items-center">
+            Sobre mi
+          </a>
+        </li>
+        <li
+          class="flex items-center p-1 text-sm gap-x-2 text-claro">
+          <a href="#contact" class="flex items-center">
+            Contacto
+          </a>
+        </li>
+      </ul>
+    </div>
+    <button
+      class="relative ml-auto h-6 max-h-[40px] w-6 max-w-[40px] select-none rounded-lg text-center align-middle text-xs font-medium uppercase text-inherit transition-all hover:bg-transparent focus:bg-transparent active:bg-transparent disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:hidden"
+      type="button">
+      <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </span>
+    </button>
+  </div>
+</nav>
