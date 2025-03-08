@@ -1,52 +1,23 @@
 <section class="flex min-h-screen items-center font-bold text-claro">
-  <div class="container mx-auto grid md:grid-cols-2 items-start justify-center px-6 md:px-10 space-y-12 md:space-y-0">
+  <div class="container mx-auto grid md:grid-cols-2 items-center justify-center px-6 md:px-10 space-y-12 md:space-y-0">
     <!-- Bloque de bienvenida alineado a la izquierda -->
     <div class="md:text-left md:pl-6">
       <p class="text-3xl">Hola! 👋, mi nombre es</p>
       <p class="text-green-500 text-6xl">Leandro Soto Miranda</p>
-      <p class="text-claro text-xl">Si necesitas más información sobre mí <a href="Leandro Soto Miranda_CV.pdf" download class="text-claro opacity-70 hover:text-green-500 font-semibold ">Descarga mi CV</a></p>
+      <p class="text-claro text-xl">
+        Si necesitas más información sobre mí 
+        <a href="Leandro Soto Miranda_CV.pdf" download 
+           class="text-claro opacity-70 hover:text-green-500 font-semibold">
+          Descarga mi CV
+        </a>
+      </p>
     </div>
+
+    <!-- Imagen al lado derecho -->
+    <div class="flex justify-center">
+      <img src="lea.PNG" 
+           alt="Foto de Leandro Soto Miranda"
+           class="w-100 h-100 md:w-100 md:h-100 object-cover">
     </div>
   </div>
 </section>
-
-<style>
-  @keyframes word {
-    0% {
-      transform: translateY(100%);
-    }
-    15% {
-      transform: translateY(-10%);
-      animation-timing-function: ease-out;
-    }
-
-    20% {
-      transform: translateY(0);
-    }
-
-    40%,
-    100% {
-      transform: translateY(-110%);
-    }
-  }
-
-  .animate-word {
-    animation: word 10s infinite;
-  }
-  .animate-word-delay-1 {
-    animation: word 10s infinite;
-    animation-delay: -2.0s;
-  }
-  .animate-word-delay-2 {
-    animation: word 10s infinite;
-    animation-delay: -4.0s;
-  }
-  .animate-word-delay-3 {
-    animation: word 10s infinite;
-    animation-delay: -6.0s;
-  }
-  .animate-word-delay-4 {
-    animation: word 10s infinite;
-    animation-delay: -8.0s;
-  }
-</style>
