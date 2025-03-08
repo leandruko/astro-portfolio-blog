@@ -19,10 +19,11 @@ module.exports = {
         gradient: 'animatedgradient 6s ease infinite alternate',
       },
       colors:{
-        'negro':'#181C14',
+        'negro':'#121212',
         'verde':'#697565',
         'claro':'#ECDFCC',
-        'gris':'#3C3D37'
+        'gris':'#1E1E1E',
+        'purple':'#10002B'
       },
     },
   },
