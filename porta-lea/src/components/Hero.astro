@@ -1,10 +1,11 @@
-<section class="flex min-h-screen items-center font-bold text-claro">
+<section class="flex min-h-screen items-center font-bold text-claro px-6">
   <div class="container mx-auto grid md:grid-cols-2 items-center justify-center px-6 md:px-10 space-y-12 md:space-y-0">
+    
     <!-- Bloque de bienvenida alineado a la izquierda -->
-    <div class="md:text-left md:pl-6">
+    <div class="text-center md:text-left md:pl-6">
       <p class="text-3xl">Hola! 👋, mi nombre es</p>
-      <p class="text-green-500 text-6xl">Leandro Soto Miranda</p>
-      <p class="text-claro text-xl">
+      <p class="text-green-500 text-5xl md:text-6xl">Leandro Soto Miranda</p>
+      <p class="text-claro text-lg md:text-xl">
         Si necesitas más información sobre mí 
         <a href="Leandro Soto Miranda_CV.pdf" download 
            class="text-claro opacity-70 hover:text-green-500 font-semibold">
@@ -13,11 +14,32 @@
       </p>
     </div>
 
-    <!-- Imagen al lado derecho -->
-    <div class="flex justify-center">
-      <img src="lea.PNG" 
+    <!-- Imagen con parpadeo -->
+    <div class="flex justify-center md:justify-end">
+      <img id="profileImage" 
+           src="lea.png" 
            alt="Foto de Leandro Soto Miranda"
-           class="w-100 h-100 md:w-100 md:h-100 object-cover">
+           class="w-100 md:w-100 lg:w-1500 max-w-200 h-100">
     </div>
+
   </div>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const images = ["lea.png", "lea2.png"]; // Imagen normal y parpadeo
+    const imgElement = document.getElementById("profileImage");
+
+    function startBlinking() {
+      setTimeout(() => {
+        imgElement.src = images[1]; // Cambia a imagen de parpadeo
+        setTimeout(() => {
+          imgElement.src = images[0]; // Vuelve a la imagen normal
+          setTimeout(startBlinking, 3000); // Espera 3s para el próximo parpadeo
+        }, 200); // Duración del parpadeo (200ms)
+      }, 3000); // Tiempo con la imagen normal (3s)
+    }
+
+    startBlinking(); // Inicia el bucle de parpadeo
+  });
+</script>
