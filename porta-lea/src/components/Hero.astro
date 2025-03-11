@@ -19,30 +19,11 @@
       <img id="profileImage" 
            src="lea.png" 
            alt="Foto de Leandro Soto Miranda"
-           class="w-[500px] md:w-[500px] lg:w-[600px] max-w-full h-auto object-cover">
+           class="w-100 md:w-100 lg:w-1500 max-w-200 h-100">
     </div>
 
   </div>
 </section>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const images = ["lea.png", "lea2.png"];
-    const imgElement = document.getElementById("profileImage") as HTMLImageElement;
-
-    if (!imgElement) return; // Si no encuentra la imagen, detiene la ejecución
-
-    function startBlinking() {
-      setTimeout(() => {
-        imgElement.src = images[1]; // Cambia a imagen de parpadeo
-        setTimeout(() => {
-          imgElement.src = images[0]; // Vuelve a la imagen normal
-          setTimeout(startBlinking, 3000); // Espera 3s para el próximo parpadeo
-        }, 200); // Duración del parpadeo (200ms)
-      }, 3000); // Tiempo con la imagen normal (3s)
-    }
-
-    startBlinking();
-  });
-
 </script>
