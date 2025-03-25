@@ -7,6 +7,7 @@ import Hero from '../components/Hero.astro';
 import Projects from '../components/Projects.astro';
 import Exp from '../components/Exp.astro';
 import Contact from '../components/Contact.astro';
+import Tec from '../components/Tec.astro';
 ---
 <html class="scroll-smooth">
   <head>
@@ -17,8 +18,9 @@ import Contact from '../components/Contact.astro';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Material Tailwind stylesheet -->
     <link rel="stylesheet" href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css"/>
+
   </head>
-  <body class="bg-gradient-to-b from-slate-800 to-slate-800 via-stone-800">
+  <body class="bg-gradient-to-b from-gray-900 to-gray-950">
       <!-- Encabezado y navegación -->
       <Navbar />
       <!-- Sección de introducción -->
@@ -29,6 +31,7 @@ import Contact from '../components/Contact.astro';
         <Exp />
         <!-- Proyectos -->
         <Projects />
+         <!-- <Tec /> -->
         <!-- Acerca de mí -->
         <About />
         <!-- Contacto -->

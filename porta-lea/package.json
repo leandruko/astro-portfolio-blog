@@ -19,6 +19,7 @@
     "astro": "^5.4.1",
     "astro-i18next": "^1.0.0-beta.21",
     "framer-motion": "^12.4.7",
+    "swiper": "^11.2.5",
     "typescript": "^5.6.3",
     "typewriter-effect": "^2.21.0"
   },
