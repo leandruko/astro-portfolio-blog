@@ -31,12 +31,6 @@ module.exports = {
         animatedgradient: {
         },
       },
-      backgroundSize: {
-        '300%': '300%',
-      },
-      animation: {
-        gradient: 'animatedgradient 6s ease infinite alternate',
-      },
       colors:{
         'negro':'#343A40',
         'claro':'#ECDFCC',
@@ -69,7 +63,6 @@ module.exports = {
           '900': '#3d3d3d',
           '950': '#161616',
       },
-
       },
     },
   },
