@@ -32,7 +32,7 @@ module.exports = {
         },
       },
       colors:{
-        'negro':'#343A40',
+        'negro':'#151922',
         'claro':'#ECDFCC',
         'fondo':'#212529',
         'gris':'#6C757D',
