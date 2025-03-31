@@ -29,7 +29,7 @@ module.exports = {
     },
     extend: {
       backgroundImage:{
-        'hero': "url('images/patternV2.svg')",
+        'hero': "url('images/patternV3.svg')",
       },
       fontFamily:{
       },
