@@ -1,32 +1,7 @@
-
-<nav class=" w-full max-w-screen-lg px-4 py-2 mx-auto text-white bg-negro shadow-lg rounded-md lg:px-8 lg:py-3 m-3">
-  <div class="container flex flex-wrap items-center justify-between mx-auto text-claro">
-    <!-- Logo -->
-    <a href="https://lensodev.vercel.app/" class="text-lg font-semibold text-claro">
-      Lensodev
-    </a>
-
-    <!-- Botón del menú hamburguesa en móvil -->
-    <button id="menu-toggle" class="lg:hidden text-claro focus:outline-none">
-      ☰
-    </button>
-
-    <!-- Menú -->
-    <div id="menu" class="hidden w-full mt-4 lg:mt-0 lg:w-auto lg:flex lg:items-center">
-      <ul class="flex flex-col lg:flex-row gap-4 lg:gap-6">
-        <li><a href="#experience" class="text-lg text-claro hover:text-green-500">Experiencia</a></li>
-        <li><a href="#projects" class="text-lg text-claro hover:text-green-500">Proyectos</a></li>
-        <li><a href="#about" class="text-lg text-claro hover:text-green-500">Sobre mí</a></li>
-        <li><a href="#contact" class="text-lg text-claro hover:text-green-500">Contacto</a></li>
-      </ul>
-    </div>
+<nav class="text-claro py-3 px-4 flex items-center justify-between">
+  <div class="flex ml-auto text-wrap">
+      <a class="text-lg px-3 py-2 leading-none rounded-full hover:bg-palm-green-900/50 transition delay-100 duration-200 ease-in-out" href="#projects">Proyectos</a>
+      <a class="text-lg px-3 py-2 leading-none rounded-full hover:bg-palm-green-900/50 transition delay-100 duration-200 ease-in-out" href="#about">Quien soy</a>
+      <a class="text-lg px-3 py-2 leading-none rounded-full hover:bg-palm-green-900/50 transition delay-100 duration-200 ease-in-out" href="#contact">Contacto</a>
   </div>
 </nav>
-
-<!-- Script para el menú hamburguesa -->
-<script>
-  document.getElementById("menu-toggle").addEventListener("click", function () {
-    const menu = document.getElementById("menu");
-    menu.classList.toggle("hidden");
-  });
-</script>
