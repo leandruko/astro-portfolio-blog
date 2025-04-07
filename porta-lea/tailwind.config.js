@@ -5,7 +5,7 @@ module.exports = {
     './src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte}',
   ],
   plugins:[
-     require('tailwindcss-animated')
+     require('tailwindcss-motion')
   ],
   theme: {
     patterns:{
