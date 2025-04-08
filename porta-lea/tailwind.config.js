@@ -46,7 +46,7 @@ module.exports = {
         'fondo':'#212529',
         'gris':'#6C757D',
         'card':'#495057',
-        'palm-green': {
+        'palm': {
           '50': '#eefff2',
           '100': '#d8ffe3',
           '200': '#b4fec8',
@@ -59,7 +59,7 @@ module.exports = {
           '900': '#0c5b25',
           '950': '#00240c',
       },
-        'woodsmoke': {
+        'smoke': {
           '50': '#f6f6f6',
           '100': '#e7e7e7',
           '200': '#d1d1d1',
