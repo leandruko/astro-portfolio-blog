@@ -1,6 +1,7 @@
 import defaultTheme from 'tailwindcss/defaultTheme'
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode:'class',
   content: [
     './src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte}',
   ],
@@ -59,6 +60,8 @@ module.exports = {
           '900': '#0c5b25',
           '950': '#00240c',
       },
+      'yellow': '#ffae18'
+      ,
         'smoke': {
           '50': '#f6f6f6',
           '100': '#e7e7e7',

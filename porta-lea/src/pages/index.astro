@@ -20,12 +20,12 @@ import Tec from '../components/Tec.astro';
     <link rel="stylesheet" href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css"/>
   
   </head>
-  <body class="bg-zinc-900 ">
+  <body class="bg-zinc-900 dark dark:bg-white/70">
       <!-- Encabezado y navegación -->
       <Navbar />
       <!-- Sección de introducción -->
-      <!-- 
-      <Hero /> -->
+      
+      <Hero /> 
       <!-- Contenido principal -->
       <main>
         <!-- Experiencia -->
@@ -39,5 +39,25 @@ import Tec from '../components/Tec.astro';
       </main>
         <!-- Footer -->
         <Footer />
+<script is:client="load">
+  const html = document.documentElement;
+  const toggleBtn = document.getElementById('dark-toggle');
+
+  // Al cargar la página
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    html.classList.add('dark');
+  }
+
+  toggleBtn?.addEventListener('click', () => {
+    html.classList.toggle('dark');
+    if (html.classList.contains('dark')) {
+      localStorage.setItem('theme', 'dark');
+    } else {
+      localStorage.setItem('theme', 'light');
+    }
+  });
+</script>
+
   </body>
 </html>
