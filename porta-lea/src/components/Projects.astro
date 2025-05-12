@@ -1,77 +1,75 @@
-<div class="container relative flex flex-col justify-between h-full max-w-6xl px-10 mx-auto xl:px-0 mt-5" id="projects">
-  <h2 class="text-4xl font-bold text-center mb-10 text-claro">
-    Algunos proyectos
-  </h2>
-  <div class="w-full">
-      <div class="flex flex-col w-full mb-10 sm:flex-row">
-          <div class="w-full mb-10 sm:mb-0 sm:w-1/2">
-              <div class="relative h-full ml-0 mr-0 sm:mr-10">
-                  <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-gris rounded-lg"></span>
-                  <div class="relative h-full p-5 bg-white border-2 border-gris rounded-lg">
-                      <div class="flex items-center -mt-1">
-                          <h3 class="my-2 ml-3 text-lg font-bold text-gray-800">Sismos Chile</h3>
-                      </div>
-                      <p class="mt-3 mb-1 text-xs font-medium text-indigo-500 uppercase">------------</p>
-                      <p class="mb-2 text-gray-600">Proyecto de análisis de datos sobre el dataset de Sismos en
-                        Chile, para ver tendencias o patrones durante los últimos
-                        años.</p>
-                  </div>
-              </div>
-          </div>
-          <div class="w-full sm:w-1/2">
-              <div class="relative h-full ml-0 md:mr-10">
-                  <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-gris rounded-lg"></span>
-                  <div class="relative h-full p-5 bg-white border-2 border-gris rounded-lg">
-                      <div class="flex items-center -mt-1">
-                          <h3 class="my-2 ml-3 text-lg font-bold text-gray-800">Clima en Australia</h3>
-                      </div>
-                      <p class="mt-3 mb-1 text-xs font-medium text-purple-500 uppercase">------------</p>
-                      <p class="mb-2 text-gray-600">Proyecto de análisis de datos sobre patrones climáticos en
-                        Australia.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="flex flex-col w-full mb-5 sm:flex-row">
-          <div class="w-full mb-10 sm:mb-0 sm:w-1/2">
-              <div class="relative h-full ml-0 mr-0 sm:mr-10">
-                  <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-gris rounded-lg"></span>
-                  <div class="relative h-full p-5 bg-white border-2 border-gris rounded-lg">
-                      <div class="flex items-center -mt-1">
-                          <h3 class="my-2 ml-3 text-lg font-bold text-gray-800">Predicción del Rendimiento Académico</h3>
-                      </div>
-                      <p class="mt-3 mb-1 text-xs font-medium text-blue-400 uppercase">------------</p>
-                      <p class="mb-2 text-gray-600">Proyecto de machine learning para predecir el puntaje de
-                        estudiantes con análisis exploratorio y modelos predictivos.</p>
-                  </div>
-              </div>
-          </div>
-          <div class="w-full mb-10 sm:mb-0 sm:w-1/2">
-              <div class="relative h-full ml-0 mr-0 sm:mr-10">
-                  <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-gris rounded-lg"></span>
-                  <div class="relative h-full p-5 bg-white border-2 border-gris rounded-lg">
-                      <div class="flex items-center -mt-1">
-                          <h3 class="my-2 ml-3 text-lg font-bold text-gray-800">Morosidad sistema financiero</h3>
-                      </div>
-                      <p class="mt-3 mb-1 text-xs font-medium text-yellow-400 uppercase">------------</p>
-                      <p class="mb-2 text-gray-600">                  Proyecto para predecir si una persona quedará como deudora en
-                        el sistema financiero.</p>
-                  </div>
-              </div>
-          </div>
-          <div class="w-full sm:w-1/2">
-              <div class="relative h-full ml-0 md:mr-10">
-                  <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-gris rounded-lg"></span>
-                  <div class="relative h-full p-5 bg-white border-2 border-gris rounded-lg">
-                      <div class="flex items-center -mt-1">
-                          <h3 class="my-2 ml-3 text-lg font-bold text-gray-800">Cáncer de pulmón</h3>
-                      </div>
-                      <p class="mt-3 mb-1 text-xs font-medium text-green-500 uppercase">------------</p>
-                      <p class="mb-2 text-gray-600">                  Proyecto de machine learning para predecir si una persona
-                        tiene cáncer de pulmón basado en datos de pacientes.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
+<section class="container p-6 mx-auto space-y-3 dark:bg-gray-800 dark:text-white" id="projects">
+  <h2 class="text-4xl font-bold text-center mb-10 text-claro dark:text-white">Algunos proyectos</h2>
+
+  <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
+    <!-- Card -->
+    <div class="w-full max-w-full text-center transition-transform duration-300 hover:-translate-y-1 hover:scale-105">
+      <a href="/">
+        <div class="flex flex-col justify-between h-80 p-4 rounded-lg bg-blue-100 border-4 border-blue-200 dark:bg-gray-900 dark:border-gray-600">
+          <h5 class="text-lg font-bold mb-2 dark:text-white">Sismos Chile</h5>
+          <p class="text-sm font-medium text-justify dark:text-gray-400">
+            Proyecto de análisis de datos sobre el dataset de Sismos en Chile,
+            para ver tendencias o patrones durante los últimos años.
+          </p>
+        </div>
+      </a>
+    </div>
+
+    <!-- Card -->
+    <div class="w-full max-w-full text-center transition-transform duration-300 hover:-translate-y-1 hover:scale-105">
+      <a href="#">
+        <div class="flex flex-col justify-between h-80 p-4 rounded-lg bg-blue-100 border-4 border-blue-200 dark:bg-gray-900 dark:border-gray-600">
+          <h5 class="text-lg font-bold mb-2 dark:text-white">Clima en Australia</h5>
+          <p class="text-sm font-medium text-justify dark:text-gray-400">
+            Proyecto de análisis de datos sobre patrones climáticos en Australia.
+          </p>
+        </div>
+      </a>
+    </div>
+
+    <!-- Card -->
+    <div class="w-full max-w-full text-center transition-transform duration-300 hover:-translate-y-1 hover:scale-105">
+      <a href="#">
+        <div class="flex flex-col justify-between h-80 p-4 rounded-lg bg-blue-100 border-4 border-blue-200 dark:bg-gray-900 dark:border-gray-600">
+          <h5 class="text-lg font-bold mb-2 dark:text-white">Predicción del Rendimiento Académico</h5>
+          <p class="text-sm font-medium text-justify dark:text-gray-400">
+            Proyecto de machine learning para predecir el puntaje de estudiantes con análisis exploratorio y modelos predictivos.
+          </p>
+        </div>
+      </a>
+    </div>
+
+    <!-- Card -->
+    <div class="w-full max-w-full text-center transition-transform duration-300 hover:-translate-y-1 hover:scale-105">
+      <a href="#">
+        <div class="flex flex-col justify-between h-80 p-4 rounded-lg bg-blue-100 border-4 border-blue-200 dark:bg-gray-900 dark:border-gray-600">
+          <h5 class="text-lg font-bold mb-2 dark:text-white">Morosidad sistema financiero</h5>
+          <p class="text-sm font-medium text-justify dark:text-gray-400">
+            Proyecto para predecir si una persona quedará como deudora en el sistema financiero.
+          </p>
+        </div>
+      </a>
+    </div>
+
+    <!-- Card -->
+    <div class="w-full max-w-full text-center transition-transform duration-300 hover:-translate-y-1 hover:scale-105">
+      <a href="#">
+        <div class="flex flex-col justify-between h-80 p-4 rounded-lg bg-blue-100 border-4 border-blue-200 dark:bg-gray-900 dark:border-gray-600">
+          <h5 class="text-lg font-bold mb-2 dark:text-white">Cáncer de pulmón</h5>
+          <p class="text-sm font-medium text-justify dark:text-gray-400">
+            Proyecto de machine learning para predecir si una persona tiene cáncer de pulmón basado en datos de pacientes.
+          </p>
+        </div>
+      </a>
+    </div>
+
+    <!-- Card -->
+    <div class="w-full max-w-full text-center transition-transform duration-300 hover:-translate-y-1 hover:scale-105">
+      <a href="#">
+        <div class="flex flex-col justify-center h-80 p-4 rounded-lg bg-gray-100 border-4 border-gray-200 dark:bg-gray-900 dark:border-gray-600 ">
+          <h5 class="text-lg font-bold mb-2 dark:text-white">Pronto más proyectos</h5>
+        </div>
+      </a>
+    </div>
   </div>
-</div>
+</section>
