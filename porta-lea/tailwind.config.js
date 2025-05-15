@@ -6,7 +6,8 @@ module.exports = {
     './src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte}',
   ],
   plugins:[
-     require('tailwindcss-motion')
+     require('tailwindcss-motion'),
+     require('tailwindcss-intersect')
   ],
   theme: {
     patterns:{
