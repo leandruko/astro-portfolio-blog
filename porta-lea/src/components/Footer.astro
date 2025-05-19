@@ -1,12 +1,35 @@
 ---
-// Datos para el footer
 const footerData = {
   year: new Date().getFullYear(),
 };
 ---
-<footer class="text-claro/20 py-6 mt-30">
-  <div class="container mx-auto flex flex-col items-center">
-    <p class="text-sm text-center mb-4 mt-2 font-mono">
+<footer class="text-claro/80 py-12 mt-30">
+  <div class="container mx-auto flex flex-col items-center text-center">
+    <p class="text-claro/60 mb-6 text-base md:text-lg max-w-xl font-mono">
+      ¡No dudes en escribirme para algún trabajo!
+    </p>
+    <p class="text-yellow/60 mb-6 text-base md:text-lg max-w-xl font-mono">
+      ;)
+    </p>
+
+    <!-- Íconos -->
+    <div class="flex justify-center space-x-6 mb-8">
+      <!-- GitHub -->
+      <a href="https://github.com/leandruko" target="_blank" class="text-gray-400 hover:text-yellow transform transition-all duration-300 hover:scale-110" aria-label="GitHub">
+        <i class="fab fa-github text-3xl"></i>
+      </a>
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/leandro-soto-miranda-767a72264/" target="_blank" class="text-gray-400 hover:text-blue-500 transform transition-all duration-300 hover:scale-110" aria-label="LinkedIn">
+        <i class="fab fa-linkedin text-3xl"></i>
+      </a>
+      <!-- Email -->
+      <a href="mailto:leasotompriv@gmail.com" class="text-gray-400 hover:text-red-500 transform transition-all duration-300 hover:scale-110" aria-label="Correo">
+        <i class="fas fa-envelope text-3xl"></i>
+      </a>
+    </div>
+
+    <!-- Créditos -->
+    <p class="text-sm text-claro/20 font-mono">
       Developed by lea 2024 - {footerData.year}
     </p>
   </div>
