@@ -3,15 +3,11 @@ const footerData = {
   year: new Date().getFullYear(),
 };
 ---
-<footer class="text-claro/80 py-12 mt-30">
+<footer class="text-claro/80 py-12 mt-30" id="contact">
   <div class="container mx-auto flex flex-col items-center text-center">
     <p class="text-claro/60 mb-6 text-base md:text-lg max-w-xl font-mono">
       ¡No dudes en escribirme para algún trabajo!
     </p>
-    <p class="text-yellow/60 mb-6 text-base md:text-lg max-w-xl font-mono">
-      ;)
-    </p>
-
     <!-- Íconos -->
     <div class="flex justify-center space-x-6 mb-8">
       <!-- GitHub -->
@@ -28,9 +24,9 @@ const footerData = {
       </a>
     </div>
 
-    <!-- Créditos -->
     <p class="text-sm text-claro/20 font-mono">
       Developed by lea 2024 - {footerData.year}
+      <span class="text-yellow/55"> ;)</span>
     </p>
-  </div>
+
 </footer>
