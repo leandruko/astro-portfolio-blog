@@ -1,13 +1,11 @@
 ---
 import '../styles/global.css';
 import Footer from '../components/Footer.astro';
-import Navbar from '../components/Navbar.astro';
 import About from '../components/About.astro';
 import Hero from '../components/Hero.astro';
 import Projects from '../components/Projects.astro';
 import Exp from '../components/Exp.astro';
 import Contact from '../components/Contact.astro';
-import Tec from '../components/Tec.astro';
 ---
 <html class="scroll-smooth">
   <head>
@@ -21,22 +19,14 @@ import Tec from '../components/Tec.astro';
   
   </head>
   <body class="bg-smoke-950">
-      <!-- Encabezado y navegación -->
-      <Navbar />
       <!-- Sección de introducción -->
       <Hero /> 
       <!-- Contenido principal -->
       <main>
-        <!-- Experiencia
-        <Exp />-->
-        <!-- Proyectos -->
+        <About/>
         <Projects />
-        <!-- Acerca de mí
-        <About /> -->
-        <!-- Contacto 
-        <Contact />-->
+        <Exp/>
+        <Contact/>
       </main>
-        <!-- Footer -->
-        <Footer />
   </body>
 </html>

@@ -1,57 +1,92 @@
-<section class="min-h-screen flex items-center px-4 font-mono  text-white">
-  <div class="grid md:grid-cols-2 items-center gap-8 max-w-7xl max-md:max-w-md mx-auto py-10 md:py-0 motion-preset-focus
-  ">
-    
-    <!-- Texto -->
-    <div class="max-md:order-1 max-md:text-center">
-      <h1 class="text-7xl font-extrabold text-[#ffae18] mb-2">Leandro Soto
-      </h1>
-      <h2 class="text-2xl font-semibold text-claro mb-6">
-        Desarrollador Web & Analista de Datos
-      </h2>
-      <p class="text-base text-gray-300 leading-relaxed mb-8 max-w-xl">
-        Apasionado por transformar datos en decisiones y crear experiencias web modernas. 
-        Construyo soluciones con enfoque técnico, visual y funcional.
-      </p>
+---
+// src/components/Hero.astro o directamente en src/pages/index.astro
+---
 
-      <div class="flex flex-wrap max-md:justify-center gap-4">
-        <a
-          href="Leandro Soto Miranda_CV.pdf"
-          download
-          class="px-6 py-3 text-base font-semibold text-white bg-[#ffae18] rounded-full hover:bg-opacity-80 transition-all duration-300 transform hover:scale-105 focus:ring-2 focus:outline-none focus:ring-[#ffae18] focus:ring-opacity-50"
-        >
-          Descargar CV
-        </a>
-        <a
-          href="https://github.com/leandruko" target="_blank"
-          class="px-6 py-3 text-base font-semibold text-yellow border border-yellow rounded-full hover:text-zinc-900 hover:bg-yellow transition-all duration-300 transform hover:scale-105 focus:ring-2 focus:outline-none focus:ring-opacity-50 flex items-center gap-2"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-github-icon lucide-github"
-          >
-            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-            <path d="M9 18c-4.51 2-5-2-7-2" />
-          </svg>
-          GitHub
-        </a>
-      </div>
-    </div>
+<section id="hero" class="relative flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-gray-900 text-white overflow-hidden">
+  <div class="absolute inset-0 z-0 opacity-20">
+    <div class="absolute top-0 left-0 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+    <div class="absolute top-0 right-0 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+    <div class="absolute bottom-0 left-1/4 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+  </div>
 
-    <!-- Imagen -->
-    <div class="w-full flex justify-center md:justify-end">
-      <img
-        src="leaimg.png"
-        alt="hero-img"
-        class="w-96 h-96 md:w-[28rem] md:h-[28rem] object-cover rounded-full transition-transform duration-500 hover:scale-105"
-      />
+  <div class="relative z-10 text-center px-4 py-16 md:py-24 max-w-4xl mx-auto">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4 animate-fade-in-up">
+      <span class="block">Tu Nombre</span>
+      <span class="block text-purple-400">Ingeniero de Datos & Analista</span>
+    </h1>
+
+    <p class="text-lg sm:text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto animate-fade-in-up animation-delay-500">
+      Transformando datos crudos en inteligencia estratégica para impulsar decisiones de negocio.
+    </p>
+
+    <div class="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up animation-delay-1000">
+      <a
+        href="#proyectos"
+        class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out transform hover:scale-105 shadow-lg"
+      >
+        Ver Proyectos
+      </a>
+      <a
+        href="#contacto"
+        class="bg-transparent border-2 border-purple-600 text-purple-300 hover:bg-purple-600 hover:text-white font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out transform hover:scale-105 shadow-lg"
+      >
+        Contactar
+      </a>
     </div>
   </div>
 </section>
+
+<style>
+  /* Animaciones para el fondo sutil */
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+
+  .animate-blob {
+    animation: blob 7s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  /* Animaciones para el contenido */
+  @keyframes fadeInFromBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInFromBottom 0.8s ease-out forwards;
+    opacity: 0; /* Asegura que el elemento esté oculto antes de la animación */
+  }
+
+  .animate-fade-in-up.animation-delay-500 {
+    animation-delay: 0.5s;
+  }
+
+  .animate-fade-in-up.animation-delay-1000 {
+    animation-delay: 1s;
+  }
+</style>
