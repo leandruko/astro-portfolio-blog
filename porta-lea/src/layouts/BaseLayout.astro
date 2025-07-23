@@ -1,21 +1,43 @@
 ---
-import "../styles/global.css";
-const { pageTitle } = Astro.props;
-import { inject } from '@vercel/analytics'; // Importa solo la función inject
+// src/layouts/Layout.astro
+interface Props {
+  title: string;
+  description?: string;
+}
 
-inject(); // Llama a la función para inyectar el script automáticamente
+const { title, description = 'Portafolio de un Ingeniero Informático enfocado en Datos' } = Astro.props;
 ---
 
-<html lang="es">
+<!doctype html>
+<html lang="es" class="scroll-smooth">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
+    <title>{title}</title>
+    <meta name="description" content={description} />
   </head>
-  <body>
-    <h1>{pageTitle}</h1>
-    <slot />
+  <body class="bg-gray-950 font-sans antialiased">
+    {/* Aquí podrías tener un Header/Navbar global si lo creas */}
+
+    <main class="relative z-0"> {/* AÑADE ESTAS CLASES */}
+      <slot />
+    </main>
+
+    {/* Aquí podrías tener un Footer global */}
   </body>
 </html>
+
+<style is:global>
+  /* Asegúrate de que los estilos globales de Tailwind estén importados */
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  html {
+    font-family: system-ui, sans-serif;
+    /* Puedes agregar un scroll-behavior: smooth; aquí o en la clase html arriba */
+  }
+  /* Otros estilos globales si los tienes */
+</style>
