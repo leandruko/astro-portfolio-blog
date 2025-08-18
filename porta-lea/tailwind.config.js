@@ -43,7 +43,7 @@ module.exports = {
         },
       },
       colors:{
-        'negro':'#151922',
+        'negro':'#111111',
         'claro':'#ECDFCC',
         'fondo':'#212529',
         'gris':'#6C757D',
