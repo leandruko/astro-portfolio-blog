@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    // other compiler options...
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   },
   "include": [
     "src",
