@@ -1,13 +1,13 @@
 ---
 // src/components/Projects.astro
-import { projects } from '../data/project'; // Importa tus datos de proyectos
+import { projects } from '../data/project'; // Importa tus datos de s
 import ProjectCard from './ProjectCard.astro'; // Importa el componente de la tarjeta
 ---
 
-<section id="proyectos" class="py-16 md:py-24 bg-negro text-white">
+<section id="proyectos" class="py-16 md:py-24 bg-negro">
   <div class="max-w-6xl mx-auto px-4">
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-12 text-purple-400">
-      Mis Proyectos Destacados
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-12 text-verde font-mono">
+      Proyectos destacados
     </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -17,14 +17,14 @@ import ProjectCard from './ProjectCard.astro'; // Importa el componente de la ta
     </div>
 
     <div class="text-center mt-16">
-      <p class="text-xl text-gray-300 mb-6">
+      <p class="text-xl text-palm-200 mb-6">
         ¿Quieres explorar más de mi trabajo?
       </p>
       <a
         href="https://github.com/leandruko"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center px-6 py-3 bg-purple-700 text-white rounded-lg hover:bg-purple-800 transition duration-300 text-lg font-semibold shadow-lg"
+        class="inline-flex items-center px-6 py-3 bg-verde text-negro rounded-lg hover:bg-palm-500 transition duration-300 text-lg font-semibold shadow-lg"
       >
         <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017 2 16.216 4.672 19.743 8.309 20.982c.5.094.68-.22.68-.485 0-.237-.008-.865-.013-1.698-2.69.586-3.253-1.3-3.253-1.3-.44-1.116-1.07-1.413-1.07-1.413-.876-.59.066-.58.066-.58.97.067 1.488.995 1.488.995.86 1.486 2.27 1.056 2.82.806.085-.628.337-1.056.617-1.295-2.15-.24-4.416-1.075-4.416-4.79 0-1.06.377-1.925 1-2.608-.1-.24-.435-1.238.096-2.573 0 0 .81-.26 2.642.987.77-.215 1.58-.322 2.39-.327.81.005 1.62.112 2.39.327 1.832-1.247 2.64-1 2.64-1 .53 1.335.2 2.333.1 2.573.623.683 1 1.548 1 2.608 0 3.722-2.27 4.545-4.425 4.786.357.307.678.915.678 1.855 0 1.336-.012 2.417-.012 2.748 0 .268.18.58.688.484C19.333 19.73 22 16.208 22 12.017 22 6.484 17.522 2 12 2Z" clip-rule="evenodd" />

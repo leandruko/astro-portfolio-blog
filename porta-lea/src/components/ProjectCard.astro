@@ -4,7 +4,6 @@ interface Props {
   project: {
     id: string;
     title: string;
-    description: string;
     image: string;
     technologies: string[];
     githubUrl: string;
@@ -15,7 +14,7 @@ interface Props {
 const { project } = Astro.props;
 ---
 
-<article class="bg-gray-800 rounded-lg shadow-lg overflow-hidden flex flex-col h-full hover:shadow-xl transform hover:-translate-y-1 transition duration-300 ease-in-out">
+<article class="bg-smoke-950 rounded-lg shadow-lg overflow-hidden flex flex-col h-full hover:shadow-xl transform hover:-translate-y-1 transition duration-300 ease-in-out border-verde">
   <img
     src={project.image}
     alt={`Miniatura del proyecto ${project.title}`}
@@ -24,9 +23,6 @@ const { project } = Astro.props;
   />
   <div class="p-6 flex-grow flex flex-col">
     <h3 class="text-xl font-bold text-white mb-2">{project.title}</h3>
-    <p class="text-gray-300 text-base mb-4 flex-grow">
-      {project.description}
-    </p>
     <div class="flex flex-wrap gap-2 mb-4">
       {project.technologies.map(tech => (
         <span class="bg-purple-700 text-white text-xs px-3 py-1 rounded-full font-semibold">
