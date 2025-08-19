@@ -33,9 +33,6 @@ module.exports = {
       }
     },
     extend: {
-      backgroundImage:{
-        'hero': "url('images/patternV3.svg')",
-      },
       fontFamily:{
       },
       keyframes: {
@@ -43,11 +40,11 @@ module.exports = {
         },
       },
       colors:{
-        'negro':'#111111',
-        'claro':'#ECDFCC',
+        'negro':'#100f0f',
+        'claro':'#e7ccb1',
         'fondo':'#212529',
         'gris':'#6C757D',
-        'card':'#495057',
+        'verde':'#DBFF5E',
         'palm': {
           '50': '#eefff2',
           '100': '#d8ffe3',
