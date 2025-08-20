@@ -1,11 +1,5 @@
 ---
-// src/layouts/Layout.astro
-interface Props {
-  title: string;
-  description?: string;
-}
 
-const { title, description = 'Portafolio de un Ingeniero Informático enfocado en Datos' } = Astro.props;
 ---
 
 <!doctype html>
@@ -14,9 +8,6 @@ const { title, description = 'Portafolio de un Ingeniero Informático enfocado e
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-    <meta name="description" content={description} />
   </head>
   <body class="bg-gray-950 font-sans antialiased">
     {/* Aquí podrías tener un Header/Navbar global si lo creas */}
