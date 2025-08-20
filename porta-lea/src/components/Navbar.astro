@@ -1,14 +1,46 @@
 <header class="mb-auto flex flex-wrap sm:justify-start sm:flex-wrap z-50 w-full text-sm py-4 animate-fade-in-up bg-negro">
   <nav class="w-full px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8">
+    
+    <!-- Logo + Botón hamburguesa -->
     <div class="flex items-center justify-between">
       <a class="flex-none text-2xl font-semibold font-mono text-verde focus:outline-hidden focus:opacity-80 transition-all duration-300 transform hover:scale-105 " href="/" aria-label="Brand">lensodev.</a>
+      
+      <!-- Botón hamburguesa (solo visible en móviles) -->
+      <button id="menu-toggle" class="sm:hidden text-white hover:text-verde focus:outline-hidden focus:opacity-80 p-2 rounded-lg transition">
+        <!-- Ícono hamburguesa -->
+        <svg id="menu-open" class="h-6 w-6 block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <!-- Ícono cerrar -->
+        <svg id="menu-close" class="h-6 w-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
     </div>
-    <div id="hs-navbar-cover-page" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block" aria-labelledby="hs-navbar-cover-page-collapse">
+
+    <!-- Menú -->
+    <div id="mobile-menu" class="hidden sm:block basis-full grow sm:basis-auto">
       <div class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
-        <a class="text-white/70 hover:text-verde focus:outline-hidden font-mono focus:text-white transition-transform duration-200 hover:-translate-y-1 hover:scale-100 text-lg font-semibold" href="#experiencia-educacion">EXPERIENCIA</a>
-        <a class="text-white/70 hover:text-verde focus:outline-hidden font-mono focus:text-white transition-transform duration-200 hover:-translate-y-1 hover:scale-100 text-lg font-semibold" href="#proyectos">PROYECTOS</a>
-        <a class="text-white/70 hover:text-verde focus:outline-hidden font-mono focus:text-white transition-transform duration-200 hover:-translate-y-1 hover:scale-100 text-lg font-semibold" href="#contacto">CONTACTO</a>
+        <a class="text-white/70 hover:text-verde font-mono transition-transform duration-200 hover:-translate-y-1 hover:scale-100 text-lg font-semibold" href="#experiencia-educacion">EXPERIENCIA</a>
+        <a class="text-white/70 hover:text-verde font-mono transition-transform duration-200 hover:-translate-y-1 hover:scale-100 text-lg font-semibold" href="#proyectos">PROYECTOS</a>
+        <a class="text-white/70 hover:text-verde font-mono transition-transform duration-200 hover:-translate-y-1 hover:scale-100 text-lg font-semibold" href="#contacto">CONTACTO</a>
       </div>
     </div>
+
   </nav>
 </header>
+
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const menuOpen = document.getElementById("menu-open");
+  const menuClose = document.getElementById("menu-close");
+
+  menuToggle.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+    menuOpen.classList.toggle("hidden");
+    menuClose.classList.toggle("hidden");
+  });
+</script>
