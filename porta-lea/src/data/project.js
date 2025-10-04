@@ -24,5 +24,13 @@ export const projects = [
     technologies: ['Python', 'Pandas','Seaborn','Mathplotlib','Scikit-learn'],
     githubUrl: 'https://github.com/leandruko/lung-cancer'
   },
-  // Añade más proyectos aquí siguiendo la misma estructura
+  {
+    id: 'sushi-kenzo',
+    title: 'Toti Kenzo Sushi',
+    description: 'Proyecto realizado con el objetivo de predecir si una persona tiene cáncer al pulmón, basándonos en el dataset lung cáncer de Kaggle, aplicando análisis de datos, limpieza y modelos de machine learning',
+    image: '/images/sushi.png',
+    technologies: ['Astro', 'Tailwind','CSS'],
+    githubUrl: 'https://www.totikenzosushi.cl/',
+    demoUrl: 'https://www.totikenzosushi.cl/'
+  },
 ];
