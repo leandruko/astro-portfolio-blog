@@ -63,23 +63,24 @@
 
 <script>
   // Detectar sección activa y resaltar el ícono correspondiente
-  const navItems = document.querySelectorAll('.nav-item');
+  const navItems = document.querySelectorAll<HTMLAnchorElement>('.nav-item');
   
   function setActiveSection() {
-    const sections = document.querySelectorAll('section[id]');
+    const sections = document.querySelectorAll<HTMLElement>('section[id]');
     let currentSection = '';
 
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
       if (window.scrollY >= sectionTop - 200) {
-        currentSection = section.getAttribute('id');
+        currentSection = section.getAttribute('id') || '';
       }
     });
 
     navItems.forEach(item => {
       const svg = item.querySelector('svg');
       const span = item.querySelector('span');
+      
+      if (!svg || !span) return;
       
       if (item.getAttribute('data-section') === currentSection) {
         svg.classList.remove('text-white/70');
@@ -107,10 +108,12 @@
   navItems.forEach(item => {
     item.addEventListener('click', (e) => {
       e.preventDefault();
-      const targetId = item.getAttribute('href').substring(1);
-      const targetSection = document.getElementById(targetId);
-      if (targetSection) {
-        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const targetId = item.getAttribute('href')?.substring(1);
+      if (targetId) {
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       }
     });
   });
@@ -133,6 +136,7 @@
     opacity: 0;
   }
 
+  /* Asegurar que el body tenga padding para el navbar mobile */
   @media (max-width: 768px) {
     body {
       padding-bottom: 5rem;
