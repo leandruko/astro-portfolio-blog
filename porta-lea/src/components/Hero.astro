@@ -1,39 +1,40 @@
-<section id="hero" class="relative min-h-screen flex items-center justify-center bg-negro">
-  <div class="container mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<!-- Hero.astro - Versión mejorada para móvil -->
+<section id="hero" class="relative min-h-screen flex items-center justify-center bg-negro px-4 sm:px-6 md:py-0">
+  <div class="container mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
     
-    <!-- Texto a la izquierda -->
-    <div class="space-y-6 animate-fade-in-up">
-      <h1 class="text-5xl md:text-7xl font-extrabold leading-tight font-mono text-verde">Leandro Soto Miranda
+    <!-- Texto -->
+    <div class="space-y-4 sm:space-y-6 animate-fade-in-up text-center md:text-left order-2 md:order-1">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold leading-tight font-mono text-verde">
+        Leandro Soto Miranda
       </h1>
-      <h2 class="text-2xl md:text-3xl text-palm-200 font-mono">
+      <h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-palm-200 font-mono">
         Desarrollador & Analista/Ingeniero de datos
       </h2>
-      <p class="text-palm-50 text-base md:text-xl max-w-2xl font-mono">
-        Transformando datos crudos en decisiones estratégicas.
+      <p class="text-palm-50 text-sm sm:text-base md:text-xl max-w-2xl mx-auto md:mx-0 font-mono">
+        ...
       </p>
-      <div class="flex gap-4">
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start pt-4">
         <a
           href="#proyectos"
-          class="bg-verde text-negro font-semibold py-3 px-8 rounded-lg shadow-md transition-transform hover:scale-105 font-mono text-xl motion-preset-oscillate motion-duration-2000
-"
+          class="bg-verde text-negro font-semibold py-3 px-6 sm:px-8 rounded-lg shadow-md transition-transform hover:scale-105 font-mono text-base sm:text-lg md:text-xl"
         >
           Ver Proyectos
         </a>
         <a
           href="#contacto"
-          class="border-2 border-verde text-verde hover:bg-verde hover:text-negro font-semibold py-3 px-8 rounded-lg shadow-md transition-transform hover:scale-105 font-mono text-xl"
+          class="border-2 border-verde text-verde hover:bg-verde hover:text-negro font-semibold py-3 px-6 sm:px-8 rounded-lg shadow-md transition-transform hover:scale-105 font-mono text-base sm:text-lg md:text-xl"
         >
           Contactar
         </a>
       </div>
     </div>
 
-    <!-- Imagen a la derecha -->
-    <div class="flex justify-center md:justify-end animate-fade-in-up">
+    <!-- Imagen -->
+    <div class="flex justify-center animate-fade-in-up order-1 md:order-2">
       <img 
         src="image.jpg" 
         alt="Leandro Soto - Perfil" 
-        class="w-full max-w-2xl md:max-w-3xl rounded-2xl  "
+        class="w-full max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-3xl rounded-2xl shadow-2xl"
       />
     </div>
 
@@ -55,5 +56,18 @@
   .animate-fade-in-up {
     animation: fadeInFromBottom 0.8s ease-out forwards;
     opacity: 0;
+  }
+
+  .bg-grid-pattern {
+    background-image: linear-gradient(to right, #4a0e71 1px, transparent 1px),
+                      linear-gradient(to bottom, #4a0e71 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Mejorar legibilidad en pantallas pequeñas */
+  @media (max-width: 640px) {
+    body {
+      font-size: 14px;
+    }
   }
 </style>

@@ -27,6 +27,7 @@
     "react-dom": "^18.3.1",
     "swiper": "^11.2.5",
     "tailwindcss-animated": "^2.0.0",
+    "three": "^0.180.0",
     "typescript": "^5.6.3",
     "typewriter-effect": "^2.21.0",
     "uvcanvas": "^0.3.0"

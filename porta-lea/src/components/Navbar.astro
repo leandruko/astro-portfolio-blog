@@ -1,46 +1,141 @@
-<header class="mb-auto flex flex-wrap sm:justify-start sm:flex-wrap z-50 w-full text-sm py-4 animate-fade-in-up bg-negro">
-  <nav class="w-full px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8">
+<!-- Navbar Desktop (arriba) -->
+<header class="hidden md:block fixed top-0 left-0 right-0 z-50 w-full text-sm py-4 bg-negro/90 backdrop-blur-sm">
+  <nav class="w-full px-4 sm:px-6 lg:px-8 flex items-center justify-between">
     
-    <!-- Logo + Botón hamburguesa -->
-    <div class="flex items-center justify-between">
-      <a class="flex-none text-2xl font-semibold font-mono text-verde focus:outline-hidden focus:opacity-80 transition-all duration-300 transform hover:scale-105 " href="/" aria-label="Brand">lensodev.</a>
-      
-      <!-- Botón hamburguesa (solo visible en móviles) -->
-      <button id="menu-toggle" class="sm:hidden text-white hover:text-verde focus:outline-hidden focus:opacity-80 p-2 rounded-lg transition">
-        <!-- Ícono hamburguesa -->
-        <svg id="menu-open" class="h-6 w-6 block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-        <!-- Ícono cerrar -->
-        <svg id="menu-close" class="h-6 w-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-    </div>
+    <!-- Logo -->
+    <a class="text-2xl font-semibold font-mono text-verde focus:outline-hidden focus:opacity-80 transition-all duration-300 transform hover:scale-105" href="/" aria-label="Brand">
+      lensodev.
+    </a>
 
-    <!-- Menú -->
-    <div id="mobile-menu" class="hidden sm:block basis-full grow sm:basis-auto">
-      <div class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
-        <a class="text-white/70 hover:text-verde font-mono transition-transform duration-200 hover:-translate-y-1 hover:scale-100 text-lg font-semibold" href="#experiencia-educacion">EXPERIENCIA</a>
-        <a class="text-white/70 hover:text-verde font-mono transition-transform duration-200 hover:-translate-y-1 hover:scale-100 text-lg font-semibold" href="#proyectos">PROYECTOS</a>
-        <a class="text-white/70 hover:text-verde font-mono transition-transform duration-200 hover:-translate-y-1 hover:scale-100 text-lg font-semibold" href="#contacto">CONTACTO</a>
-      </div>
+    <!-- Menú Desktop -->
+    <div class="flex gap-8">
+      <a class="text-white/70 hover:text-verde font-mono transition-all duration-200 hover:-translate-y-1 text-lg font-semibold" href="#experiencia-educacion">
+        EXPERIENCIA
+      </a>
+      <a class="text-white/70 hover:text-verde font-mono transition-all duration-200 hover:-translate-y-1 text-lg font-semibold" href="#proyectos">
+        PROYECTOS
+      </a>
+      <a class="text-white/70 hover:text-verde font-mono transition-all duration-200 hover:-translate-y-1 text-lg font-semibold" href="#contacto">
+        CONTACTO
+      </a>
     </div>
 
   </nav>
 </header>
 
-<script>
-  const menuToggle = document.getElementById("menu-toggle");
-  const mobileMenu = document.getElementById("mobile-menu");
-  const menuOpen = document.getElementById("menu-open");
-  const menuClose = document.getElementById("menu-close");
+<!-- Navbar Mobile (abajo) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-negro/90 backdrop-blur-lg shadow-lg shadow-verde/5">
+  <div class="flex items-center justify-around py-3 px-2">
 
-  menuToggle.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-    menuOpen.classList.toggle("hidden");
-    menuClose.classList.toggle("hidden");
+    <!-- Proyectos -->
+    <a href="#proyectos" class="nav-item flex flex-col items-center gap-1 px-4 py-2 rounded-lg transition-all duration-200 hover:bg-verde/10 active:scale-95" data-section="proyectos">
+      <svg class="w-6 h-6 text-white/70" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+      </svg>
+      <span class="text-xs font-mono text-white/70">Proyectos</span>
+    </a>
+
+    <!-- Certificaciones -->
+    <a href="#experiencia-educacion" class="nav-item flex flex-col items-center gap-1 px-4 py-2 rounded-lg transition-all duration-200 hover:bg-verde/10 active:scale-95" data-section="experiencia-educacion">
+      <svg class="w-6 h-6 text-white/70" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      </svg>
+      <span class="text-xs font-mono text-white/70">Exp & Edu</span>
+    </a>
+
+
+    <!-- Contacto -->
+    <a href="#contacto" class="nav-item flex flex-col items-center gap-1 px-4 py-2 rounded-lg transition-all duration-200 hover:bg-verde/10 active:scale-95" data-section="contacto">
+      <svg class="w-6 h-6 text-white/70" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+      </svg>
+      <span class="text-xs font-mono text-white/70">Contacto</span>
+    </a>
+
+  </div>
+</nav>
+
+<!-- Espaciador para compensar el navbar fijo en desktop -->
+<div class="hidden md:block h-16"></div>
+
+<!-- Espaciador para compensar el navbar fijo en mobile -->
+<div class="md:hidden h-20"></div>
+
+<script>
+  // Detectar sección activa y resaltar el ícono correspondiente
+  const navItems = document.querySelectorAll('.nav-item');
+  
+  function setActiveSection() {
+    const sections = document.querySelectorAll('section[id]');
+    let currentSection = '';
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (window.scrollY >= sectionTop - 200) {
+        currentSection = section.getAttribute('id');
+      }
+    });
+
+    navItems.forEach(item => {
+      const svg = item.querySelector('svg');
+      const span = item.querySelector('span');
+      
+      if (item.getAttribute('data-section') === currentSection) {
+        svg.classList.remove('text-white/70');
+        svg.classList.add('text-verde');
+        span.classList.remove('text-white/70');
+        span.classList.add('text-verde');
+        item.classList.add('bg-verde/10');
+      } else {
+        svg.classList.remove('text-verde');
+        svg.classList.add('text-white/70');
+        span.classList.remove('text-verde');
+        span.classList.add('text-white/70');
+        item.classList.remove('bg-verde/10');
+      }
+    });
+  }
+
+  // Ejecutar al hacer scroll
+  window.addEventListener('scroll', setActiveSection);
+  
+  // Ejecutar al cargar la página
+  setActiveSection();
+
+  // Smooth scroll
+  navItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = item.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
   });
 </script>
+
+<style>
+  @keyframes fadeInFromBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInFromBottom 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      padding-bottom: 5rem;
+    }
+  }
+</style>
