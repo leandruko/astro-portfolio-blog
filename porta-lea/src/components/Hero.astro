@@ -8,11 +8,10 @@
         Leandro Soto Miranda
       </h1>
       <h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-palm-200 font-mono">
-        Desarrollador
+        Desarrollador & Analista de datos
       </h2>
       <!--
       <p class="text-palm-50 text-sm sm:text-base md:text-xl max-w-2xl mx-auto md:mx-0 font-mono">
-        ...
       </p>
     -->
       <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start pt-4">
@@ -33,6 +32,10 @@
 
     <!-- Imagen -->
     <div class="flex justify-center animate-fade-in-up order-1 md:order-2">
+      <div class="code-float text-lg">SELECT * FROM data</div>
+      <div class="code-float text-base">def analyze():</div>
+      <div class="code-float">pipeline.transform()</div>
+      <div class="code-float">import pandas as pd</div>
       <img 
         src="image.jpg" 
         alt="picture" 
@@ -72,4 +75,45 @@
       font-size: 14px;
     }
   }
+
+  @keyframes fadeInFromBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInFromBottom 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .code-float {
+    position: absolute;
+    color: #00ff88;
+    opacity: 0.6;
+    animation: float 8s infinite ease-in-out;
+    pointer-events: none;
+    font-family: 'Courier New', monospace;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) translateX(0px);
+      opacity: 0.3;
+    }
+    50% {
+      transform: translateY(-20px) translateX(10px);
+      opacity: 0.8;
+    }
+  }
+
+  .code-float:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+  .code-float:nth-child(2) { top: 30%; right: 15%; animation-delay: 2s; }
+  .code-float:nth-child(3) { bottom: 20%; left: 20%; animation-delay: 4s; }
+  .code-float:nth-child(4) { top: 50%; left: 5%; animation-delay: 6s; }
 </style>
