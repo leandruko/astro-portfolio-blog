@@ -1,36 +1,48 @@
 ---
 // src/components/Projects.astro
-import { projects } from '../data/project'; // Importa tus datos de s
-import ProjectCard from './ProjectCard.astro'; // Importa el componente de la tarjeta
+import { projects } from '../data/project';
+import ProjectCard from './ProjectCard.astro'; 
 ---
 
-<section id="proyectos" class="py-16 md:py-24 bg-negro">
-  <div class="max-w-6xl mx-auto px-4">
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-12 text-verde font-mono">
-      Proyectos destacados
-    </h2>
+<section id="proyectos" class="py-20 bg-[#0d0d0d] relative">
+  <div class="absolute inset-0 opacity-[0.15] pointer-events-none"></div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
+    
+    <div class="inline-block bg-[#1a1a1a] text-[#ccff00] px-6 py-2 mb-16 shadow-[6px_6px_0px_0px_rgba(255,255,255,0.1)] border-2 border-[#ccff00]">
+      <h2 class="text-3xl md:text-5xl font-black tracking-tighter font-mono">
+        Proyectos_Realizados
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 items-stretch">
       {projects.map(project => (
-        <ProjectCard project={project} />
+        <div class="hover:translate-y-[-8px] transition-all duration-300">
+           <ProjectCard project={project} />
+        </div>
       ))}
     </div>
 
-    <div class="text-center mt-16">
-      <p class="text-3xl text-palm-300 mb-6 font-mono">
-        ¿Quieres explorar más de mi trabajo?
-      </p>
-      <a
-        href="https://github.com/leandruko"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center px-6 py-3 bg-verde text-negro rounded-lg transition duration-200 text-xl font-semibold shadow-xl font-mono border-2 border-verde hover:bg-negro hover:text-verde"
-      >
-        <svg class="w-10 h-10 mr-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017 2 16.216 4.672 19.743 8.309 20.982c.5.094.68-.22.68-.485 0-.237-.008-.865-.013-1.698-2.69.586-3.253-1.3-3.253-1.3-.44-1.116-1.07-1.413-1.07-1.413-.876-.59.066-.58.066-.58.97.067 1.488.995 1.488.995.86 1.486 2.27 1.056 2.82.806.085-.628.337-1.056.617-1.295-2.15-.24-4.416-1.075-4.416-4.79 0-1.06.377-1.925 1-2.608-.1-.24-.435-1.238.096-2.573 0 0 .81-.26 2.642.987.77-.215 1.58-.322 2.39-.327.81.005 1.62.112 2.39.327 1.832-1.247 2.64-1 2.64-1 .53 1.335.2 2.333.1 2.573.623.683 1 1.548 1 2.608 0 3.722-2.27 4.545-4.425 4.786.357.307.678.915.678 1.855 0 1.336-.012 2.417-.012 2.748 0 .268.18.58.688.484C19.333 19.73 22 16.208 22 12.017 22 6.484 17.522 2 12 2Z" clip-rule="evenodd" />
-        </svg>
-        Ver más en GitHub
-      </a>
+    <div class="mt-24 max-w-2xl mx-auto">
+      <div class="border-[3px] border-white bg-[#111111] shadow-[8px_8px_0px_0px_#ccff00] p-1">
+        <div class="border-2 border-white/20 border-dashed p-8 text-center bg-[#0d0d0d]">
+          <p class="text-2xl text-white mb-8 font-mono font-bold uppercase tracking-tight">
+            ¿Quieres ver el mis otros proyectos? 
+          </p>
+          
+          <a
+            href="https://github.com/leandruko"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group inline-flex items-center px-8 py-4 bg-[#ccff00] text-black border-2 border-black transition-all duration-200 hover:bg-white hover:shadow-[4px_4px_0px_0px_rgba(204,255,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] active:translate-x-[0px] active:translate-y-[0px] active:shadow-none font-mono font-black text-lg uppercase"
+          >
+            <svg class="w-6 h-6 mr-3 transition-transform group-hover:rotate-12" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.477 2 2 6.484 2 12.017 2 16.216 4.672 19.743 8.309 20.982c.5.094.68-.22.68-.485 0-.237-.008-.865-.013-1.698-2.69.586-3.253-1.3-3.253-1.3-.44-1.116-1.07-1.413-1.07-1.413-.876-.59.066-.58.066-.58.97.067 1.488.995 1.488.995.86 1.486 2.27 1.056 2.82.806.085-.628.337-1.056.617-1.295-2.15-.24-4.416-1.075-4.416-4.79 0-1.06.377-1.925 1-2.608-.1-.24-.435-1.238.096-2.573 0 0 .81-.26 2.642.987.77-.215 1.58-.322 2.39-.327.81.005 1.62.112 2.39.327 1.832-1.247 2.64-1 2.64-1 .53 1.335.2 2.333.1 2.573.623.683 1 1.548 1 2.608 0 3.722-2.27 4.545-4.425 4.786.357.307.678.915.678 1.855 0 1.336-.012 2.417-.012 2.748 0 .268.18.58.688.484C19.333 19.73 22 16.208 22 12.017 22 6.484 17.522 2 12 2Z" />
+            </svg>
+            Visita mi GitHub
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>

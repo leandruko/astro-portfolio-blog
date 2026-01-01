@@ -1,119 +1,60 @@
-<!-- Hero.astro - Versión mejorada para móvil -->
-<section id="hero" class="relative min-h-screen flex items-center justify-center bg-negro px-4 sm:px-6 md:py-0">
-  <div class="container mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-    
-    <!-- Texto -->
-    <div class="space-y-4 sm:space-y-6 animate-fade-in-up text-center md:text-left order-2 md:order-1">
-      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold leading-tight font-mono text-verde">
-        Leandro Soto Miranda
-      </h1>
-      <h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-palm-200 font-mono">
-        Desarrollador & Analista de datos
-      </h2>
-      <!--
-      <p class="text-palm-50 text-sm sm:text-base md:text-xl max-w-2xl mx-auto md:mx-0 font-mono">
-      </p>
-    -->
-      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start pt-4">
-        <a
-          href="#proyectos"
-          class="bg-verde text-negro font-semibold py-3 px-6 sm:px-8 rounded-lg shadow-md transition-transform hover:scale-105 font-mono text-base sm:text-lg md:text-xl"
-        >
-          Ver Proyectos
-        </a>
-        <a
-          href="#contacto"
-          class="border-2 border-verde text-verde hover:bg-verde hover:text-negro font-semibold py-3 px-6 sm:px-8 rounded-lg shadow-md transition-transform hover:scale-105 font-mono text-base sm:text-lg md:text-xl"
-        >
-          Contactar
+---
+// Hero.astro
+---
+
+<section class="min-h-screen flex items-center justify-center bg-[#0d0d0d] px-6 selection:bg-[#ccff00] selection:text-black overflow-hidden relative">
+
+  <div class="relative w-full max-w-5xl z-20 flex flex-col items-center text-center">
+    <div class="p-4 md:p-10 relative w-full">
+      
+      <div class="mb-6">
+          <h1 class="text-4xl sm:text-8xl md:text-[5rem] font-mono text-white leading-[0.8] tracking-[calc(-0.05em)] transition-transform cursor-default">
+              Leandro <br/> 
+              <span class="text-transparent" style="-webkit-text-stroke: 3px #ccff00;">Soto</span>
+              <br/>
+              <span class="text-transparent" style="-webkit-text-stroke: 3px #ccff00;">Miranda</span>
+          </h1>
+      </div>
+
+      <div class="flex justify-center">
+        <p class="text-xl md:text-3xl text-white/60 max-w-2xl mb-16 leading-tight border-y-2 border-[#ccff00] py-4 opacity-0 animate-[fadeIn_0.8s_ease-out_0.3s_forwards] uppercase font-bold">
+            Ingeniería de datos <span class="text-white font-mono">&</span> <br class="hidden md:block"/> desarrollo web.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-6 items-center justify-center opacity-0 animate-[fadeIn_1s_ease-out_0.6s_forwards]">
+        <a href="#proyectos" class="group relative inline-block">
+          <span class="relative z-10 px-12 py-5 bg-[#ccff00] text-black font-mono uppercase text-lg md:text-xl flex items-center gap-4 group-hover:bg-white transition-all">
+            EXPLORAR_PROYECTOS
+            <span class="text-2xl group-hover:translate-x-3 transition-transform">→</span>
+          </span>
+          <div class="absolute inset-0 translate-x-3 translate-y-3 border-[3px] border-white -z-0 group-hover:translate-x-0 group-hover:translate-y-0 transition-all"></div>
         </a>
       </div>
-    </div>
 
-    <!-- Imagen -->
-    <div class="flex justify-center animate-fade-in-up order-1 md:order-2">
-      <div class="code-float text-lg">SELECT * FROM data</div>
-      <div class="code-float text-base">def analyze():</div>
-      <div class="code-float">pipeline.transform()</div>
-      <div class="code-float">import pandas as pd</div>
-      <img 
-        src="image.jpg" 
-        alt="picture" 
-        class="w-full max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-3xl rounded-2xl shadow-2xl"
-      />
     </div>
-
   </div>
 </section>
 
 <style>
-  @keyframes fadeInFromBottom {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
+  @keyframes fadeIn {
+    from { 
+      opacity: 0; 
+      transform: translateY(20px); 
     }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .animate-fade-in-up {
-    animation: fadeInFromBottom 0.8s ease-out forwards;
-    opacity: 0;
-  }
-
-  .bg-grid-pattern {
-    background-image: linear-gradient(to right, #4a0e71 1px, transparent 1px),
-                      linear-gradient(to bottom, #4a0e71 1px, transparent 1px);
-    background-size: 40px 40px;
-  }
-
-  /* Mejorar legibilidad en pantallas pequeñas */
-  @media (max-width: 640px) {
-    body {
-      font-size: 14px;
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
     }
   }
 
-  @keyframes fadeInFromBottom {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
+  @media (max-width: 768px) {
+    h1 {
+        font-size: 4rem;
+        line-height: 0.9;
     }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .animate-fade-in-up {
-    animation: fadeInFromBottom 0.8s ease-out forwards;
-    opacity: 0;
-  }
-
-  .code-float {
-    position: absolute;
-    color: #00ff88;
-    opacity: 0.6;
-    animation: float 8s infinite ease-in-out;
-    pointer-events: none;
-    font-family: 'Courier New', monospace;
-  }
-
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px) translateX(0px);
-      opacity: 0.3;
-    }
-    50% {
-      transform: translateY(-20px) translateX(10px);
-      opacity: 0.8;
+    h1 span {
+      -webkit-text-stroke: 1.5px #ccff00 !important;
     }
   }
-
-  .code-float:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
-  .code-float:nth-child(2) { top: 30%; right: 15%; animation-delay: 2s; }
-  .code-float:nth-child(3) { bottom: 20%; left: 20%; animation-delay: 4s; }
-  .code-float:nth-child(4) { top: 50%; left: 5%; animation-delay: 6s; }
 </style>

@@ -1,173 +1,102 @@
-<!-- Contact.astro - Versión mejorada -->
-<section id="contacto" class="py-12 sm:py-16 md:py-24 bg-negro text-white">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-    <h2
-      class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-verde font-mono mb-8 sm:mb-12"
-    >
-      Contacto
-    </h2>
+---
+// src/components/Contact.astro
+---
 
-    <p
-      class="text-sm sm:text-base lg:text-lg text-gray-300 mb-6 sm:mb-8 font-mono"
-    >
-      ¿Tienes un proyecto en mente, una pregunta o simplemente quieres saludar?
-      ¡No dudes en contactarme! Estoy abierto a nuevas oportunidades laborales.
-    </p>
+<section id="contacto" class="py-24 bg-[#0d0d0d] relative overflow-hidden font-mono">
+  <div class="absolute inset-0 opacity-[0.05] pointer-events-none"></div>
+  
+  <div class="max-w-4xl mx-auto px-6 relative z-10">
+    <div class="bg-[#111111] border-[3px] border-white shadow-[10px_10px_0px_0px_rgba(204,255,0,0.1)] overflow-hidden">
+      
+      <div class="bg-white text-black p-3 flex justify-between items-center">
+        <div class="flex gap-2">
+           <div class="w-3 h-3 bg-black"></div>
+           <div class="w-3 h-3 bg-black/20"></div>
+        </div>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em]">OUTGOING_CONNECTION.SH</span>
+        <div class="w-6"></div>
+      </div>
 
-    <div
-      class="flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-4 sm:gap-6 lg:gap-8 mb-12"
-    >
-      <!-- Botón Email con función copiar -->
-      <button
-        id="copy-email-btn"
-        class="flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 bg-verde rounded-lg text-negro font-semibold shadow-md justify-center text-sm sm:text-base lg:text-lg font-mono transition-all duration-300 hover:scale-105 active:scale-95 relative group"
-      >
-        <svg
-          id="email-icon"
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6 sm:h-8 sm:w-8 lg:h-10 lg:w-10 flex-shrink-0 transition-all duration-300"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-          ></path>
-        </svg>
+      <div class="p-8 md:p-16 text-center">
+        
+        <h2 class="text-4xl md:text-6xl font-black text-white tracking-tighter mb-8 uppercase leading-[0.9]">
+          EN BUSQUEDA DE <br/>
+          <span class="text-[#ccff00] underline decoration-white/20 underline-offset-8">OPORTUNIDADES!!</span>
+        </h2>
 
-        <svg
-          id="check-icon"
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6 sm:h-8 sm:w-8 lg:h-10 lg:w-10 flex-shrink-0 hidden"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M5 13l4 4L19 7"></path>
-        </svg>
+        <p class="text-white/60 text-lg max-w-2xl mx-auto mb-16 leading-relaxed border-2 border-white/10 border-dashed p-6 bg-black/50 italic">
+          // Estoy en busqueda activa para vacantes, consultas de datos o proyectos de desarrollo. Comunicate conmigo abajo.
+        </p>
 
-        <span id="email-text" class="hidden sm:inline"
-          >leasotompriv@gmail.com</span
-        >
-        <span id="email-text-mobile" class="sm:hidden">Copiar Email</span>
+        <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+          <button
+            id="copy-email-btn"
+            class="group relative w-full md:w-auto flex items-center gap-4 px-8 py-5 bg-[#1a1a1a] border-[3px] border-white shadow-[6px_6px_0px_0px_rgba(255,255,255,0.1)] hover:border-[#ccff00] hover:shadow-[6px_6px_0px_0px_#ccff00] active:translate-y-[2px] active:translate-x-[2px] active:shadow-none transition-all"
+          >
+            <div id="icon-container" class="text-[#ccff00]">
+              <svg id="email-icon" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <svg id="check-icon" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 hidden text-[#ccff00]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
 
-        <!-- Tooltip -->
-        <span
-          class="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-negro text-verde px-3 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap"
-        >
-          Click para copiar
-        </span>
-      </button>
+            <div class="flex flex-col items-start">
+              <span class="text-[10px] text-white/40 uppercase font-black tracking-widest">Copiame!!</span>
+              <span id="email-text" class="text-white text-lg font-bold group-hover:text-[#ccff00] transition-colors">leasotompriv@gmail.com</span>
+            </div>
+          </button>
 
-      <!-- LinkedIn -->
-      <a
-        href="https://www.linkedin.com/in/leandro-soto-miranda-767a72264/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 border-2 border-verde text-verde hover:bg-verde hover:text-negro rounded-lg font-semibold transition duration-300 transform hover:scale-105 shadow-md justify-center text-sm sm:text-base lg:text-lg font-mono"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6 sm:h-8 sm:w-8 flex-shrink-0"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 
-          5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 
-          19h-3v-10h3v10zm-1.5-11.27c-.97 
-          0-1.75-.79-1.75-1.76s.78-1.75 
-          1.75-1.75 1.75.78 1.75 1.75-.78 
-          1.76-1.75 1.76zm13.5 11.27h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 
-          0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.37h.04c.4-.75 
-          1.37-1.54 2.83-1.54 3.03 0 3.59 1.99 3.59 
-          4.58v5.59z"
-          ></path>
-        </svg>
-        LinkedIn
-      </a>
+          <a
+            href="https://www.linkedin.com/in/leandro-soto-miranda-767a72264/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group w-full md:w-auto flex items-center gap-4 px-8 py-5 bg-[#ccff00] text-black border-[3px] border-black shadow-[6px_6px_0px_0px_rgba(255,255,255,0.2)] hover:bg-white hover:shadow-[6px_6px_0px_0px_#ccff00] active:translate-y-[2px] active:translate-x-[2px] active:shadow-none transition-all font-black uppercase"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 transition-transform group-hover:rotate-12" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.27c-.97 0-1.75-.79-1.75-1.76s.78-1.75 1.75-1.75 1.75.78 1.75 1.75-.78 1.76-1.75 1.76zm13.5 11.27h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.37h.04c.4-.75 1.37-1.54 2.83-1.54 3.03 0 3.59 1.99 3.59 4.58v5.59z" />
+            </svg>
+            <div class="flex flex-col items-start">
+              <span class="text-[10px] text-black/40 uppercase font-black tracking-widest">Hablame en Linkedin</span>
+              <span class="text-lg">LINKEDIN_PERFIL</span>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-
-<style>
-  @keyframes fadeInFromBottom {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .animate-fade-in-up {
-    animation: fadeInFromBottom 0.8s ease-out forwards;
-    opacity: 0;
-  }
-
-  .bg-grid-pattern {
-    background-image: linear-gradient(to right, #4a0e71 1px, transparent 1px),
-      linear-gradient(to bottom, #4a0e71 1px, transparent 1px);
-    background-size: 40px 40px;
-  }
-
-  /* Mejorar legibilidad en pantallas pequeñas */
-  @media (max-width: 640px) {
-    body {
-      font-size: 14px;
-    }
-  }
-
-  #copy-email-btn:active {
-    transform: scale(0.95);
-  }
-</style>
 
 <script>
   const copyButton = document.getElementById("copy-email-btn");
   const emailIcon = document.getElementById("email-icon");
   const checkIcon = document.getElementById("check-icon");
   const emailText = document.getElementById("email-text");
-  const emailTextMobile = document.getElementById("email-text-mobile");
   const email = "leasotompriv@gmail.com";
 
-  if (copyButton && emailIcon && checkIcon && emailText && emailTextMobile) {
+  if (copyButton && emailIcon && checkIcon && emailText) {
     copyButton.addEventListener("click", async () => {
       try {
         await navigator.clipboard.writeText(email);
 
         emailIcon.classList.add("hidden");
         checkIcon.classList.remove("hidden");
-        emailText.textContent = "¡Copiado!";
-        emailTextMobile.textContent = "¡Copiado!";
-
-        copyButton.classList.add("scale-110");
+        emailText.textContent = "MAIL COPIADO :)";
+        
+        // Feedback visual Cyber-Dark
+        copyButton.style.borderColor = "#ccff00";
+        emailText.style.color = "#ccff00";
 
         setTimeout(() => {
           emailIcon.classList.remove("hidden");
           checkIcon.classList.add("hidden");
           emailText.textContent = email;
-          emailTextMobile.textContent = "Copiar Email";
-          copyButton.classList.remove("scale-110");
+          copyButton.style.borderColor = "white";
+          emailText.style.color = "white";
         }, 2000);
       } catch (err) {
-        console.error("Error al copiar:", err);
-        emailText.textContent = "No se pudo copiar";
-        emailTextMobile.textContent = "Error";
-
-        setTimeout(() => {
-          emailText.textContent = email;
-          emailTextMobile.textContent = "Copiar Email";
-        }, 2000);
+        console.error("Error:", err);
       }
     });
   }

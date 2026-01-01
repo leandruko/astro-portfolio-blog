@@ -1,145 +1,115 @@
-<!-- Navbar Desktop (arriba) -->
-<header class="hidden md:block fixed top-0 left-0 right-0 z-50 w-full text-sm py-4 bg-negro/90 backdrop-blur-sm">
-  <nav class="w-full px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-    
-    <!-- Logo -->
-    <a class="text-2xl font-semibold font-mono text-verde focus:outline-hidden focus:opacity-80 transition-all duration-300 transform hover:scale-105" href="/" aria-label="Brand">
-      lensodev.
-    </a>
+---
+// src/components/Navbar.astro
+---
 
-    <!-- Menú Desktop -->
-    <div class="flex gap-8">
-      <a class="text-white/70 hover:text-verde font-mono transition-all duration-200 hover:-translate-y-1 text-lg font-semibold" href="#experiencia-educacion">
-        EXPERIENCIA
-      </a>
-      <a class="text-white/70 hover:text-verde font-mono transition-all duration-200 hover:-translate-y-1 text-lg font-semibold" href="#proyectos">
-        PROYECTOS
-      </a>
-      <a class="text-white/70 hover:text-verde font-mono transition-all duration-200 hover:-translate-y-1 text-lg font-semibold" href="#contacto">
-        CONTACTO
-      </a>
+<header class="hidden md:block fixed top-0 left-0 right-0 z-50 w-full bg-[#0d0d0d] font-mono">
+  <nav class="flex items-center justify-between px-6 py-2">
+    
+    <div class="flex items-center gap-4">
+        <a href="/" class="flex items-center gap-2 px-3 py-1 bg-[#ccff00] text-black border-2 border-black hover:bg-white transition-colors shadow-[2px_2px_0px_0px_rgba(255,255,255,0.5)]">
+            <span class="font-black tracking-tighter">lensodev.</span>
+        </a>
+        <div class="flex gap-2">
+        </div>
+    </div>
+
+    <div class="flex items-center h-full">
+      <a class="nav-link-desktop" href="#proyectos">PROYECTOS</a>
+      <a class="nav-link-desktop" href="#contacto">CONTACTO</a>
+      
+      <div class="ml-6 px-4 py-1 bg-black border-2 border-white/30 font-black text-xs text-[#ccff00] shadow-[inset_0_0_10px_rgba(204,255,0,0.2)]">
+        <span id="desktop-clock">00:00 AM</span>
+      </div>
     </div>
 
   </nav>
 </header>
 
-<!-- Navbar Mobile (abajo) -->
-<nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-negro/90 backdrop-blur-lg shadow-lg shadow-verde/5">
-  <div class="flex items-center justify-around py-3 px-2">
+<nav class="md:hidden fixed bottom-4 left-4 right-4 z-50 bg-[#111111] border-[3px] border-white shadow-[6px_6px_0px_0px_rgba(255,255,255,0.1)] p-1">
+  <div class="flex items-center justify-around bg-black border-2 border-white/10 border-dashed py-2 px-1">
 
-    <!-- Proyectos -->
-    <a href="#proyectos" class="nav-item flex flex-col items-center gap-1 px-4 py-2 rounded-lg transition-all duration-200 hover:bg-verde/10 active:scale-95" data-section="proyectos">
-      <svg class="w-6 h-6 text-white/70" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
-      </svg>
-      <span class="text-xs font-mono text-white/70">Proyectos</span>
+    <a href="#proyectos" class="nav-item-mobile" data-section="proyectos">
+      <span class="text-xl">📁</span>
+      <span class="text-[9px] font-black uppercase">Proyectos</span>
     </a>
 
-    <!-- Certificaciones -->
-    <a href="#experiencia-educacion" class="nav-item flex flex-col items-center gap-1 px-4 py-2 rounded-lg transition-all duration-200 hover:bg-verde/10 active:scale-95" data-section="experiencia-educacion">
-      <svg class="w-6 h-6 text-white/70" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-      </svg>
-      <span class="text-xs font-mono text-white/70">Exp & Edu</span>
-    </a>
-
-
-    <!-- Contacto -->
-    <a href="#contacto" class="nav-item flex flex-col items-center gap-1 px-4 py-2 rounded-lg transition-all duration-200 hover:bg-verde/10 active:scale-95" data-section="contacto">
-      <svg class="w-6 h-6 text-white/70" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-      </svg>
-      <span class="text-xs font-mono text-white/70">Contacto</span>
+    <a href="#contacto" class="nav-item-mobile" data-section="contacto">
+      <span class="text-xl">✉️</span>
+      <span class="text-[9px] font-black uppercase">Contacto</span>
     </a>
 
   </div>
 </nav>
 
-<!-- Espaciador para compensar el navbar fijo en desktop -->
-<div class="hidden md:block h-16"></div>
-
-<!-- Espaciador para compensar el navbar fijo en mobile -->
-<div class="md:hidden h-20"></div>
+<div class="hidden md:block h-14"></div>
 
 <script>
-  // Detectar sección activa y resaltar el ícono correspondiente
-  const navItems = document.querySelectorAll<HTMLAnchorElement>('.nav-item');
-  
+  function updateClock() {
+    const now = new Date();
+    const clock = document.getElementById('desktop-clock');
+    if (clock) {
+      clock.textContent = now.toLocaleTimeString('en-US', { 
+        hour: '2-digit', 
+        minute: '2-digit',
+        hour12: false 
+      });
+    }
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+
+  const navItemsMobile = document.querySelectorAll('.nav-item-mobile');
+  const navLinksDesktop = document.querySelectorAll('.nav-link-desktop');
+
   function setActiveSection() {
-    const sections = document.querySelectorAll<HTMLElement>('section[id]');
+    const sections = document.querySelectorAll('section[id]');
     let currentSection = '';
 
     sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      if (window.scrollY >= sectionTop - 200) {
+      const sectionTop = (section as HTMLElement).offsetTop;
+      if (window.scrollY >= sectionTop - 150) {
         currentSection = section.getAttribute('id') || '';
       }
     });
 
-    navItems.forEach(item => {
-      const svg = item.querySelector('svg');
-      const span = item.querySelector('span');
-      
-      if (!svg || !span) return;
-      
-      if (item.getAttribute('data-section') === currentSection) {
-        svg.classList.remove('text-white/70');
-        svg.classList.add('text-verde');
-        span.classList.remove('text-white/70');
-        span.classList.add('text-verde');
-        item.classList.add('bg-verde/10');
+    navItemsMobile.forEach(item => {
+      if (item.getAttribute('href')?.substring(1) === currentSection) {
+        item.classList.add('active-mobile');
       } else {
-        svg.classList.remove('text-verde');
-        svg.classList.add('text-white/70');
-        span.classList.remove('text-verde');
-        span.classList.add('text-white/70');
-        item.classList.remove('bg-verde/10');
+        item.classList.remove('active-mobile');
+      }
+    });
+
+    navLinksDesktop.forEach(link => {
+      if (link.getAttribute('href')?.substring(1) === currentSection) {
+        link.classList.add('active-desktop');
+      } else {
+        link.classList.remove('active-desktop');
       }
     });
   }
 
-  // Ejecutar al hacer scroll
   window.addEventListener('scroll', setActiveSection);
-  
-  // Ejecutar al cargar la página
   setActiveSection();
-
-  // Smooth scroll
-  navItems.forEach(item => {
-    item.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = item.getAttribute('href')?.substring(1);
-      if (targetId) {
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) {
-          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
-    });
-  });
 </script>
 
 <style>
-  @keyframes fadeInFromBottom {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+
+  .nav-link-desktop {
+    @apply px-4 py-2 text-xs font-black text-white/50 uppercase transition-all border-b-4 border-transparent hover:text-[#ccff00] hover:bg-white/5;
+  }
+  .active-desktop {
+    @apply text-[#ccff00] border-[#ccff00] bg-white/5;
   }
 
-  .animate-fade-in-up {
-    animation: fadeInFromBottom 0.8s ease-out forwards;
-    opacity: 0;
+  .nav-item-mobile {
+    @apply flex flex-col items-center justify-center w-20 py-1 border-2 border-transparent transition-all grayscale opacity-40 text-white;
+  }
+  .active-mobile {
+    @apply grayscale-0 opacity-100 border-[#ccff00] bg-[#ccff00]/10 text-[#ccff00] shadow-[0_0_15px_rgba(204,255,0,0.2)];
   }
 
-  /* Asegurar que el body tenga padding para el navbar mobile */
-  @media (max-width: 768px) {
-    body {
-      padding-bottom: 5rem;
-    }
+  header, nav {
+    -webkit-font-smoothing: none;
   }
 </style>
