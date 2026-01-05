@@ -2,31 +2,35 @@
 // src/components/Navbar.astro
 ---
 
-<header class="hidden md:block fixed top-0 left-0 right-0 z-50 w-full bg-[#0d0d0d] font-mono">
+<header class="hidden md:block fixed top-0 left-0 right-0 z-50 w-full bg-[#e7e2d8] border-b-[3px] border-[#403b33] font-mono shadow-sm">
   <nav class="flex items-center justify-between px-6 py-2">
     
     <div class="flex items-center gap-4">
-        <a href="/" class="flex items-center gap-2 px-3 py-1 bg-[#ccff00] text-black border-2 border-black hover:bg-white transition-colors shadow-[2px_2px_0px_0px_rgba(255,255,255,0.5)]">
-            <span class="font-black tracking-tighter">lensodev.</span>
+        <a href="/" class="flex items-center gap-2 px-3 py-1 bg-[#403b33] text-[#e7e2d8] border-2 border-black hover:bg-[#e85a4f] transition-colors shadow-[2px_2px_0px_0px_rgba(64,59,51,0.3)]">
+            <span class="font-black tracking-tighter uppercase">lensodev.</span>
         </a>
-        <div class="flex gap-2">
-        </div>
+
     </div>
 
-    <div class="flex items-center h-full">
-      <a class="nav-link-desktop" href="#proyectos">PROYECTOS</a>
-      <a class="nav-link-desktop" href="#contacto">CONTACTO</a>
-      
-      <div class="ml-6 px-4 py-1 bg-black border-2 border-white/30 font-black text-xs text-[#ccff00] shadow-[inset_0_0_10px_rgba(204,255,0,0.2)]">
-        <span id="desktop-clock">00:00 AM</span>
+    <div class="ml-6 flex items-center gap-3">
+      <div class="flex items-center justify-center w-8 h-8 bg-[#403b33] border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] group hover:rotate-12 transition-transform cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#ccff00] opacity-80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="4 17 10 11 4 5"></polyline>
+          <line x1="12" y1="19" x2="20" y2="19"></line>
+        </svg>
+      </div>
+
+      <div class="px-4 py-1 bg-[#d1ccbd] border-2 border-[#403b33] font-black text-xs text-[#403b33] shadow-inner flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-[#e85a4f] animate-pulse"></span>
+        <span id="desktop-clock">00:00</span>
       </div>
     </div>
 
   </nav>
 </header>
 
-<nav class="md:hidden fixed bottom-4 left-4 right-4 z-50 bg-[#111111] border-[3px] border-white shadow-[6px_6px_0px_0px_rgba(255,255,255,0.1)] p-1">
-  <div class="flex items-center justify-around bg-black border-2 border-white/10 border-dashed py-2 px-1">
+<nav class="md:hidden fixed bottom-4 left-4 right-4 z-50 bg-[#d1ccbd] border-[3px] border-[#403b33] shadow-[6px_6px_0px_0px_rgba(64,59,51,0.2)] p-1">
+  <div class="flex items-center justify-around bg-[#eae7dc] border-2 border-[#403b33]/30 border-dashed py-2 px-1">
 
     <a href="#proyectos" class="nav-item-mobile" data-section="proyectos">
       <span class="text-xl">📁</span>
@@ -94,19 +98,18 @@
 </script>
 
 <style>
-
   .nav-link-desktop {
-    @apply px-4 py-2 text-xs font-black text-white/50 uppercase transition-all border-b-4 border-transparent hover:text-[#ccff00] hover:bg-white/5;
+    @apply px-4 py-2 text-xs font-black text-[#403b33]/60 uppercase transition-all border-b-4 border-transparent hover:text-[#e85a4f];
   }
   .active-desktop {
-    @apply text-[#ccff00] border-[#ccff00] bg-white/5;
+    @apply text-[#403b33] border-[#e85a4f] bg-[#403b33]/5;
   }
 
   .nav-item-mobile {
-    @apply flex flex-col items-center justify-center w-20 py-1 border-2 border-transparent transition-all grayscale opacity-40 text-white;
+    @apply flex flex-col items-center justify-center w-20 py-1 border-2 border-transparent transition-all grayscale opacity-60 text-[#403b33];
   }
   .active-mobile {
-    @apply grayscale-0 opacity-100 border-[#ccff00] bg-[#ccff00]/10 text-[#ccff00] shadow-[0_0_15px_rgba(204,255,0,0.2)];
+    @apply grayscale-0 opacity-100 border-[#403b33] bg-[#d8c3a5]/30 text-[#403b33] shadow-[3px_3px_0px_0px_rgba(64,59,51,0.2)];
   }
 
   header, nav {

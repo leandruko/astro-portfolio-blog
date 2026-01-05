@@ -40,11 +40,9 @@ module.exports = {
         },
       },
       colors:{
-        'negro':'#100f0f',
-        'claro':'#e7ccb1',
+        'negro':'#1c1c1c',
+        'claro':'#c5bfae',
         'fondo':'#212529',
-        'gris':'#6C757D',
-        'verde':'#DBFF5E',
         'palm': {
           '50': '#eefff2',
           '100': '#d8ffe3',
