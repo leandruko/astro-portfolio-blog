@@ -2,13 +2,13 @@
 // src/components/Navbar.astro
 ---
 
-<header class="hidden md:block fixed top-0 left-0 right-0 z-50 w-full bg-[#FCFBF8]/80 backdrop-blur-md border-b border-[#D1CCBD]/40 font-sans transition-all duration-300">
+<header class="hidden md:block fixed top-0 left-0 right-0 z-50 w-full bg-[#1e1e1e]/80 backdrop-blur-md font-sans transition-all duration-300">
   <nav class="max-w-7xl mx-auto flex items-center justify-between px-8 py-4">
     
     <div class="flex items-center gap-4">
       <a href="/" class="group flex items-center gap-2">
         <span class="w-2 h-2 bg-[#E85A4F] rounded-full group-hover:scale-150 transition-transform"></span>
-        <span class="font-bold text-lg tracking-tighter text-[#1A1A1A] uppercase">lensodev.</span>
+        <span class="font-bold text-lg tracking-tighter text-[#e1dbc9] uppercase">lensodev.</span>
       </a>
     </div>
 
@@ -108,7 +108,7 @@
 <style>
   /* Desktop Links */
   .nav-link-desktop {
-    @apply text-xs font-bold text-[#8E8D8A] uppercase tracking-widest transition-all duration-300 hover:text-[#1A1A1A] relative py-2;
+    @apply text-xs text-[#e1dbc9]/30 uppercase tracking-widest transition-all duration-300 hover:text-[#e1dbc9] relative py-2;
   }
   .active-desktop {
     @apply text-[#1A1A1A];

@@ -8,22 +8,19 @@ const personalProjects = projects.filter(p => p.category === 'personal');
 ---
 
 <section id="proyectos" class="py-24 bg-[#1e1e1e] relative overflow-hidden">
-  <div class="absolute inset-0 opacity-[0.4] pointer-events-none" style="background-image: radial-gradient(#D1CCBD 1px, transparent 1px); background-size: 40px 40px;"></div>
 
   <div class="max-w-6xl mx-auto px-6 relative z-10">
     
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
       <div class="max-w-xl">
         <div class="flex items-center gap-3 mb-4">
-          <span class="w-8 h-[2px] bg-[#E85A4F]"></span>
-          <span class="font-mono text-xs uppercase tracking-widest text-[#8E8D8A]">Portafolio Seleccionado</span>
         </div>
-        <h2 class="text-5xl md:text-6xl font-bold text-[#1A1A1A] tracking-tighter">
+        <h2 class="text-5xl md:text-6xl font-bold text-[#e1dbc9] tracking-tighter">
           Proyectos<span class="text-[#E85A4F]">.</span>
         </h2>
       </div>
 
-      <div class="flex bg-[#F3F0E8] p-1 rounded-full border border-[#D1CCBD]/50">
+      <div class="flex bg-[#e1dbc9] p-1 rounded-full border border-[#D1CCBD]/50">
         <button 
           onclick="switchTab('profesional')" 
           id="tab-profesional"
@@ -59,10 +56,9 @@ const personalProjects = projects.filter(p => p.category === 'personal');
       </div>
     </div>
 
-    <div class="mt-24 border-t border-[#D1CCBD]/30 pt-12 flex justify-center">
-        <a href="https://github.com/leandruko" target="_blank" class="group flex items-center gap-3 font-mono text-sm font-bold text-[#1A1A1A] hover:text-[#E85A4F] transition-colors">
-          <span class="bg-[#1A1A1A] text-white p-2 group-hover:bg-[#E85A4F] transition-colors">GH</span>
-          EXPLORAR_REPOSITORIO_COMPLETO
+    <div class="mt-12 pt-12 flex justify-center">
+        <a href="https://github.com/leandruko" target="_blank" class="group flex items-center gap-3 font-mono text-2xl font-bold text-[#e1dbc9] hover:text-[#E85A4F] transition-colors">
+          Explorar proyectos
           <span class="transform group-hover:translate-x-2 transition-transform">→</span>
         </a>
     </div>
@@ -76,7 +72,7 @@ const personalProjects = projects.filter(p => p.category === 'personal');
   }
 
   .active-tab {
-    @apply bg-[#1A1A1A] text-[#FCFBF8] shadow-lg shadow-black/10;
+    @apply bg-[#1A1A1A] text-[#e1dbc9] shadow-lg shadow-black/10;
   }
 
   .tab-content {
