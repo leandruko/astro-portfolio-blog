@@ -2,50 +2,57 @@
 // src/components/Navbar.astro
 ---
 
-<header class="hidden md:block fixed top-0 left-0 right-0 z-50 w-full bg-[#e7e2d8] border-b-[3px] border-[#403b33] font-mono shadow-sm">
-  <nav class="flex items-center justify-between px-6 py-2">
+<header class="hidden md:block fixed top-0 left-0 right-0 z-50 w-full bg-[#FCFBF8]/80 backdrop-blur-md border-b border-[#D1CCBD]/40 font-sans transition-all duration-300">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between px-8 py-4">
     
     <div class="flex items-center gap-4">
-        <a href="/" class="flex items-center gap-2 px-3 py-1 bg-[#403b33] text-[#ccff00] border-2 border-black hover:bg-[#e85a4f] transition-colors shadow-[2px_2px_0px_0px_rgba(64,59,51,0.3)]">
-            <span class="font-black tracking-tighter uppercase">lensodev.</span>
-        </a>
-
+      <a href="/" class="group flex items-center gap-2">
+        <span class="w-2 h-2 bg-[#E85A4F] rounded-full group-hover:scale-150 transition-transform"></span>
+        <span class="font-bold text-lg tracking-tighter text-[#1A1A1A] uppercase">lensodev.</span>
+      </a>
     </div>
 
-    <div class="ml-6 flex items-center gap-3">
-      <div class="flex items-center justify-center w-8 h-8 bg-[#403b33] border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] group hover:rotate-12 transition-transform cursor-help">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#ccff00] opacity-80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="4 17 10 11 4 5"></polyline>
-          <line x1="12" y1="19" x2="20" y2="19"></line>
-        </svg>
-      </div>
+    <div class="flex items-center gap-8">
+      <a class="nav-link-desktop" href="#proyectos">Proyectos</a>
+      <a class="nav-link-desktop" href="#contacto">Contacto</a>
+      
+      <div class="h-4 w-[1px] bg-[#D1CCBD]"></div>
 
-      <div class="px-4 py-1 bg-[#d1ccbd] border-2 border-[#403b33] font-black text-xs text-[#403b33] shadow-inner flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-[#e85a4f] animate-pulse"></span>
+      <div class="flex items-center gap-3 text-[#8E8D8A] font-mono text-[11px] font-bold uppercase tracking-widest">
         <span id="desktop-clock">00:00</span>
+        <div class="w-6 h-6 flex items-center justify-center bg-[#F3F0E8] rounded-md border border-[#D1CCBD]/50">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
       </div>
     </div>
-
   </nav>
 </header>
 
-<nav class="md:hidden fixed bottom-4 left-4 right-4 z-50 bg-[#d1ccbd] border-[3px] border-[#403b33] shadow-[6px_6px_0px_0px_rgba(64,59,51,0.2)] p-1">
-  <div class="flex items-center justify-around bg-[#eae7dc] border-2 border-[#403b33]/30 border-dashed py-2 px-1">
-
+<nav class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-sm">
+  <div class="bg-[#1A1A1A]/90 backdrop-blur-xl border border-white/10 rounded-2xl p-2 shadow-2xl flex items-center justify-around">
+    
     <a href="#proyectos" class="nav-item-mobile" data-section="proyectos">
-      <span class="text-xl">📁</span>
-      <span class="text-[9px] font-black uppercase">Proyectos</span>
+      <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+      </svg>
+      <span class="text-[9px] font-bold uppercase tracking-tighter">Proyectos</span>
     </a>
 
+    <div class="w-[1px] h-8 bg-white/10"></div>
+
     <a href="#contacto" class="nav-item-mobile" data-section="contacto">
-      <span class="text-xl">✉️</span>
-      <span class="text-[9px] font-black uppercase">Contacto</span>
+      <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+      <span class="text-[9px] font-bold uppercase tracking-tighter">Contacto</span>
     </a>
 
   </div>
 </nav>
 
-<div class="hidden md:block h-14"></div>
+<div class="hidden md:block h-20"></div>
 
 <script>
   function updateClock() {
@@ -62,6 +69,7 @@
   setInterval(updateClock, 1000);
   updateClock();
 
+  // Lógica de Scroll Activo
   const navItemsMobile = document.querySelectorAll('.nav-item-mobile');
   const navLinksDesktop = document.querySelectorAll('.nav-link-desktop');
 
@@ -98,21 +106,29 @@
 </script>
 
 <style>
+  /* Desktop Links */
   .nav-link-desktop {
-    @apply px-4 py-2 text-xs font-black text-[#403b33]/60 uppercase transition-all border-b-4 border-transparent hover:text-[#e85a4f];
+    @apply text-xs font-bold text-[#8E8D8A] uppercase tracking-widest transition-all duration-300 hover:text-[#1A1A1A] relative py-2;
   }
   .active-desktop {
-    @apply text-[#403b33] border-[#e85a4f] bg-[#403b33]/5;
+    @apply text-[#1A1A1A];
+  }
+  .active-desktop::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-[2px] bg-[#E85A4F];
+    animation: scaleIn 0.3s ease-out;
   }
 
+  /* Mobile Items */
   .nav-item-mobile {
-    @apply flex flex-col items-center justify-center w-20 py-1 border-2 border-transparent transition-all grayscale opacity-60 text-[#403b33];
+    @apply flex flex-col items-center justify-center py-2 px-6 transition-all duration-300 text-white/40;
   }
   .active-mobile {
-    @apply grayscale-0 opacity-100 border-[#403b33] bg-[#d8c3a5]/30 text-[#403b33] shadow-[3px_3px_0px_0px_rgba(64,59,51,0.2)];
+    @apply text-[#E85A4F] scale-110;
   }
 
-  header, nav {
-    -webkit-font-smoothing: none;
+  @keyframes scaleIn {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
   }
 </style>
