@@ -2,7 +2,7 @@
 // src/components/Contact.astro
 ---
 
-<section id="contacto" class="py-32 bg-[#1e1e1e] relative overflow-hidden font-sans">
+<section id="contacto" class="py-10 bg-[#1e1e1e] relative overflow-hidden font-sans">
   
   <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
     <div class="mb-12">
@@ -12,12 +12,12 @@
         <span class="w-12 h-[2px] bg-[#E85A4F]"></span>
       </div>
       
-      <h2 class="text-5xl md:text-7xl font-bold text-[#1A1A1A] tracking-tighter mb-8 leading-tight">
+      <h2 class="text-5xl md:text-7xl font-bold text-[#e1dbc9] mb-8 leading-tight font-sans">
         Hablemos de tu <br/>
         <span class="text-[#E85A4F]">próximo proyecto.</span>
       </h2>
 
-      <p class="text-[#403B33]/70 text-lg md:text-xl max-w-2xl mx-auto mb-16 leading-relaxed">
+      <p class="text-[#e1dbc9]/70 text-lg md:text-xl max-w-2xl mx-auto mb-16 leading-relaxed">
         Actualmente disponible para nuevas vacantes, consultas de análisis de datos o proyectos de desarrollo full-stack.
       </p>
     </div>
@@ -26,7 +26,7 @@
       
       <button
         id="copy-email-btn"
-        class="flex-1 group flex flex-col items-center justify-center p-8 bg-white border border-[#D1CCBD]/50 rounded-2xl shadow-sm hover:shadow-xl hover:shadow-[#403B33]/5 hover:border-[#403B33] transition-all duration-500"
+        class="flex-1 group flex flex-col items-center justify-center p-8 bg-[#1a1a1a] border border-[#D1CCBD]/50 rounded-2xl shadow-sm hover:shadow-xl hover:shadow-[#e1dbc9]/5 hover:border-[#403B33] transition-all duration-500"
       >
         <div class="mb-4 p-3 bg-[#F3F0E8] rounded-full text-[#403B33] group-hover:bg-[#403B33] group-hover:text-white transition-all duration-500">
           <svg id="email-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
@@ -38,7 +38,7 @@
         </div>
 
         <span class="text-[10px] text-[#8E8D8A] uppercase font-bold tracking-widest mb-1">Click para copiar</span>
-        <span id="email-text" class="text-[#1A1A1A] font-mono text-base md:text-lg font-bold truncate w-full">
+        <span id="email-text" class="text-[#e1dbc9] font-mono text-base md:text-lg font-bold truncate w-full">
           leasotompriv@gmail.com
         </span>
       </button>
@@ -47,7 +47,7 @@
         href="https://www.linkedin.com/in/leandro-soto-miranda-767a72264/"
         target="_blank"
         rel="noopener noreferrer"
-        class="flex-1 group flex flex-col items-center justify-center p-8 bg-white border border-[#D1CCBD]/50 rounded-2xl shadow-sm hover:shadow-xl hover:shadow-[#403B33]/5 hover:border-[#0077B5] transition-all duration-500"
+        class="flex-1 group flex flex-col items-center justify-center p-8 bg-[#1a1a1a] border border-[#D1CCBD]/50 rounded-2xl shadow-sm hover:shadow-xl hover:shadow-[#e1dbc9]/5 hover:border-[#0077B5] transition-all duration-500"
       >
         <div class="mb-4 p-3 bg-[#F3F0E8] rounded-full text-[#403B33] group-hover:bg-[#0077B5] group-hover:text-white transition-all duration-500">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -56,7 +56,7 @@
         </div>
 
         <span class="text-[10px] text-[#8E8D8A] uppercase font-bold tracking-widest mb-1">Red Profesional</span>
-        <span class="text-[#1A1A1A] font-sans text-base md:text-lg font-bold">linkedin.com/in/leandro</span>
+        <span class="text-[#e1dbc9] font-mono text-base md:text-lg font-bold">linkedin.com/in/leandro</span>
       </a>
     </div>
   </div>
@@ -83,7 +83,7 @@
           emailIcon.classList.remove("hidden");
           checkIcon.classList.add("hidden");
           emailText.textContent = email;
-          emailText.style.color = "#1A1A1A";
+          emailText.style.color = "#e1dbc9";
         }, 2000);
       } catch (err) {
         console.error("Error:", err);
