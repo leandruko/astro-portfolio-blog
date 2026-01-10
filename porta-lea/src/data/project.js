@@ -1,7 +1,16 @@
 // src/data/projects.js
 
 export const projects = [
-    {
+     {
+    id: "brosbusters",
+    title: "BrosBusters.cl",
+    category: "profesional", 
+    description: "Landing page para Brosbusters podcast",
+    image: "/images/brosbusters.png",
+    technologies: ["Astro", "Tailwind", "CSS", "JS"],
+    demoUrl: "https://www.brosbusters.cl/",
+  },   
+  {
     id: "modo-piola",
     title: "Modo Piola Hub",
     category: "profesional", 
