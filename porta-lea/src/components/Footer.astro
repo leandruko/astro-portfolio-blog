@@ -1,15 +1,47 @@
 ---
-const footerData = {
-  year: new Date().getFullYear(),
-};
+// src/components/Footer.astro
+const year = new Date().getFullYear();
 ---
-<footer class="text-[#e1dbc9] py-12 mt-30 bg-[#1e1e1e] mx-auto text-center font-bold" id="footer" >
-  <div class="container mx-auto">
 
+<footer class="bg-ink text-paper border-t-4 border-ink pt-12 pb-6 px-4 md:px-8 font-mono overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        
+        <div class="col-span-1 md:col-span-2 flex flex-col justify-between">
+             <div>
+                <h3 class="text-4xl font-serif font-bold mb-2">TU_NOMBRE.DEV</h3>
+                <p class="text-sm opacity-60 max-w-xs">
+                    Desarrollando soluciones web y analizando datos desde algún lugar del mundo.
+                </p>
+            </div>
+            <pre class="text-[10px] leading-3 mt-6 opacity-30 select-none text-frog-green">
+   (o)_(o)
+   ( . . )   CODE
+    ( - )    FROG
+  _ | | | _
+            </pre>
+        </div>
+
+        <div class="flex flex-col gap-2">
+            <h4 class="uppercase tracking-widest text-xs opacity-50 mb-2 border-b border-paper/20 pb-2">Mapa del Sitio</h4>
+            <a href="#" class="hover:text-frog-green transition-colors">Inicio</a>
+            <a href="#proyectos" class="hover:text-frog-green transition-colors">Proyectos</a>
+            <a href="#contact" class="hover:text-frog-green transition-colors">Contacto</a>
+            <a href="/cv.pdf" class="hover:text-frog-green transition-colors">[Descargar CV]</a>
+        </div>
+
+        <div class="flex flex-col gap-2">
+            <h4 class="uppercase tracking-widest text-xs opacity-50 mb-2 border-b border-paper/20 pb-2">Especificaciones</h4>
+            <span class="text-sm">Built with Astro 5.0</span>
+            <span class="text-sm">Styled with Tailwind</span>
+            <span class="text-sm">Deployed on Vercel</span>
+        </div>
     </div>
 
-    <p class="text-sm font-mono">
-      Developed by lea 2024 - {footerData.year}
-      <span class="text-[#e85a4f]"> ;)</span>
-    </p>
+    <div class="border-t border-paper/20 pt-6 flex flex-col md:flex-row justify-between items-center text-xs opacity-50 uppercase tracking-widest">
+        <span>© {year} Todos los derechos reservados.</span>
+        
+        <div class="flex items-center gap-4 mt-2 md:mt-0">
+             <span>Hecho con cafeina y ❤️</span>
+             <span class="text-lg">あ</span> </div>
+    </div>
 </footer>

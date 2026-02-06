@@ -1,17 +1,68 @@
-<section class="py-20 bg-[#1e1e1e] text-[#1a1a1a] px-6">
-  <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+<section class="relative w-full min-h-screen bg-paper text-ink p-2 md:p-4 flex flex-col overflow-hidden">
     
-    <div class="lg:col-span-2">
-      <div class="flex items-center gap-3 mb-6">
-        <span class="w-12 h-[1px] bg-[#e1dbc9]"></span>
-        <span class="font-mono text-xs uppercase tracking-[0.3em] text-[#8e8d8a]">Disponibilidad Inmediata</span>
-      </div>
-      <h1 class="text-6xl font-bold tracking-tight mb-6 font-mono text-[#e1dbc9]">
-        Leandro Soto Miranda<span class="text-[#e85a4f]">.</span>
-      </h1>
-      <p class="text-xl text-[#e1dbc9] leading-relaxed max-w-xl opacity-80">
-        Ingeniero de Datos y Desarrollador Web enfocado en crear soluciones eficientes, escalables y visualmente equilibradas.
-      </p>
-    </div>
-  </div>
+    <div class="absolute inset-0 opacity-15 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/rough-cloth.png')]"></div>
+
+    <main class="flex-1 border-4 border-ink relative z-10 flex flex-col md:grid md:grid-cols-12 md:grid-rows-[2fr_1fr]">
+        
+        <div class="col-span-8 row-span-1 bg-paper p-6 md:p-12 border-b-4 md:border-r-4 border-ink flex items-end relative overflow-hidden">
+            <span class="absolute -top-10 -left-10 text-[12rem] text-ink opacity-[0.03] font-serif select-none pointer-events-none">改善</span>
+            
+            <h1 class="text-6xl font-serif font-black leading-[0.9] uppercase tracking-tighter">
+                <span class="block  md:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-ink to-zinc-700">Desarrollo</span>
+                <span class="block md:text-8xl text-frog-green px-2 -ml-2 my-2 italic bg-ink/5 w-fit transform -skew-x-6">Web & Datos</span>
+                <span class="block text-2xl md:text-3xl font-mono mt-4 tracking-normal text-ink/70">-> Leandro Soto Miranda</span>
+            </h1>
+        </div>
+
+        <div class="col-span-4 row-span-2 bg-frog-green border-b-4 md:border-b-0 border-ink relative flex items-center justify-center overflow-hidden p-4">
+            <div class="absolute inset-0 opacity-20 mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/seigaiha.png')]"></div>
+            
+            <div class="absolute w-64 h-64 md:w-96 md:h-96 bg-paper rounded-full mix-blend-soft-light opacity-30 blur-xl"></div>
+
+            <img 
+                src="/images/ranita.webp" 
+                alt="ranita" 
+                class="relative z-10 w-full max-w-sm h-auto object-contain grayscale contrast-125 mix-blend-multiply hover:mix-blend-normal hover:grayscale-0 transition-all duration-200"
+            />
+            
+            <div class="absolute top-4 right-4 border-2 border-ink p-2 bg-paper text-ink font-mono text-xs writing-vertical-rl uppercase tracking-widest shadow-[4px_4px_0px_#18181B]">
+                
+こんにちは </div>
+        </div>
+
+        <div class="col-span-5 row-span-1 bg-paper p-8 md:border-r-4 border-ink flex flex-col justify-center">
+            <p class="font-mono text-lg md:text-xl mb-8 border-l-4 border-frog-green pl-4 text-ink/80">
+                /// Minimalismo brutalista aplicado a soluciones de código complejas. Especializado en el stack de Astro y análisis de datos.
+            </p>
+             <div class="flex flex-wrap gap-4 font-mono font-bold">
+                <a href="#proyectos" class="px-6 py-3 bg-ink text-paper border-2 border-ink hover:bg-stamp-red hover:border-stamp-red transition-colors">
+                    VER PROYECTOS_
+                </a>
+                <a href="#contact" class="px-6 py-3 border-2 border-ink hover:bg-frog-green hover:text-paper transition-colors">
+                    CONTACTO //
+                </a>
+            </div>
+        </div>
+
+        <div class="col-span-3 row-span-1 bg-paper p-4 border-t-4 md:border-t-0 border-ink flex items-center justify-between relative overflow-hidden group">
+             <div class="absolute inset-0 bg-frog-green translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-0"></div>
+             
+             <div class="relative z-10 flex flex-col font-mono text-sm group-hover:text-paper transition-colors">
+                 <span class="uppercase opacity-50">Ubicación</span>
+                 <span class="text-lg font-bold">LATAM</span>
+             </div>
+             
+             <div class="relative z-10 w-16 h-16 border-2 border-stamp-red rounded-sm flex items-center justify-center text-stamp-red font-serif font-bold rotate-12 group-hover:border-paper group-hover:text-paper transition-all">
+                 <span class="writing-vertical-rl text-sm leading-none">合格</span> </div>
+        </div>
+
+    </main>
 </section>
+
+<style>
+    /* Necesario para el texto vertical japonés */
+    .writing-vertical-rl {
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+    }
+</style>

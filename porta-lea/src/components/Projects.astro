@@ -1,101 +1,132 @@
 ---
 // src/components/Projects.astro
-import { projects } from '../data/project';
-import ProjectCard from './ProjectCard.astro'; 
 
-const profProjects = projects.filter(p => p.category === 'profesional');
-const personalProjects = projects.filter(p => p.category === 'personal');
+// DATOS DE EJEMPLO (Esto podrías moverlo a un archivo JSON o .ts separado)
+const webProjects = [
+  {
+    title: "E-COMMERCE ARTESANAL",
+    desc: "Plataforma de venta con pasarela de pagos custom y panel de administración.",
+    tags: ["Astro", "React", "Stripe"],
+    img: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=800&auto=format&fit=crop", // Placeholder
+    link: "#"
+  },
+  {
+    title: "DASHBOARD CORPORATIVO",
+    desc: "Interfaz de gestión de usuarios con autenticación y gráficos en tiempo real.",
+    tags: ["Next.js", "Tailwind", "Supabase"],
+    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop", // Placeholder
+    link: "#"
+  }
+];
+
+const dataProjects = [
+  {
+    title: "PREDICCIÓN DE VENTAS CON PYTHON",
+    desc: "Modelo de ML para predecir stock necesario basado en históricos de 5 años.",
+    metrics: "Accuracy: 94% | Pandas, Scikit-learn",
+    link: "#"
+  },
+  {
+    title: "ANÁLISIS DE SENTIMIENTO TWITTER",
+    desc: "NLP para categorizar opiniones sobre productos tech en tiempo real.",
+    metrics: "Data Visualization | Matplotlib, NLTK",
+    link: "#"
+  }
+];
 ---
 
-<section id="proyectos" class="py-24 bg-[#1e1e1e] relative overflow-hidden">
-
-  <div class="max-w-6xl mx-auto px-6 relative z-10">
+<section id="proyectos" class="w-full bg-paper text-ink py-20 px-4 md:px-8 border-b-4 border-ink relative">
     
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-      <div class="max-w-xl">
-        <div class="flex items-center gap-3 mb-4">
-        </div>
-        <h2 class="text-5xl md:text-6xl font-bold text-[#e1dbc9]">
-          Proyectos<span class="text-[#E85A4F]">.</span>
+    <div class="max-w-7xl mx-auto mb-16 border-b-4 border-ink pb-4">
+        <h2 class="text-5xl md:text-7xl font-serif font-black uppercase tracking-tighter">
+            SELECCIÓN DE <br/>
+            <span class="text-frog-green">TRABAJOS</span>
         </h2>
-      </div>
-
-      <div class="flex bg-[#e1dbc9] p-1 rounded-full border border-[#D1CCBD]/50">
-        <button 
-          onclick="switchTab('profesional')" 
-          id="tab-profesional"
-          class="tab-btn active-tab"
-        >
-          Profesional
-        </button>
-        <button 
-          onclick="switchTab('personal')" 
-          id="tab-personal"
-          class="tab-btn"
-        >
-          Laboratorio
-        </button>
-      </div>
     </div>
 
-    <div class="relative min-h-[600px]">
-      <div id="content-profesional" class="tab-content transition-all duration-500">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {profProjects.map(project => (
-            <ProjectCard project={project} />
-          ))}
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-0">
+        
+        <div class="md:pr-8 md:border-r-4 border-ink">
+            <div class="flex items-center gap-4 mb-8">
+                <span class="text-4xl">🌐</span>
+                <h3 class="font-mono text-2xl font-bold bg-ink text-paper px-2 inline-block">
+                    DESARROLLO_WEB
+                </h3>
+            </div>
+
+            <div class="space-y-12">
+                {webProjects.map((project, index) => (
+                    <article class="group relative">
+                        <div class="border-4 border-ink bg-paper relative z-10 transition-transform duration-300 group-hover:-translate-y-2 group-hover:-translate-x-2">
+                            
+                            <div class="w-full h-48 overflow-hidden border-b-4 border-ink relative">
+                                <div class="absolute inset-0 bg-frog-green mix-blend-multiply opacity-20 group-hover:opacity-0 transition-opacity z-10 pointer-events-none"></div>
+                                <img 
+                                    src={project.img} 
+                                    alt={project.title} 
+                                    class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-500"
+                                />
+                            </div>
+
+                            <div class="p-6">
+                                <h4 class="font-serif text-2xl font-bold mb-2 leading-none">{project.title}</h4>
+                                <p class="font-mono text-sm text-ink/70 mb-4">{project.desc}</p>
+                                
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    {project.tags.map(tag => (
+                                        <span class="text-xs font-mono border border-ink px-1 rounded-sm uppercase">{tag}</span>
+                                    ))}
+                                </div>
+
+                                <a href={project.link} class="inline-block text-sm font-bold border-b-2 border-stamp-red text-stamp-red hover:bg-stamp-red hover:text-paper transition-colors">
+                                    VER PROYECTO ->
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="absolute top-0 left-0 w-full h-full bg-ink z-0 translate-x-0 translate-y-0"></div>
+                    </article>
+                ))}
+            </div>
         </div>
-      </div>
 
-      <div id="content-personal" class="tab-content hidden transition-all duration-500">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {personalProjects.map(project => (
-            <ProjectCard project={project} />
-          ))}
+        <div class="md:pl-8 pt-12 md:pt-0 border-t-4 md:border-t-0 border-ink">
+             <div class="flex items-center gap-4 mb-8">
+                <span class="text-4xl">📊</span>
+                <h3 class="font-mono text-2xl font-bold bg-frog-green text-paper px-2 inline-block">
+                    DATA_SCIENCE
+                </h3>
+            </div>
+
+            <div class="space-y-6">
+                {dataProjects.map((project) => (
+                    <article class="relative block group">
+                        <div class="border-2 border-ink p-6 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] hover:bg-white transition-colors">
+                            
+                            <div class="flex justify-between items-start mb-4 border-b-2 border-ink/20 pb-2">
+                                <h4 class="font-serif text-xl font-bold">{project.title}</h4>
+                                <span class="text-2xl text-frog-green">★</span>
+                            </div>
+
+                            <p class="font-mono text-sm mb-4">{project.desc}</p>
+                            
+                            <div class="bg-ink/5 p-2 border-l-4 border-frog-green mb-4">
+                                <p class="font-mono text-xs font-bold text-ink/80">{project.metrics}</p>
+                            </div>
+
+                            <a href={project.link} class="text-xs font-mono uppercase tracking-widest hover:underline group-hover:text-frog-green">
+                                [Explorar Notebook]
+                            </a>
+                        </div>
+                    </article>
+                ))}
+                
+                <div class="mt-12 p-4 border border-dashed border-ink opacity-50 font-mono text-xs text-center hidden md:block">
+                    // ANALYTICS STATUS: READY <br/>
+                    [||||||||||||||||||||] 100%
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
-    <div class=" pt-12 flex justify-center">
-        <a href="https://github.com/leandruko" target="_blank" class="group flex items-center gap-3 font-mono text-2xl font-bold text-[#e1dbc9] hover:text-green-400 transition-colors">
-          Explorar proyectos en GitHub
-          <span class="transform group-hover:translate-x-2 transition-transform">→</span>
-        </a>
     </div>
-  </div>
 </section>
-
-<style>
-  /* Tabs con diseño de "Píldora" moderna */
-  .tab-btn {
-    @apply px-8 py-2.5 rounded-full font-mono text-[10px] uppercase font-bold tracking-widest transition-all duration-300 text-[#8E8D8A];
-  }
-
-  .active-tab {
-    @apply bg-[#1A1A1A] text-[#e1dbc9] shadow-lg shadow-black/10;
-  }
-
-  .tab-content {
-    animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  @keyframes slideUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-</style>
-
-<script is:inline>
-  function switchTab(category) {
-    document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active-tab'));
-
-    const content = document.getElementById(`content-${category}`);
-    const btn = document.getElementById(`tab-${category}`);
-    
-    if(content && btn) {
-      content.classList.remove('hidden');
-      btn.classList.add('active-tab');
-    }
-  }
-</script>
