@@ -1,0 +1,71 @@
+---
+// src/components/Stack.astro
+
+const technologies = [
+  {
+    category: "CORE / LENGUAJES",
+    items: ["JavaScript ", "Python", "SQL", "HTML5/CSS3"]
+  },
+  {
+    category: "FRAMEWORKS & LIBS",
+    items: ["Astro", "Tailwind CSS", "Node.js"]
+  },
+  {
+    category: "DATA & TOOLS",
+    items: ["Pandas", "NumPy", "Git/GitHub", "Docker", "Supabase"]
+  }
+];
+
+---
+
+<section class="w-full bg-paper text-ink border-b-4 border-ink overflow-hidden flex flex-col">
+    
+
+    <div class="max-w-7xl mx-auto w-full px-4 md:px-8 py-20">
+        
+        <div class="flex flex-col md:flex-row items-start md:items-end justify-between mb-16 gap-6">
+            <h2 class="text-5xl md:text-7xl font-serif font-black uppercase leading-[0.9]">
+                ARSENAL <br/> <span class="text-frog-green">TÉCNICO</span>
+            </h2>
+            
+            <div class="font-mono text-xs border border-ink p-2 opacity-70">
+                <p>STATUS: OPERATIONAL</p>
+                <p>LAST UPDATE: {new Date().toLocaleDateString()}</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {technologies.map((group, index) => (
+                <div class="flex flex-col">
+                    <div class="border-b-4 border-ink pb-2 mb-6 flex justify-between items-end">
+                        <h3 class="font-mono font-bold text-xl uppercase">{group.category}</h3>
+                        <span class="text-xs font-mono bg-ink text-paper px-1">0{index + 1}</span>
+                    </div>
+
+                    <ul class="space-y-3">
+                        {group.items.map((tech) => (
+                            <li class="group cursor-default">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-4 h-4 border-2 border-ink flex items-center justify-center group-hover:bg-frog-green transition-colors">
+                                        <div class="w-2 h-2 bg-ink opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                    </div>
+                                    
+                                    <span class="font-serif text-lg md:text-xl font-bold border-b-2 border-transparent group-hover:border-frog-green group-hover:pl-2 transition-all duration-300">
+                                        {tech}
+                                    </span>
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
+        </div>
+
+        <div class="mt-20 border-t-2 border-dashed border-ink pt-4 font-mono text-xs text-ink/50 flex justify-between uppercase">
+            <span>/// System_Check_Complete</span>
+            <span class="hidden md:inline">Memory_Alloc: 100%</span>
+            <span>Ready_to_Deploy</span>
+        </div>
+
+    </div>
+</section>

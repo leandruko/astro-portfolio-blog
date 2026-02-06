@@ -1,36 +1,65 @@
 ---
 // src/components/Projects.astro
-
-// DATOS DE EJEMPLO (Esto podrías moverlo a un archivo JSON o .ts separado)
 const webProjects = [
   {
-    title: "E-COMMERCE ARTESANAL",
-    desc: "Plataforma de venta con pasarela de pagos custom y panel de administración.",
-    tags: ["Astro", "React", "Stripe"],
-    img: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=800&auto=format&fit=crop", // Placeholder
-    link: "#"
+    title: "Brosbusters",
+    desc: "Landing page para Brosbusters podcast.",
+    tags: ["Astro", "Tailwind", "JS"],
+    img: "/images/brosbusters.png",
+    link: "https://www.brosbusters.cl/"
   },
   {
-    title: "DASHBOARD CORPORATIVO",
-    desc: "Interfaz de gestión de usuarios con autenticación y gráficos en tiempo real.",
-    tags: ["Next.js", "Tailwind", "Supabase"],
-    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop", // Placeholder
-    link: "#"
+    title: "Modo Piola Hub",
+    desc: "Landing page con el fin de mostrar redes sociales.",
+    tags: ["Astro", "Tailwind", "JS"],
+    img: "/images/modopiola.png", 
+    link: "https://www.modopiola.cl/"
+  },
+    {
+    title: "Cimasur",
+    desc: "Sistema creado con el fin de registrar informacion de logista en la empresa.",
+    tags: ["DJANGO", "JS", "PYTHON", "POSTGRES"],
+    img: "/images/cimasur.png", // Placeholder
   }
 ];
 
 const dataProjects = [
   {
-    title: "PREDICCIÓN DE VENTAS CON PYTHON",
+    title: "Análisis de sismos en Chile 2000-2024",
     desc: "Modelo de ML para predecir stock necesario basado en históricos de 5 años.",
-    metrics: "Accuracy: 94% | Pandas, Scikit-learn",
-    link: "#"
+        technologies: [
+      "Python",
+      "Pandas",
+      "Seaborn",
+      "Mathplotlib",
+      "Scikit-learn",
+    ],
+    link: "https://github.com/leandruko/sismos-Chile"
   },
   {
-    title: "ANÁLISIS DE SENTIMIENTO TWITTER",
-    desc: "NLP para categorizar opiniones sobre productos tech en tiempo real.",
-    metrics: "Data Visualization | Matplotlib, NLTK",
-    link: "#"
+    title: "Morosidad sistema financiero",
+    desc: "NAnálisis de datos para predecir si alguien será deudor.",
+        technologies: [
+      "Python",
+      "Pandas",
+      "Seaborn",
+      "Mathplotlib",
+      "Scikit-learn",
+      "Jupyter",
+    ],
+    link: "https://github.com/leandruko/Morosidad-Sistema-Financiero"
+  },
+    {
+    title: "Cáncer de pulmón",
+    desc: "Desarrollado con el objetivo de predecir si una persona tiene cáncer al pulmón.",
+    technologies: [
+      "Python",
+      "Pandas",
+      "Seaborn",
+      "Mathplotlib",
+      "Scikit-learn",
+    ],
+    link: "https://github.com/leandruko/lung-cancer"
   }
 ];
 ---
@@ -48,7 +77,6 @@ const dataProjects = [
         
         <div class="md:pr-8 md:border-r-4 border-ink">
             <div class="flex items-center gap-4 mb-8">
-                <span class="text-4xl">🌐</span>
                 <h3 class="font-mono text-2xl font-bold bg-ink text-paper px-2 inline-block">
                     DESARROLLO_WEB
                 </h3>
@@ -78,7 +106,7 @@ const dataProjects = [
                                     ))}
                                 </div>
 
-                                <a href={project.link} class="inline-block text-sm font-bold border-b-2 border-stamp-red text-stamp-red hover:bg-stamp-red hover:text-paper transition-colors">
+                                <a href={project.link} target="_blank" class="inline-block text-sm font-bold border-b-2 border-stamp-red text-stamp-red hover:bg-stamp-red hover:text-paper transition-colors">
                                     VER PROYECTO ->
                                 </a>
                             </div>
@@ -92,7 +120,6 @@ const dataProjects = [
 
         <div class="md:pl-8 pt-12 md:pt-0 border-t-4 md:border-t-0 border-ink">
              <div class="flex items-center gap-4 mb-8">
-                <span class="text-4xl">📊</span>
                 <h3 class="font-mono text-2xl font-bold bg-frog-green text-paper px-2 inline-block">
                     DATA_SCIENCE
                 </h3>
@@ -111,10 +138,12 @@ const dataProjects = [
                             <p class="font-mono text-sm mb-4">{project.desc}</p>
                             
                             <div class="bg-ink/5 p-2 border-l-4 border-frog-green mb-4">
-                                <p class="font-mono text-xs font-bold text-ink/80">{project.metrics}</p>
+                            {project.technologies.map(tag => (
+                                        <span class="text-xs font-mono border border-ink px-1 rounded-sm uppercase">{tag}</span>
+                                    ))}
                             </div>
 
-                            <a href={project.link} class="text-xs font-mono uppercase tracking-widest hover:underline group-hover:text-frog-green">
+                            <a href={project.link} target="_blank" class="text-xs font-mono uppercase tracking-widest hover:underline group-hover:text-frog-green">
                                 [Explorar Notebook]
                             </a>
                         </div>
