@@ -1,66 +1,111 @@
 ---
 // src/components/Contact.astro
+const email = "leasotompriv@gmail.com"; // CAMBIA ESTO POR TU CORREO REAL
 ---
 
 <section id="contact" class="w-full bg-paper text-ink border-b-4 border-ink py-20 px-4 relative overflow-hidden">
     
-    <div class="absolute top-0 left-0 w-full h-4 bg-[repeating-linear-gradient(45deg,#C84C34,#C84C34_20px,#F4F1EA_20px,#F4F1EA_40px,#18181B_40px,#18181B_60px,#F4F1EA_60px,#F4F1EA_80px)] opacity-80"></div>
+    <div class="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')]"></div>
 
-    <div class="max-w-5xl mx-auto mt-10 grid grid-cols-1 md:grid-cols-2 gap-12">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         
-        <div class="space-y-8">
-            <h2 class="text-6xl md:text-7xl font-serif font-black uppercase leading-none">
-                MANDA <br/> <span class="text-stamp-red">SEÑAL</span>
+        <div class="space-y-8 relative z-10">
+            <div class="inline-block bg-ink text-paper px-3 py-1 font-mono text-xs uppercase tracking-widest mb-4 rotate-[-2deg]">
+                /// Comunicate conmigo
+            </div>
+
+            <h2 class="text-5xl md:text-7xl font-serif font-black uppercase leading-[0.9]">
+                ESTAMOS EN <br/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-frog-green to-ink">CONTACTO</span>
             </h2>
             
-            <p class="font-mono text-lg border-l-4 border-frog-green pl-4">
-                ¿Tienes una idea, un proyecto de datos o simplemente quieres saludar? La línea está abierta.
+            <p class="font-mono text-lg border-l-4 border-frog-green pl-4 text-ink/80 max-w-md">
+             Si quieres hablar de código, datos o proyectos, copia mi dirección y escríbeme.
             </p>
 
-            <div class="grid grid-cols-2 gap-4 mt-8">
-                <a href="https://github.com/tuusuario" target="_blank" class="group relative block h-32 border-2 border-ink bg-white p-4 hover:bg-frog-green transition-colors overflow-hidden">
-                    <div class="absolute top-2 left-2 text-xs font-mono uppercase text-ink/50 group-hover:text-paper">Ticket No. 01</div>
-                    <div class="flex flex-col items-center justify-center h-full gap-2">
-                        <svg class="w-10 h-10 group-hover:fill-paper" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        <span class="font-serif font-bold text-xl group-hover:text-paper">GITHUB</span>
+            <div class="flex flex-col gap-4 max-w-md">
+                <a href="https://github.com/leandruko" target="_blank" class="group flex items-center justify-between border-2 border-ink bg-white p-4 hover:bg-ink hover:text-paper transition-all shadow-[4px_4px_0px_#18181B] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]">
+                    <div class="flex items-center gap-4">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        <span class="font-mono font-bold">/GITHUB</span>
                     </div>
+                    <span class="text-xs font-mono opacity-50">CODE_REPO</span>
                 </a>
-
-                <a href="https://linkedin.com/in/tuusuario" target="_blank" class="group relative block h-32 border-2 border-ink bg-white p-4 hover:bg-[#0077b5] transition-colors overflow-hidden">
-                    <div class="absolute top-2 left-2 text-xs font-mono uppercase text-ink/50 group-hover:text-paper">Ticket No. 02</div>
-                    <div class="flex flex-col items-center justify-center h-full gap-2">
-                         <svg class="w-10 h-10 group-hover:fill-paper" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                        <span class="font-serif font-bold text-xl group-hover:text-paper">LINKEDIN</span>
+                
+                <a href="https://linkedin.com/in/leasotomdev" target="_blank" class="group flex items-center justify-between border-2 border-ink bg-white p-4 hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] transition-all shadow-[4px_4px_0px_#18181B] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]">
+                     <div class="flex items-center gap-4">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        <span class="font-mono font-bold">/LINKEDIN</span>
                     </div>
+                    <span class="text-xs font-mono opacity-50">PRO_NET</span>
                 </a>
             </div>
         </div>
 
-        <div class="border-4 border-ink p-6 md:p-8 bg-paper relative shadow-[10px_10px_0px_rgba(24,24,27,0.2)]">
-            <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-ink text-paper px-4 py-1 font-mono text-sm uppercase tracking-widest rotate-1">
-                Formulario de Transmisión
-            </div>
+        <div class="relative w-full flex justify-center md:justify-end group">
+            
+            <div class="absolute inset-0 bg-ink transform rotate-3 rounded-sm border-2 border-ink md:w-full md:h-full z-0"></div>
 
-            <form class="space-y-6 mt-4">
-                <div class="flex flex-col gap-2">
-                    <label class="font-mono text-xs uppercase font-bold text-ink/60">Identificación (Nombre)</label>
-                    <input type="text" class="w-full bg-transparent border-2 border-ink p-3 font-serif focus:bg-ink focus:text-paper focus:outline-none transition-colors placeholder:text-ink/30" placeholder="Escribe tu nombre..." />
+            <div class="relative z-10 w-full bg-paper border-4 border-ink p-8 flex flex-col items-center text-center gap-6 shadow-xl transition-transform duration-300 group-hover:-translate-y-1">
+                
+                <div class="absolute top-0 left-0 w-full h-2 bg-[repeating-linear-gradient(45deg,#C84C34,#C84C34_10px,#F4F1EA_10px,#F4F1EA_20px,#18181B_20px,#18181B_30px,#F4F1EA_30px,#F4F1EA_40px)]"></div>
+                <div class="absolute bottom-0 left-0 w-full h-2 bg-[repeating-linear-gradient(45deg,#18181B,#18181B_10px,#F4F1EA_10px,#F4F1EA_20px,#C84C34_20px,#C84C34_30px,#F4F1EA_30px,#F4F1EA_40px)]"></div>
+
+                <div class="w-16 h-16 rounded-full border-2 border-ink flex items-center justify-center bg-frog-green text-paper mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8">
+                        <path stroke-linecap="square" stroke-linejoin="miter" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5" />
+                    </svg>
                 </div>
 
-                <div class="flex flex-col gap-2">
-                    <label class="font-mono text-xs uppercase font-bold text-ink/60">Frecuencia (Email)</label>
-                    <input type="email" class="w-full bg-transparent border-2 border-ink p-3 font-mono focus:bg-ink focus:text-paper focus:outline-none transition-colors placeholder:text-ink/30" placeholder="correo@ejemplo.com" />
+                <div class="space-y-2 w-full">
+                    <h3 class="font-mono text-sm uppercase text-ink/60 tracking-widest">Correo Electrónico</h3>
+                    <p id="email-text" class="font-serif text-xl md:text-3xl font-bold text-ink break-all select-all">
+                        {email}
+                    </p>
                 </div>
 
-                <div class="flex flex-col gap-2">
-                    <label class="font-mono text-xs uppercase font-bold text-ink/60">Mensaje Codificado</label>
-                    <textarea rows="4" class="w-full bg-transparent border-2 border-ink p-3 font-serif focus:bg-ink focus:text-paper focus:outline-none transition-colors placeholder:text-ink/30 resize-none" placeholder="Escribe tu mensaje aquí..."></textarea>
-                </div>
-
-                <button type="submit" class="w-full bg-stamp-red text-paper font-bold font-mono py-4 border-2 border-transparent hover:bg-paper hover:text-stamp-red hover:border-stamp-red transition-all uppercase tracking-widest shadow-md active:shadow-none active:translate-y-1">
-                    ENVIAR [SEND]
+                <button 
+                    id="copy-btn" 
+                    data-email={email}
+                    class="w-full md:w-auto px-8 py-4 bg-stamp-red text-paper font-mono font-bold border-2 border-ink hover:bg-paper hover:text-stamp-red hover:border-stamp-red transition-all uppercase shadow-[4px_4px_0px_#18181B] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] cursor-pointer"
+                >
+                    COPIAR EMAIL :)
                 </button>
-            </form>
+            </div>
         </div>
+
     </div>
 </section>
+
+<script>
+    const copyBtn = document.getElementById('copy-btn');
+    const emailText = document.getElementById('email-text');
+
+    if (copyBtn) {
+        copyBtn.addEventListener('click', async () => {
+            const email = copyBtn.dataset.email;
+            
+            try {
+                await navigator.clipboard.writeText(email);
+                
+                // Feedback visual: Cambiar texto y color
+                const originalText = copyBtn.innerText;
+                const originalBg = copyBtn.classList.contains('bg-stamp-red');
+                
+                copyBtn.innerText = "¡COPIADO!";
+                copyBtn.classList.remove('bg-stamp-red', 'text-paper');
+                copyBtn.classList.add('bg-frog-green', 'text-paper', 'border-frog-green');
+
+                // Restaurar después de 2 segundos
+                setTimeout(() => {
+                    copyBtn.innerText = originalText;
+                    copyBtn.classList.remove('bg-frog-green', 'border-frog-green');
+                    copyBtn.classList.add('bg-stamp-red');
+                }, 2000);
+
+            } catch (err) {
+                console.error('Error al copiar: ', err);
+                copyBtn.innerText = "ERROR";
+            }
+        });
+    }
+</script>
