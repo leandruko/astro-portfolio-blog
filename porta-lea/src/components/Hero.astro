@@ -1,33 +1,49 @@
-<section class="relative w-full min-h-screen bg-paper text-ink p-2 md:p-4 flex flex-col overflow-hidden">
+---
+// src/components/Hero.astro
+import { Image } from 'astro:assets';
+// Si tienes la imagen en src/assets/ usa la importación de arriba.
+// Si está en public/, usa el string directo como tenías, pero recomiendo Astro Assets.
+---
+
+<section class="relative w-full min-h-dvh bg-paper text-ink p-2 md:p-4 flex flex-col overflow-hidden">
     
-    <div class="absolute inset-0 opacity-15 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/rough-cloth.png')]"></div>
+    <div class="absolute inset-0 opacity-40 pointer-events-none mix-blend-multiply" 
+         style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.15%22/%3E%3C/svg%3E');">
+    </div>
 
     <main class="flex-1 border-4 border-ink relative z-10 flex flex-col md:grid md:grid-cols-12 md:grid-rows-[2fr_1fr]">
         
         <div class="col-span-8 row-span-1 bg-paper p-6 md:p-12 border-b-4 md:border-r-4 border-ink flex items-end relative overflow-hidden">
-            <span class="absolute -top-10 -left-10 text-[12rem] text-ink opacity-[0.03] font-serif select-none pointer-events-none">改善</span>
+            <span class="absolute -top-10 -left-10 text-[8rem] md:text-[12rem] text-ink opacity-[0.03] font-serif select-none pointer-events-none leading-none">改善</span>
             
-            <h1 class="text-5xl font-serif font-black leading-[0.9] uppercase tracking-tighter">
+            <h1 class="relative z-10 text-5xl font-serif font-black leading-[0.9] uppercase tracking-tighter">
                 <span class="block md:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-ink to-zinc-700">Desarrollo</span>
-                <span class="block md:text-8xl text-frog-green px-2 -ml-2 my-2 italic bg-ink/5 w-fit transform -skew-x-6">Web & Datos</span>
-                <span class="block text-2xl md:text-3xl font-mono mt-4 tracking-normal text-ink/70">-> Leandro Soto Miranda</span>
+                <span class="block md:text-8xl text-frog-green px-2 -ml-2 my-2 italic bg-ink/5 w-fit transform -skew-x-6 will-change-transform">Web & Datos</span>
+                <span class="block text-xl md:text-3xl font-mono mt-4 tracking-normal text-ink/70">-> Leandro Soto Miranda</span>
             </h1>
         </div>
 
         <div class="col-span-4 row-span-2 bg-frog-green border-b-4 md:border-b-0 border-ink relative flex items-center justify-center overflow-hidden p-4">
-            <div class="absolute inset-0 opacity-20 mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/seigaiha.png')]"></div>
             
-            <div class="absolute w-64 h-64 md:w-96 md:h-96 bg-paper rounded-full mix-blend-soft-light opacity-30 blur-xl"></div>
+            <div class="absolute inset-0 opacity-20" 
+                 >
+            </div>
+            
+            <div class="absolute w-64 h-64 md:w-96 md:h-96 bg-paper rounded-full mix-blend-soft-light opacity-30 blur-3xl"></div>
 
             <img 
                 src="/images/ranita.webp" 
-                alt="ranita" 
-                class="relative z-10 w-full max-w-sm h-auto object-contain grayscale contrast-125 mix-blend-multiply hover:mix-blend-normal hover:grayscale-0 transition-all duration-200"
+                alt="Mascota Digital - Ranita" 
+                width="400" 
+                height="400"
+                fetchpriority="high"
+                loading="eager"
+                class="relative z-10 w-full max-w-[280px] md:max-w-sm h-auto object-contain grayscale contrast-125 mix-blend-multiply hover:mix-blend-normal hover:grayscale-0 transition-all duration-300 ease-out"
             />
             
             <div class="absolute top-4 right-4 border-2 border-ink p-2 bg-paper text-ink font-mono text-xs writing-vertical-rl uppercase tracking-widest shadow-[4px_4px_0px_#18181B]">
-                
-こんにちは </div>
+                こんにちは
+            </div>
         </div>
 
         <div class="col-span-5 row-span-1 bg-paper p-8 md:border-r-4 border-ink flex flex-col justify-center">
@@ -35,32 +51,32 @@
                 /// Aplicado a soluciones de código. Especializado en el stack de Astro y análisis de datos.
             </p>
              <div class="flex flex-wrap gap-4 font-mono font-bold">
-                <a href="#proyectos" class="px-6 py-3 bg-ink text-paper border-2 border-ink hover:bg-stamp-red hover:border-stamp-red transition-colors">
+                <a href="#proyectos" class="px-6 py-3 bg-ink text-paper border-2 border-ink hover:bg-stamp-red hover:border-stamp-red transition-colors duration-200">
                     VER PROYECTOS_
                 </a>
-                <a href="#contact" class="px-6 py-3 border-2 border-ink hover:bg-frog-green hover:text-paper transition-colors">
+                <a href="#contact" class="px-6 py-3 border-2 border-ink hover:bg-frog-green hover:text-paper transition-colors duration-200">
                     CONTACTO //
                 </a>
             </div>
         </div>
 
-        <div class="col-span-3 row-span-1 bg-paper p-4 border-t-4 md:border-t-0 border-ink flex items-center justify-between relative overflow-hidden group">
-             <div class="absolute inset-0 bg-frog-green  z-0"></div>
+        <div class="col-span-3 row-span-1 bg-paper p-4 border-t-4 md:border-t-0 border-ink flex items-center justify-between relative overflow-hidden group ">
+             <div class="absolute inset-0 bg-frog-green"></div>
              
-             <div class="relative z-10 flex flex-col font-mono text-lg group-hover:text-paper transition-colors">
-                 <span class="uppercase opacity-50 text-paper">Ubicación</span>
-                 <span class="text-xl font-bold ">Concepción, Chile</span>
+             <div class="relative flex flex-col font-mono group-hover:text-paper transition-colors z-10">
+                 <span class="uppercase text-xs md:text-sm opacity-60">Ubicación</span>
+                 <span class="text-lg md:text-xl font-bold">Concepción, CL</span>
              </div>
              
-             <div class="relative z-10 w-16 h-16 border-2 border-stamp-red rounded-sm flex items-center justify-center text-stamp-red font-serif font-bold rotate-12 group-hover:border-paper group-hover:text-paper transition-all">
-                 <span class="writing-vertical-rl text-sm leading-none">合格</span> </div>
+             <div class="relative w-12 h-12 md:w-16 md:h-16 border-2 border-stamp-red rounded-sm flex items-center justify-center text-stamp-red font-serif font-bold rotate-12 group-hover:border-paper group-hover:text-paper transition-all z-10 bg-paper group-hover:bg-transparent">
+                 <span class="writing-vertical-rl text-xs md:text-sm leading-none">合格</span> 
+             </div>
         </div>
 
     </main>
 </section>
 
 <style>
-    /* Necesario para el texto vertical japonés */
     .writing-vertical-rl {
         writing-mode: vertical-rl;
         text-orientation: upright;

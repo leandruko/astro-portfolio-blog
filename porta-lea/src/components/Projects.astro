@@ -1,5 +1,6 @@
 ---
 // src/components/Projects.astro
+
 const webProjects = [
   {
     title: "Brosbusters",
@@ -15,50 +16,31 @@ const webProjects = [
     img: "/images/modopiola.png", 
     link: "https://www.modopiola.cl/"
   },
-    {
+  {
     title: "Cimasur",
-    desc: "Sistema creado con el fin de registrar informacion de logista en la empresa.",
+    desc: "Sistema creado con el fin de registrar informacion de logística.",
     tags: ["DJANGO", "JS", "PYTHON", "POSTGRES"],
-    img: "/images/cimasur.png", // Placeholder
+    img: "/images/cimasur.png",
   }
 ];
 
 const dataProjects = [
   {
-    title: "Análisis de sismos en Chile 2000-2024",
-    desc: "Modelo de ML para predecir stock necesario basado en históricos de 5 años.",
-        technologies: [
-      "Python",
-      "Pandas",
-      "Seaborn",
-      "Mathplotlib",
-      "Scikit-learn",
-    ],
+    title: "Análisis de sismos Chile",
+    desc: "Modelo de ML para predecir stock necesario basado en históricos.",
+    technologies: ["Python", "Pandas", "Seaborn", "Matplotlib", "Scikit-learn"],
     link: "https://github.com/leandruko/sismos-Chile"
   },
   {
-    title: "Morosidad sistema financiero",
-    desc: "NAnálisis de datos para predecir si alguien será deudor.",
-        technologies: [
-      "Python",
-      "Pandas",
-      "Seaborn",
-      "Mathplotlib",
-      "Scikit-learn",
-      "Jupyter",
-    ],
+    title: "Morosidad Financiera",
+    desc: "Análisis de datos para predecir si alguien será deudor.",
+    technologies: ["Python", "Pandas", "Seaborn", "Matplotlib", "Scikit-learn", "Jupyter"],
     link: "https://github.com/leandruko/Morosidad-Sistema-Financiero"
   },
-    {
+  {
     title: "Cáncer de pulmón",
-    desc: "Desarrollado con el objetivo de predecir si una persona tiene cáncer al pulmón.",
-    technologies: [
-      "Python",
-      "Pandas",
-      "Seaborn",
-      "Mathplotlib",
-      "Scikit-learn",
-    ],
+    desc: "Modelo predictivo para detección de cáncer de pulmón.",
+    technologies: ["Python", "Pandas", "Seaborn", "Matplotlib", "Scikit-learn"],
     link: "https://github.com/leandruko/lung-cancer"
   }
 ];
@@ -83,32 +65,38 @@ const dataProjects = [
             </div>
 
             <div class="space-y-12">
-                {webProjects.map((project, index) => (
+                {webProjects.map((project) => (
                     <article class="group relative">
-                        <div class="border-4 border-ink bg-paper relative z-10 transition-transform duration-300 group-hover:-translate-y-2 group-hover:-translate-x-2">
+                        <div class="border-4 border-ink bg-paper relative z-10 transition-transform duration-300 group-hover:-translate-y-2 group-hover:-translate-x-2 flex flex-col h-full">
                             
-                            <div class="w-full h-48 overflow-hidden border-b-4 border-ink relative">
+                            <div class="w-full h-48 overflow-hidden border-b-4 border-ink relative bg-ink/10">
                                 <div class="absolute inset-0 bg-frog-green mix-blend-multiply opacity-20 group-hover:opacity-0 transition-opacity z-10 pointer-events-none"></div>
                                 <img 
                                     src={project.img} 
-                                    alt={project.title} 
+                                    alt={`Captura de pantalla del proyecto ${project.title}`} 
+                                    width="600"
+                                    height="400"
+                                    loading="lazy"
+                                    decoding="async"
                                     class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-500"
                                 />
                             </div>
 
-                            <div class="p-6">
+                            <div class="p-6 flex flex-col flex-1">
                                 <h4 class="font-serif text-2xl font-bold mb-2 leading-none">{project.title}</h4>
-                                <p class="font-mono text-sm text-ink/70 mb-4">{project.desc}</p>
+                                <p class="font-mono text-sm text-ink/70 mb-4 line-clamp-3">{project.desc}</p>
                                 
-                                <div class="flex flex-wrap gap-2 mb-4">
+                                <div class="flex flex-wrap gap-2 mb-6 mt-auto">
                                     {project.tags.map(tag => (
-                                        <span class="text-xs font-mono border border-ink px-1 rounded-sm uppercase">{tag}</span>
+                                        <span class="text-xs font-mono border border-ink px-1 rounded-sm uppercase bg-paper">{tag}</span>
                                     ))}
                                 </div>
 
-                                <a href={project.link} target="_blank" class="inline-block text-sm font-bold border-b-2 border-stamp-red text-stamp-red hover:bg-stamp-red hover:text-paper transition-colors">
-                                    VER PROYECTO ->
-                                </a>
+                                {project.link && (
+                                    <a href={project.link} target="_blank" rel="noopener noreferrer" class="w-fit inline-block text-sm font-bold border-b-2 border-stamp-red text-stamp-red hover:bg-stamp-red hover:text-paper transition-colors">
+                                        VER PROYECTO ->
+                                    </a>
+                                )}
                             </div>
                         </div>
 
@@ -128,22 +116,25 @@ const dataProjects = [
             <div class="space-y-6">
                 {dataProjects.map((project) => (
                     <article class="relative block group">
-                        <div class="border-2 border-ink p-6 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] hover:bg-white transition-colors">
+                        <div class="border-2 border-ink p-6 transition-colors hover:bg-white relative overflow-hidden"
+                             style="background-image: linear-gradient(#18181b10 1px, transparent 1px), linear-gradient(to right, #18181b10 1px, transparent 1px); background-size: 20px 20px; background-color: #F4F1EA;">
                             
-                            <div class="flex justify-between items-start mb-4 border-b-2 border-ink/20 pb-2">
-                                <h4 class="font-serif text-xl font-bold">{project.title}</h4>
+                            <div class="flex justify-between items-start mb-4 border-b-2 border-ink/20 pb-2 relative z-10">
+                                <h4 class="font-serif text-xl font-bold leading-tight max-w-[85%]">{project.title}</h4>
                                 <span class="text-2xl text-frog-green">★</span>
                             </div>
 
-                            <p class="font-mono text-sm mb-4">{project.desc}</p>
+                            <p class="font-mono text-sm mb-4 relative z-10 text-ink/80">{project.desc}</p>
                             
-                            <div class="bg-ink/5 p-2 border-l-4 border-frog-green mb-4">
-                            {project.technologies.map(tag => (
-                                        <span class="text-xs font-mono border border-ink px-1 rounded-sm uppercase">{tag}</span>
+                            <div class="bg-ink/5 p-3 border-l-4 border-frog-green mb-4 relative z-10">
+                                <div class="flex flex-wrap gap-2">
+                                    {project.technologies.map(tag => (
+                                        <span class="text-[10px] md:text-xs font-mono border border-ink/50 px-1 rounded-sm uppercase bg-paper/50">{tag}</span>
                                     ))}
+                                </div>
                             </div>
 
-                            <a href={project.link} target="_blank" class="text-xs font-mono uppercase tracking-widest hover:underline group-hover:text-frog-green">
+                            <a href={project.link} target="_blank" rel="noopener noreferrer" class="text-xs font-mono uppercase tracking-widest hover:underline group-hover:text-frog-green relative z-10 font-bold">
                                 [Explorar Notebook]
                             </a>
                         </div>
