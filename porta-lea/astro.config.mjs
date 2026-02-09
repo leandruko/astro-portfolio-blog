@@ -8,7 +8,7 @@ export default defineConfig({
 
   adapter: vercel({
     webAnalytics: {
-      enabled: true, // set to false when using @vercel/analytics@1.4.0
+      enabled: false, // disabled because using @vercel/analytics@1.5.0 with Analytics component
     },
   }),
 
