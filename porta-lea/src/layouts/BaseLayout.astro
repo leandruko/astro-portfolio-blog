@@ -1,5 +1,5 @@
 ---
-
+import Analytics from '@vercel/analytics/astro'
 ---
 
 <!doctype html>
@@ -11,6 +11,7 @@
     <link rel="icon" type="image/svg+xml" href="images/logo.webp" />
   </head>
   <body class="overflow-x-hidden w-full bg-[#1e1e1e]">
+    <Analytics/>
     <main class="relative z-0">
       <slot />
     </main>
