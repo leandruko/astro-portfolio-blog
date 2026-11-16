@@ -22,3 +22,9 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# lockfile (prevent Windows vs Linux npm ci optional dependency mismatch on Cloudflare)
+package-lock.json
+.wrangler/
+.vercel/
+
