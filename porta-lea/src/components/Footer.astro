@@ -1,15 +1,16 @@
 ---
-const footerData = {
-  year: new Date().getFullYear(),
-};
+// src/components/Footer.astro
+const currentYear = new Date().getFullYear();
 ---
-<footer class="text-frog-green py-12 mt-30 bg-paper mx-auto text-center" id="footer" >
-  <div class="container mx-auto">
 
-    </div>
+<footer class="w-full pt-8 pb-10 sm:pb-12 mt-auto border-t border-zinc-200/50 dark:border-zinc-800/50 flex flex-row items-center justify-between gap-4 text-[11px] sm:text-xs font-mono text-zinc-400 dark:text-zinc-500">
+  <span class="truncate">© {currentYear} Leandro Javier Soto Miranda</span>
 
-    <p class="text-sm font-mono">
-      Developed by lea 2024 - {footerData.year}
-      <span class="text-frog-green"> ;)</span>
-    </p>
+  <a 
+    href="#" 
+    class="hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors flex-shrink-0"
+  >
+    ↑ arriba
+  </a>
 </footer>
+

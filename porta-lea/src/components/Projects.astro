@@ -1,152 +1,214 @@
 ---
 // src/components/Projects.astro
+import { projects } from '../data/project.js';
 
-const webProjects = [
-  {
-    title: "Brosbusters",
-    desc: "Landing page para Brosbusters podcast.",
-    tags: ["Astro", "Tailwind", "JS"],
-    img: "/images/brosbusters.png",
-    link: "https://www.brosbusters.cl/"
-  },
-  {
-    title: "Modo Piola Hub",
-    desc: "Landing page con el fin de mostrar redes sociales.",
-    tags: ["Astro", "Tailwind", "JS"],
-    img: "/images/modopiola.png", 
-    link: "https://www.modopiola.cl/"
-  },
-  {
-    title: "Cimasur",
-    desc: "Sistema creado con el fin de registrar informacion de logística.",
-    tags: ["DJANGO", "JS", "PYTHON", "POSTGRES"],
-    img: "/images/cimasur.png",
-  }
-];
-
-const dataProjects = [
-  {
-    title: "Análisis de sismos Chile",
-    desc: "Modelo de ML para predecir stock necesario basado en históricos.",
-    technologies: ["Python", "Pandas", "Seaborn", "Matplotlib", "Scikit-learn"],
-    link: "https://github.com/leandruko/sismos-Chile"
-  },
-  {
-    title: "Morosidad Financiera",
-    desc: "Análisis de datos para predecir si alguien será deudor.",
-    technologies: ["Python", "Pandas", "Seaborn", "Matplotlib", "Scikit-learn", "Jupyter"],
-    link: "https://github.com/leandruko/Morosidad-Sistema-Financiero"
-  },
-  {
-    title: "Cáncer de pulmón",
-    desc: "Modelo predictivo para detección de cáncer de pulmón.",
-    technologies: ["Python", "Pandas", "Seaborn", "Matplotlib", "Scikit-learn"],
-    link: "https://github.com/leandruko/lung-cancer"
-  }
-];
+const webProjects = projects.filter(p => p.category === 'profesional');
+const dataProjects = projects.filter(p => p.category === 'personal');
 ---
 
-<section id="proyectos" class="w-full bg-paper text-ink py-20 px-4 md:px-8 border-b-4 border-ink relative">
-    
-    <div class="max-w-7xl mx-auto mb-16 border-b-4 border-ink pb-4">
-        <h2 class="text-5xl md:text-7xl font-serif font-black uppercase tracking-tighter">
-            SELECCIÓN DE <br/>
-            <span class="text-frog-green">TRABAJOS</span>
-        </h2>
+<section id="proyectos" class="gsap-section w-full pt-12 pb-16 border-t border-zinc-200/70 dark:border-zinc-800/70">
+  
+  <!-- Section Title & Filters -->
+  <div class="gsap-section-header flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+    <div>
+      <h2 class="text-xl sm:text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
+        Proyectos seleccionados
+      </h2>
+      <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5 font-mono">
+        // ingeniería de datos, pipelines ETL/ELT y aplicaciones web
+      </p>
     </div>
 
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-0">
-        
-        <div class="md:pr-8 md:border-r-4 border-ink">
-            <div class="flex items-center gap-4 mb-8">
-                <h3 class="font-mono text-2xl font-bold bg-ink text-paper px-2 inline-block">
-                    DESARROLLO_WEB
-                </h3>
-            </div>
-
-            <div class="space-y-12">
-                {webProjects.map((project) => (
-                    <article class="group relative">
-                        <div class="border-4 border-ink bg-paper relative z-10 transition-transform duration-300 group-hover:-translate-y-2 group-hover:-translate-x-2 flex flex-col h-full">
-                            
-                            <div class="w-full h-48 overflow-hidden border-b-4 border-ink relative bg-ink/10">
-                                <div class="absolute inset-0 bg-frog-green mix-blend-multiply opacity-20 group-hover:opacity-0 transition-opacity z-10 pointer-events-none"></div>
-                                <img 
-                                    src={project.img} 
-                                    alt={`Captura de pantalla del proyecto ${project.title}`} 
-                                    width="600"
-                                    height="400"
-                                    loading="lazy"
-                                    decoding="async"
-                                    class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-500"
-                                />
-                            </div>
-
-                            <div class="p-6 flex flex-col flex-1">
-                                <h4 class="font-serif text-2xl font-bold mb-2 leading-none">{project.title}</h4>
-                                <p class="font-mono text-sm text-ink/70 mb-4 line-clamp-3">{project.desc}</p>
-                                
-                                <div class="flex flex-wrap gap-2 mb-6 mt-auto">
-                                    {project.tags.map(tag => (
-                                        <span class="text-xs font-mono border border-ink px-1 rounded-sm uppercase bg-paper">{tag}</span>
-                                    ))}
-                                </div>
-
-                                {project.link && (
-                                    <a href={project.link} target="_blank" rel="noopener noreferrer" class="w-fit inline-block text-sm font-bold border-b-2 border-stamp-red text-stamp-red hover:bg-stamp-red hover:text-paper transition-colors">
-                                        VER PROYECTO ->
-                                    </a>
-                                )}
-                            </div>
-                        </div>
-
-                        <div class="absolute top-0 left-0 w-full h-full bg-ink z-0 translate-x-0 translate-y-0"></div>
-                    </article>
-                ))}
-            </div>
-        </div>
-
-        <div class="md:pl-8 pt-12 md:pt-0 border-t-4 md:border-t-0 border-ink">
-             <div class="flex items-center gap-4 mb-8">
-                <h3 class="font-mono text-2xl font-bold bg-frog-green text-paper px-2 inline-block">
-                    DATA_SCIENCE
-                </h3>
-            </div>
-
-            <div class="space-y-6">
-                {dataProjects.map((project) => (
-                    <article class="relative block group">
-                        <div class="border-2 border-ink p-6 transition-colors hover:bg-white relative overflow-hidden"
-                             style="background-image: linear-gradient(#18181b10 1px, transparent 1px), linear-gradient(to right, #18181b10 1px, transparent 1px); background-size: 20px 20px; background-color: #F4F1EA;">
-                            
-                            <div class="flex justify-between items-start mb-4 border-b-2 border-ink/20 pb-2 relative z-10">
-                                <h4 class="font-serif text-xl font-bold leading-tight max-w-[85%]">{project.title}</h4>
-                                <span class="text-2xl text-frog-green">★</span>
-                            </div>
-
-                            <p class="font-mono text-sm mb-4 relative z-10 text-ink/80">{project.desc}</p>
-                            
-                            <div class="bg-ink/5 p-3 border-l-4 border-frog-green mb-4 relative z-10">
-                                <div class="flex flex-wrap gap-2">
-                                    {project.technologies.map(tag => (
-                                        <span class="text-[10px] md:text-xs font-mono border border-ink/50 px-1 rounded-sm uppercase bg-paper/50">{tag}</span>
-                                    ))}
-                                </div>
-                            </div>
-
-                            <a href={project.link} target="_blank" rel="noopener noreferrer" class="text-xs font-mono uppercase tracking-widest hover:underline group-hover:text-frog-green relative z-10 font-bold">
-                                [Explorar Notebook]
-                            </a>
-                        </div>
-                    </article>
-                ))}
-                
-                <div class="mt-12 p-4 border border-dashed border-ink opacity-50 font-mono text-xs text-center hidden md:block">
-                    // ANALYTICS STATUS: READY <br/>
-                    [||||||||||||||||||||] 100%
-                </div>
-            </div>
-        </div>
-
+    <!-- Filter Pills -->
+    <div class="flex flex-wrap gap-1.5 font-mono text-[11px]" id="filter-container">
+      <button 
+        data-filter="all" 
+        class="filter-pill px-3 py-1 rounded-full bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 font-medium transition-colors cursor-pointer"
+      >
+        todos ({projects.length})
+      </button>
+      <button 
+        data-filter="personal" 
+        class="filter-pill px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800/80 text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors cursor-pointer"
+      >
+        data &amp; cloud ({dataProjects.length})
+      </button>
+      <button 
+        data-filter="profesional" 
+        class="filter-pill px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800/80 text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors cursor-pointer"
+      >
+        web &amp; sistemas ({webProjects.length})
+      </button>
     </div>
+  </div>
+
+  <!-- Projects List -->
+  <div class="flex flex-col gap-5" id="projects-grid">
+    {projects.map((project, index) => (
+      <article 
+        class="project-card p-4 sm:p-5 rounded-2xl border border-zinc-200/80 dark:border-zinc-800/80 bg-white dark:bg-[#141417] shadow-xs hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors flex flex-col sm:flex-row gap-4 sm:gap-5"
+        data-category={project.category}
+      >
+        <!-- Project Visual Thumbnail -->
+        <div class="w-full sm:w-44 h-36 rounded-xl border border-zinc-200/60 dark:border-zinc-800/60 bg-zinc-100 dark:bg-zinc-900 overflow-hidden flex-shrink-0 relative group">
+          {project.image ? (
+            <img 
+              src={project.image} 
+              alt={`Vista previa de ${project.title}`}
+              loading="lazy"
+              decoding="async"
+              class="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+          ) : null}
+
+          <!-- Fallback Architecture / Data Pipeline Graphic -->
+          <div class={`w-full h-full p-4 flex-col justify-between font-mono text-[10px] text-zinc-500 dark:text-zinc-400 bg-gradient-to-br from-zinc-50 via-zinc-100/80 to-zinc-200/50 dark:from-zinc-900 dark:via-zinc-900/90 dark:to-zinc-800/60 ${project.image ? 'hidden' : 'flex'}`}>
+            <div class="flex items-center justify-between">
+              <span class="text-emerald-600 dark:text-emerald-400 font-semibold">
+                {project.category === 'personal' ? '⟨ETL/ELT⟩' : '⟨SYSTEM⟩'}
+              </span>
+              {project.year && <span>{project.year}</span>}
+            </div>
+            <div class="my-auto py-1">
+              <p class="text-xs font-semibold text-zinc-800 dark:text-zinc-200 leading-snug">
+                {project.category === 'personal' ? 'AWS Glue · Athena · dbt' : 'Next.js · OR-Tools · Supabase'}
+              </p>
+              <div class="mt-1.5 flex items-center gap-1">
+                <span class="h-1 w-6 rounded-full bg-emerald-500/80"></span>
+                <span class="h-1 w-3 rounded-full bg-zinc-400/50"></span>
+                <span class="h-1 w-2 rounded-full bg-zinc-400/30"></span>
+              </div>
+            </div>
+            <span class="text-[9px] text-zinc-400 dark:text-zinc-500">[producción]</span>
+          </div>
+
+          <!-- Category Chip -->
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-white/90 dark:bg-zinc-900/90 text-[10px] font-mono text-zinc-700 dark:text-zinc-300 backdrop-blur-xs shadow-2xs border border-zinc-200/50 dark:border-zinc-700/50">
+            {project.category === 'profesional' ? 'web' : 'data'}
+          </span>
+        </div>
+
+        <!-- Project Content -->
+        <div class="flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-start justify-between gap-2 mb-1.5">
+              <div class="flex items-center flex-wrap gap-2">
+                <h3 class="text-base sm:text-lg font-semibold text-zinc-900 dark:text-zinc-100 tracking-tight">
+                  {project.title}
+                </h3>
+                {project.featured && (
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-medium bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/20">
+                    Destacado CV
+                  </span>
+                )}
+              </div>
+              <span class="text-xs font-mono text-zinc-400 dark:text-zinc-600 flex-shrink-0">
+                #0{index + 1}
+              </span>
+            </div>
+
+            <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
+              {project.description}
+            </p>
+          </div>
+
+          <div>
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              {project.technologies.map(tech => (
+                <span class="px-2 py-0.5 rounded-md bg-zinc-100 dark:bg-zinc-800/80 text-[10px] font-mono text-zinc-600 dark:text-zinc-300 border border-zinc-200/40 dark:border-zinc-700/40">
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            <!-- Action Links -->
+            <div class="flex items-center gap-3 pt-2 border-t border-zinc-100 dark:border-zinc-800/60 font-mono text-xs">
+              {project.demoUrl && (
+                <a 
+                  href={project.demoUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="inline-flex items-center gap-1 font-medium text-zinc-900 dark:text-zinc-100 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+                >
+                  <span>ver demo</span>
+                  <span class="text-[10px]">↗</span>
+                </a>
+              )}
+              {project.githubUrl && (
+                <a 
+                  href={project.githubUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="inline-flex items-center gap-1 text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+                >
+                  <span>repositorio</span>
+                  <span class="text-[10px]">↗</span>
+                </a>
+              )}
+              {!project.demoUrl && !project.githubUrl && (
+                <span class="text-[11px] text-zinc-400 dark:text-zinc-500 italic">
+                  // sistema interno en producción (Cloudflare)
+                </span>
+              )}
+            </div>
+          </div>
+        </div>
+      </article>
+    ))}
+  </div>
+
 </section>
+
+<script>
+  import gsap from 'gsap';
+
+  const filterPills = document.querySelectorAll('.filter-pill');
+  const projectCards = document.querySelectorAll<HTMLElement>('.project-card');
+
+  const activePillClasses = ['bg-zinc-900', 'text-white', 'dark:bg-zinc-100', 'dark:text-zinc-900'];
+  const inactivePillClasses = ['bg-zinc-100', 'dark:bg-zinc-800/80', 'text-zinc-600', 'dark:text-zinc-400'];
+
+  filterPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      const filter = pill.getAttribute('data-filter');
+
+      // Update pills
+      filterPills.forEach(p => {
+        p.classList.remove(...activePillClasses);
+        p.classList.add(...inactivePillClasses);
+      });
+      pill.classList.remove(...inactivePillClasses);
+      pill.classList.add(...activePillClasses);
+
+      const visibleCards: HTMLElement[] = [];
+
+      projectCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          card.style.display = 'flex';
+          visibleCards.push(card);
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (visibleCards.length > 0) {
+        gsap.fromTo(
+          visibleCards,
+          { opacity: 0, y: 16, scale: 0.985 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.4,
+            stagger: 0.06,
+            ease: 'power2.out',
+            clearProps: 'transform'
+          }
+        );
+      }
+    });
+  });
+</script>

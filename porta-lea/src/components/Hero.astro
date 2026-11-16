@@ -1,84 +1,159 @@
 ---
 // src/components/Hero.astro
-import { Image } from 'astro:assets';
-// Si tienes la imagen en src/assets/ usa la importación de arriba.
-// Si está en public/, usa el string directo como tenías, pero recomiendo Astro Assets.
 ---
 
-<section class="relative w-full min-h-dvh bg-paper text-ink p-2 md:p-4 flex flex-col overflow-hidden">
-    
-    <div class="absolute inset-0 opacity-40 pointer-events-none mix-blend-multiply" 
-         style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.15%22/%3E%3C/svg%3E');">
+<section id="sobre-mi" class="w-full flex flex-col items-center text-center pt-4 sm:pt-6 pb-12 sm:pb-16">
+  
+  <!-- Centered Avatar / Mascot -->
+  <div class="hero-avatar relative mb-4 group">
+    <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800 shadow-sm flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+      <img 
+        src="/images/ranita.webp" 
+        alt="Leandro Javier Soto Miranda - Ranita Dev" 
+        width="96" 
+        height="96"
+        fetchpriority="high"
+        loading="eager"
+        class="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+      />
     </div>
+    <!-- Online status pip -->
+    <span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-white dark:border-[#0c0c0e]" title="Disponible para proyectos"></span>
+  </div>
 
-    <main class="flex-1 border-4 border-ink relative z-10 flex flex-col md:grid md:grid-cols-12 md:grid-rows-[2fr_1fr]">
-        
-        <div class="col-span-8 row-span-1 bg-paper p-6 md:p-12 border-b-4 md:border-r-4 border-ink flex items-end relative overflow-hidden ">
-            <span class="absolute -top-10 -left-10 text-[8rem] md:text-[12rem] text-ink opacity-[0.03] font-serif select-none pointer-events-none leading-none">改善</span>
-            
-            <h1 class="relative z-10 text-5xl font-serif font-black leading-[0.9] uppercase tracking-tighter">
-                <span class="block md:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-ink to-zinc-700">Desarrollo</span>
-                <span class="block md:text-8xl text-frog-green px-2 -ml-2 my-2 italic bg-ink/5 w-fit transform -skew-x-6 will-change-transform">Web & Datos</span>
-                <span class="block  scramble-text text-xl md:text-3xl font-mono mt-4 tracking-normal text-ink/70" data-value="LEANDRO SOTO Miranda">Leandro Soto Miranda</span>
-            </h1>
-        </div>
+  <!-- Name & Role Subtitle -->
+  <div class="hero-badge flex flex-col items-center gap-1.5 mb-4 px-2">
+    <p class="text-xs sm:text-sm font-semibold text-zinc-800 dark:text-zinc-200 tracking-wide">
+      Leandro Javier Soto Miranda
+    </p>
+    <span class="inline-flex flex-wrap items-center justify-center gap-1.5 px-3 py-0.5 rounded-full bg-zinc-100 dark:bg-zinc-800/90 border border-zinc-200/80 dark:border-zinc-700/80 text-[10px] sm:text-[11px] font-mono text-zinc-600 dark:text-zinc-300">
+      <span>Ingeniero en Informática</span>
+      <span class="text-emerald-500">·</span>
+      <span class="text-emerald-600 dark:text-emerald-400 font-medium">Data Engineer Junior</span>
+    </span>
+  </div>
 
-        <div class="col-span-4 row-span-2 bg-frog-green border-b-4 md:border-b-0 border-ink relative flex items-center justify-center overflow-hidden p-4">
-            
-            <div class="absolute inset-0 opacity-20" 
-                 >
-            </div>
-            
-            <div class="absolute w-64 h-64 md:w-96 md:h-96 bg-paper rounded-full mix-blend-soft-light opacity-30 blur-3xl"></div>
+  <!-- Big Editorial Headline -->
+  <h1 class="hero-title text-2xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50 leading-[1.15] max-w-lg mb-7 sm:mb-8 px-1">
+    Ingeniería de datos <span class="inline-block text-emerald-500">✦</span> <br />
+    <span class="text-zinc-500 dark:text-zinc-400">&amp; desarrollo web</span>
+  </h1>
 
-            <img 
-                src="/images/ranita.webp" 
-                alt="Mascota Digital - Ranita" 
-                width="400" 
-                height="400"
-                fetchpriority="high"
-                loading="eager"
-                class="relative z-10 w-full max-w-[280px] md:max-w-sm h-auto object-contain grayscale contrast-125 mix-blend-multiply hover:mix-blend-normal hover:grayscale-0 transition-all duration-300 ease-out"
-            />
-            
-            <div class="absolute top-4 right-4 border-2 border-ink p-2 bg-paper text-ink font-mono text-xs writing-vertical-rl uppercase tracking-widest shadow-[4px_4px_0px_#18181B]">
-                こんにちは
-            </div>
-        </div>
+  <!-- Floating Squircle App/Tool Dock with Crisp Logos -->
+  <div class="hero-dock max-w-full p-1.5 sm:p-2 rounded-2xl bg-white/90 dark:bg-zinc-900/90 border border-zinc-200/80 dark:border-zinc-800/80 shadow-sm flex flex-wrap justify-center items-center gap-1.5 sm:gap-2.5 mb-8 sm:mb-10 backdrop-blur-md">
+    
+    <!-- Python -->
+    <a 
+      href="#stack" 
+      class="dock-item w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-[#3776AB] text-white flex items-center justify-center shadow-xs"
+      title="Python & ETL/ELT"
+    >
+      <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-current" viewBox="0 0 24 24">
+        <path d="M11.914 0C5.82 0 6.2 2.656 6.2 2.656l.007 2.752h5.814v.826H3.9S0 5.789 0 11.969c0 6.18 3.403 5.96 3.403 5.96h2.03v-2.867s-.109-3.42 3.35-3.42h5.766s3.24.052 3.24-3.148V3.202S18.28 0 11.914 0zM8.708 1.85c.578 0 1.046.47 1.046 1.052 0 .581-.468 1.051-1.046 1.051-.579 0-1.046-.47-1.046-1.051 0-.582.467-1.052 1.046-1.052zm3.378 22.15c6.094 0 5.714-2.656 5.714-2.656l-.007-2.752h-5.814v-.826h8.121S24 18.211 24 12.031c0-6.18-3.403-5.96-3.403-5.96h-2.03v2.867s.109 3.42-3.35 3.42H9.451s-3.24-.052-3.24 3.148v5.292S5.72 24 12.086 24zm3.206-1.85c-.579 0-1.046-.47-1.046-1.052 0-.581.467-1.051 1.046-1.051.578 0 1.046.47 1.046 1.051 0 .582-.468 1.052-1.046 1.052z"/>
+      </svg>
+    </a>
 
-        <div class="col-span-5 row-span-1 bg-paper p-8 md:border-r-4 border-ink flex flex-col justify-center">
-            <p class="font-mono text-lg md:text-xl mb-8 border-l-4 border-frog-green pl-4 text-ink/80">
-                /// Aplicado a soluciones de código. Especializado en el stack de Astro y análisis de datos.
-            </p>
-             <div class="flex flex-wrap gap-4 font-mono font-bold">
-                <a href="#proyectos" class="px-6 py-3 bg-ink text-paper border-2 border-ink hover:bg-stamp-red hover:border-stamp-red transition-colors duration-200">
-                    VER PROYECTOS_
-                </a>
-                <a href="#contact" class="px-6 py-3 border-2 border-ink hover:bg-frog-green hover:text-paper transition-colors duration-200">
-                    CONTACTO //
-                </a>
-            </div>
-        </div>
+    <!-- SQL / Databases -->
+    <a 
+      href="#stack" 
+      class="dock-item w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-emerald-600 text-white flex items-center justify-center shadow-xs"
+      title="SQL · PostgreSQL · MySQL · dbt"
+    >
+      <svg class="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <ellipse cx="12" cy="5" rx="8" ry="3"/>
+        <path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/>
+        <path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"/>
+      </svg>
+    </a>
 
-        <div class="col-span-3 row-span-1 bg-paper p-4 border-t-4 md:border-t-0 border-ink flex items-center justify-between relative overflow-hidden group ">
-             <div class="absolute inset-0 bg-frog-green"></div>
-             
-             <div class="relative flex flex-col font-mono group-hover:text-paper transition-colors z-10">
-                 <span class="uppercase text-xs md:text-sm opacity-60">Ubicación</span>
-                 <span class="text-lg md:text-xl font-bold">Concepción, CL</span>
-             </div>
-             
-             <div class="relative w-12 h-12 md:w-16 md:h-16 border-2 border-stamp-red rounded-sm flex items-center justify-center text-stamp-red font-serif font-bold rotate-12 group-hover:border-paper group-hover:text-paper transition-all z-10 bg-paper group-hover:bg-transparent">
-                 <span class="writing-vertical-rl text-xs md:text-sm leading-none">合格</span> 
-             </div>
-        </div>
+    <!-- Cloud (Azure & AWS) -->
+    <a 
+      href="#stack" 
+      class="dock-item w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-[#0078D4] text-white flex items-center justify-center shadow-xs"
+      title="Cloud: Azure · AWS · BigQuery · Cloudflare"
+    >
+      <svg class="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
+      </svg>
+    </a>
 
-    </main>
+    <!-- Next.js & Astro -->
+    <a 
+      href="#stack" 
+      class="dock-item w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-orange-500 text-white flex items-center justify-center shadow-xs"
+      title="Next.js · Astro · Supabase"
+    >
+      <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-current" viewBox="0 0 24 24">
+        <path d="M8.25 21.75l2.4-7.5h6.7l-5.45-4.2 2.1-6.55L8.6 7.75 3.15 3.55l2.1 6.55-5.45 4.2h6.7l1.75 7.45z"/>
+      </svg>
+    </a>
+
+    <!-- GitHub -->
+    <a 
+      href="https://github.com/leandruko" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="dock-item w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-zinc-900 text-white dark:bg-zinc-800 flex items-center justify-center shadow-xs"
+      title="GitHub Profile"
+    >
+      <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-current" viewBox="0 0 24 24">
+        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+      </svg>
+    </a>
+
+    <!-- LinkedIn -->
+    <a 
+      href="https://linkedin.com/in/leasotomdev" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="dock-item w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-[#0A66C2] text-white flex items-center justify-center shadow-xs"
+      title="LinkedIn Profile"
+    >
+      <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+      </svg>
+    </a>
+
+    <!-- Email -->
+    <a 
+      href="#contacto" 
+      class="dock-item w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-sky-500 text-white flex items-center justify-center shadow-xs"
+      title="Contactar"
+    >
+      <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+        <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l9.518 7.714 9.518-7.714v11.817h-19.036z"/>
+      </svg>
+    </a>
+
+  </div>
+
+  <!-- Quick Location & Experience Pill -->
+  <div class="hero-pill inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200/80 dark:border-zinc-700/80 text-[11px] sm:text-xs font-mono text-zinc-600 dark:text-zinc-300 mb-7 sm:mb-8">
+    <span>📍 Concepción, Chile</span>
+    <span class="text-zinc-300 dark:text-zinc-600">|</span>
+    <span class="px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-semibold">
+      ETL/ELT · Cloud · Web
+    </span>
+  </div>
+
+  <!-- Editorial Personal Bio (Aligned with CV Profile) -->
+  <div class="hero-bio text-left w-full space-y-4 text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed font-normal pt-2">
+    
+    <!-- Greeting with Emoticon -->
+    <p class="font-medium text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
+      <span>Hola, soy Leandro</span>
+      <span class="text-base select-none">👋</span>
+      <span class="font-mono text-xs px-2 py-0.5 rounded-full bg-zinc-200/60 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400">ʕ•ᴥ•ʔ</span>
+    </p>
+
+    <p>
+      <strong class="font-medium text-zinc-900 dark:text-zinc-100">Ingeniero en Informática</strong> con experiencia en automatización de procesos, integración de sistemas y desarrollo de aplicaciones web en producción.
+    </p>
+
+    <p>
+      He trabajado con <strong class="font-medium text-zinc-900 dark:text-zinc-100">Python</strong>, <strong class="font-medium text-zinc-900 dark:text-zinc-100">SQL</strong> y <strong class="font-medium text-zinc-900 dark:text-zinc-100">dbt</strong> para procesar y transformar datos, con servicios cloud en <strong class="font-medium text-zinc-900 dark:text-zinc-100">Azure</strong> y <strong class="font-medium text-zinc-900 dark:text-zinc-100">AWS</strong> (Functions, Blob Storage, S3, Glue, Athena) para automatizar flujos de archivos, <strong class="font-medium text-zinc-900 dark:text-zinc-100">Power BI</strong> para reportería ejecutiva, y desarrollo de intranets y sistemas con <strong class="font-medium text-zinc-900 dark:text-zinc-100">Next.js</strong>, <strong class="font-medium text-zinc-900 dark:text-zinc-100">Supabase</strong> y <strong class="font-medium text-zinc-900 dark:text-zinc-100">Astro</strong> desplegados en <strong class="font-medium text-zinc-900 dark:text-zinc-100">Cloudflare</strong>.
+    </p>
+
+  </div>
+
 </section>
-
-<style>
-    .writing-vertical-rl {
-        writing-mode: vertical-rl;
-        text-orientation: upright;
-    }
-</style>

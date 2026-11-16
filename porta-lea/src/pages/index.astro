@@ -1,39 +1,214 @@
 ---
-import '../styles/global.css';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Footer from '../components/Footer.astro';
+import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
+import Stack from '../components/Stack.astro';
 import Projects from '../components/Projects.astro';
 import Exp from '../components/Exp.astro';
 import Contact from '../components/Contact.astro';
-import Navbar from '../components/Navbar.astro';
-import Stack from '../components/Stack.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<BaseLayout>
-  <Fragment slot="head">
-    <meta name="description" content="Leandro Soto Miranda - Desarrollador & Analista/Ingeniero de datos">
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <!-- Material Tailwind -->
-    <link rel="stylesheet" href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css"/>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-  </Fragment>
-
+<BaseLayout 
+  title="Leandro Javier Soto Miranda | Ingeniero en Informática & Data Engineer Jr"
+  description="Portafolio profesional de Leandro Javier Soto Miranda. Ingeniería de Datos (Python, SQL, ETL/ELT, dbt, Azure, AWS, Power BI) y Desarrollo Web (Next.js, Supabase, Astro, Cloudflare)."
+>
   <Navbar />
-  <Hero /> 
-  
-  <main class="min-h-screen bg-fixed bg-cover overflow-x-hidden">
+  <main class="w-full">
+    <Hero />
+    <Exp />
+    <Stack />
     <Projects />
-   <!-- <Exp /> -->
     <Contact />
-    <Footer />
   </main>
+  <Footer />
 </BaseLayout>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!prefersReducedMotion) {
+    // 1. Navbar & Hero Entrance Timeline
+    const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+    heroTl
+      .from('.gsap-navbar', {
+        y: -24,
+        opacity: 0,
+        duration: 0.65,
+        clearProps: 'all'
+      })
+      .from('.hero-avatar', {
+        scale: 0.75,
+        opacity: 0,
+        duration: 0.6,
+        ease: 'back.out(1.7)',
+        clearProps: 'all'
+      }, '-=0.4')
+      .from('.hero-badge', {
+        y: 14,
+        opacity: 0,
+        duration: 0.5,
+        clearProps: 'all'
+      }, '-=0.35')
+      .from('.hero-title', {
+        y: 22,
+        opacity: 0,
+        duration: 0.65,
+        clearProps: 'all'
+      }, '-=0.35')
+      .from('.hero-dock .dock-item', {
+        y: 18,
+        scale: 0.8,
+        opacity: 0,
+        duration: 0.45,
+        stagger: 0.055,
+        ease: 'back.out(1.6)',
+        clearProps: 'all'
+      }, '-=0.35')
+      .from('.hero-pill', {
+        y: 12,
+        opacity: 0,
+        duration: 0.45,
+        clearProps: 'all'
+      }, '-=0.25')
+      .from('.hero-bio > *', {
+        y: 16,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.08,
+        clearProps: 'all'
+      }, '-=0.25');
+
+    // 2. Interactive GSAP Magnetic Hover on Dock Icons
+    const dockItems = document.querySelectorAll<HTMLElement>('.hero-dock .dock-item');
+    dockItems.forEach((item) => {
+      item.addEventListener('mouseenter', () => {
+        gsap.to(item, {
+          y: -6,
+          scale: 1.12,
+          duration: 0.25,
+          ease: 'back.out(2)'
+        });
+      });
+      item.addEventListener('mouseleave', () => {
+        gsap.to(item, {
+          y: 0,
+          scale: 1,
+          duration: 0.3,
+          ease: 'power2.out'
+        });
+      });
+    });
+
+    // 3. Section Headers Scroll Reveal
+    gsap.utils.toArray<HTMLElement>('.gsap-section-header').forEach((header) => {
+      gsap.from(header, {
+        scrollTrigger: {
+          trigger: header,
+          start: 'top 88%',
+          toggleActions: 'play none none none'
+        },
+        y: 20,
+        opacity: 0,
+        duration: 0.6,
+        ease: 'power2.out',
+        clearProps: 'all'
+      });
+    });
+
+    // 4. Experience Cards Stagger Reveal
+    const expCards = gsap.utils.toArray<HTMLElement>('.exp-card');
+    if (expCards.length) {
+      gsap.from(expCards, {
+        scrollTrigger: {
+          trigger: '#experiencia',
+          start: 'top 82%',
+          toggleActions: 'play none none none'
+        },
+        y: 28,
+        opacity: 0,
+        duration: 0.65,
+        stagger: 0.12,
+        ease: 'power3.out',
+        clearProps: 'all'
+      });
+    }
+
+    // 5. Stack Groups & Tech Pills Reveal
+    gsap.utils.toArray<HTMLElement>('.stack-group-card').forEach((groupCard) => {
+      const pills = groupCard.querySelectorAll('.tech-pill');
+      gsap.from(groupCard, {
+        scrollTrigger: {
+          trigger: groupCard,
+          start: 'top 86%',
+          toggleActions: 'play none none none'
+        },
+        y: 24,
+        opacity: 0,
+        duration: 0.55,
+        ease: 'power2.out',
+        clearProps: 'all'
+      });
+
+      if (pills.length) {
+        gsap.from(pills, {
+          scrollTrigger: {
+            trigger: groupCard,
+            start: 'top 84%',
+            toggleActions: 'play none none none'
+          },
+          y: 12,
+          scale: 0.96,
+          opacity: 0,
+          duration: 0.4,
+          stagger: 0.04,
+          delay: 0.1,
+          ease: 'power2.out',
+          clearProps: 'all'
+        });
+      }
+    });
+
+    // 6. Project Cards Scroll Reveal
+    const projectCards = gsap.utils.toArray<HTMLElement>('.project-card');
+    if (projectCards.length) {
+      gsap.from(projectCards, {
+        scrollTrigger: {
+          trigger: '#proyectos',
+          start: 'top 82%',
+          toggleActions: 'play none none none'
+        },
+        y: 28,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.09,
+        ease: 'power2.out',
+        clearProps: 'all'
+      });
+    }
+
+    // 7. Contact Items Reveal
+    const contactItems = gsap.utils.toArray<HTMLElement>('.contact-item');
+    if (contactItems.length) {
+      gsap.from(contactItems, {
+        scrollTrigger: {
+          trigger: '#contacto',
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        },
+        y: 20,
+        opacity: 0,
+        duration: 0.55,
+        stagger: 0.08,
+        ease: 'power2.out',
+        clearProps: 'all'
+      });
+    }
+  }
+</script>

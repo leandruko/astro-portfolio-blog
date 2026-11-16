@@ -1,5 +1,15 @@
 ---
-import Analytics from '@vercel/analytics/astro'
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Leandro Javier Soto Miranda — Ingeniero en Informática | Data Engineer Jr",
+  description = "Portafolio profesional de Leandro Javier Soto Miranda. Ingeniería de datos (Python, SQL, ETL/ELT, dbt, Azure, AWS, Power BI) y desarrollo web (Next.js, Supabase, Astro, Cloudflare)."
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -7,19 +17,40 @@ import Analytics from '@vercel/analytics/astro'
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lensodev.</title>
-    <link rel="icon" type="image/svg+xml" href="images/logo.webp" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    
+    <!-- Preconnect Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/images/logo.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#fafaf9" />
+
+    <!-- Theme Initialization Script (Zero FOUC) -->
+    <script is:inline>
+      (function() {
+        const storedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (storedTheme === 'dark' || (!storedTheme && systemPrefersDark)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
   </head>
-  <body class="overflow-x-hidden w-full bg-[#1e1e1e]">
-    {/* @ts-ignore */}
-    <Analytics/>
-    <main class="relative z-0">
+  <body class="min-h-screen overflow-x-hidden bg-[#fafaf9] text-zinc-900 dark:bg-[#0c0c0e] dark:text-zinc-100 transition-colors duration-200 antialiased font-sans flex flex-col items-center">
+    <div class="w-full max-w-2xl px-4 sm:px-6 py-5 sm:py-10 flex flex-col min-h-screen">
       <slot />
-    </main>
+    </div>
   </body>
 </html>
-
-<style is:global>
-
-</style>
 
